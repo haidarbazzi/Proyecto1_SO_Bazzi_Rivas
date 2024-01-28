@@ -6,6 +6,7 @@ package Company;
 
 import Disk.Drive;
 import List.List;
+import Workers.Regular;
 
 /**
  *
@@ -15,6 +16,7 @@ public class Company {
     
     protected CompanyRules requirements;
     protected Drive drive;
+    
     /**
      * 0 - guionista
      * 1 - disenador
@@ -28,19 +30,28 @@ public class Company {
     private int maxEmployees;
     private int numEmployees;
 
-    public Company(CompanyRules requirements, Drive drive, int maxEmployees, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers) {
+    public Company(CompanyRules requirements, Drive drive, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers) {
         this.requirements = requirements;
         this.drive = drive;
-        this.maxEmployees = maxEmployees;
-       
+        switch (requirements.getIdentifier()){
+            case Nickelodeon -> maxEmployees = 17;
+            case DisneyChannel -> maxEmployees = 19;
+        }
+        
+        for (int i = 0; i < this.employees.length; i++){
+            employees[i] = new List();
+        }
+ 
         //falta llenar las listas con los empleados segun el numero y set numEmployees.
-        
-        
     }
     
-    public void hireEmployee(){};
+    public void hireEmployee(){
     
-    public void fireEmployee(){};
+    };
+    
+    public void fireEmployee(){
+    
+    };
     
     
     /**
