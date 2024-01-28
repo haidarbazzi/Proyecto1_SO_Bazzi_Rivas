@@ -6,6 +6,7 @@ package Workers;
 
 import Disk.Drive;
 import java.util.concurrent.Semaphore;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,10 +15,12 @@ import java.util.concurrent.Semaphore;
 public class Regular extends Worker {
     
     protected int dailyProduction;
+    private float accWork; // Acumulado de la fracción de la parte de Capítulo que realiza a diario
 
-    public Regular(int dailyProduction, Drive drive, int id, double hourlyRate, Semaphore sem, int dayLength) {
-        super(id, hourlyRate, sem, dayLength, drive);
+    public Regular(int dailyProduction, Drive drive, EnumW type, double hourlyRate, Semaphore sem, int dayLength) {
+        super(type, hourlyRate, sem, dayLength, drive);
         this.dailyProduction = dailyProduction;
+        this.accWork = 0;
     }
     
     @Override
@@ -36,9 +39,28 @@ public class Regular extends Worker {
 
     @Override
     public void work() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        this.accWork += this.dailyProduction;
+        
+        try{
+            while (accWork >= 1){
+                this.sem.acquire(1);
+                this.drive.addProduct(this.type);
+                this.sem.release();
+                accWork--;
+                if (accWork < 1){
+                    accWork = 0;
+                }
+            }
+            this.daysWorked++;
+        }
+        
+        catch(Exception e){
+        
+        }
+        
     }
-
+    
     /**
      * @return the dailyProduction
      */

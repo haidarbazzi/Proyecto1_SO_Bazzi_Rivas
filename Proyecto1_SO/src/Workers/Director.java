@@ -13,8 +13,8 @@ import java.util.concurrent.Semaphore;
  */
 public class Director extends Worker {
 
-    public Director(int id, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
-        super(id, hourlyRate, sem, dayLength, drive);
+    public Director(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+        super(type, hourlyRate, sem, dayLength, drive);
     }
     
     @Override

@@ -18,8 +18,8 @@ public class Assembler extends Worker {
     protected CompanyRules requirements;
     protected int regEpToplotEp; //capitulos regulares a capitulos con plot twist
 
-    public Assembler(CompanyRules requirements, int regEpToplotEp, int id, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
-        super(id, hourlyRate, sem, dayLength, drive);
+    public Assembler(CompanyRules requirements, int regEpToplotEp, EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+        super(type, hourlyRate, sem, dayLength, drive);
         this.requirements = requirements;
         this.regEpToplotEp = regEpToplotEp;
     }

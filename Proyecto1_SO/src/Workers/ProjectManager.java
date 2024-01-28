@@ -13,8 +13,8 @@ import java.util.concurrent.Semaphore;
  */
 public class ProjectManager extends Worker {
 
-    public ProjectManager(int id, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
-        super(id, hourlyRate, sem, dayLength, drive);
+    public ProjectManager(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+        super(type, hourlyRate, sem, dayLength, drive);
     }
 
     @Override

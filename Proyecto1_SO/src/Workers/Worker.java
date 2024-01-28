@@ -13,7 +13,7 @@ import java.util.concurrent.Semaphore;
  */
 public abstract class Worker extends Thread {
     
-    protected final int id; //si usamos Enums esto seria un enum
+    protected EnumW type; 
     protected int daysWorked;
     protected double hourlyRate;
     protected boolean hired;
@@ -21,8 +21,8 @@ public abstract class Worker extends Thread {
     protected int dayLength;
     protected final Drive drive;
 
-    public Worker(int id, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
-        this.id = id;
+    public Worker(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+        this.type = type;
         this.daysWorked = 0;
         this.hourlyRate = hourlyRate;
         this.hired = true;
