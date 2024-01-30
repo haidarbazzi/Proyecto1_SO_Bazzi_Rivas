@@ -4,6 +4,7 @@
  */
 package Workers;
 
+import Company.CompanyRules;
 import Disk.Drive;
 import java.util.concurrent.Semaphore;
 
@@ -13,8 +14,10 @@ import java.util.concurrent.Semaphore;
  */
 public class Director extends Worker {
 
-    public Director(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+    private CompanyRules cRules;
+    public Director(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive, CompanyRules cRules) {
         super(type, hourlyRate, sem, dayLength, drive);
+        this.cRules = cRules;
     }
     
     @Override
@@ -25,6 +28,20 @@ public class Director extends Worker {
     @Override
     public void work() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    /**
+     * @return the cRules
+     */
+    public CompanyRules getcRules() {
+        return cRules;
+    }
+
+    /**
+     * @param cRules the cRules to set
+     */
+    public void setcRules(CompanyRules cRules) {
+        this.cRules = cRules;
     }
     
     

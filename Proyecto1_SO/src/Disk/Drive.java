@@ -53,9 +53,11 @@ public class Drive {
     private int profit;
     private int netProfit;
     private int salaryFault;
+    private int totalCosts;
     
     private int daysCountdown;
     private int regEpsSinceptEp =0;
+    private int regEpstoplotEp;
 
     public Drive(int daysCountdown) {
         this.produceM = new Semaphore(1);
@@ -69,6 +71,7 @@ public class Drive {
         this.netProfit = 0;
         this.salaryFault = 100;
         this.daysCountdown = daysCountdown;
+        regEpstoplotEp =0;
     }
     
     public void addProduct(EnumW type){
@@ -413,6 +416,34 @@ public class Drive {
      */
     public Semaphore getCostsM() {
         return costsM;
+    }
+
+    /**
+     * @return the regEpstoplotEp
+     */
+    public int getRegEpstoplotEp() {
+        return regEpstoplotEp;
+    }
+
+    /**
+     * @param regEpstoplotEp the regEpstoplotEp to set
+     */
+    public void setRegEpstoplotEp(int regEpstoplotEp) {
+        this.regEpstoplotEp = regEpstoplotEp;
+    }
+
+    /**
+     * @return the totalCosts
+     */
+    public int getTotalCosts() {
+        return totalCosts;
+    }
+
+    /**
+     * @param totalCosts the totalCosts to set
+     */
+    public void setTotalCosts(int totalCosts) {
+        this.totalCosts = totalCosts;
     }
     
     

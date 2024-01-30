@@ -5,6 +5,11 @@
 package Workers;
 
 import Disk.Drive;
+import static Workers.EnumW.Animator;
+import static Workers.EnumW.Designer;
+import static Workers.EnumW.PtWriter;
+import static Workers.EnumW.ScriptWriter;
+import static Workers.EnumW.Translator;
 import java.util.concurrent.Semaphore;
 import javax.swing.JOptionPane;
 
@@ -14,10 +19,10 @@ import javax.swing.JOptionPane;
  */
 public class Regular extends Worker {
     
-    protected int dailyProduction;
+    protected double dailyProduction;
     private float accWork; // Acumulado de la fracción de la parte de Capítulo que realiza a diario
 
-    public Regular(int dailyProduction, Drive drive, EnumW type, double hourlyRate, Semaphore sem, int dayLength) {
+    public Regular(double dailyProduction, Drive drive, EnumW type, double hourlyRate, Semaphore sem, int dayLength) {
         super(type, hourlyRate, sem, dayLength, drive);
         this.dailyProduction = dailyProduction;
         this.accWork = 0;
@@ -52,6 +57,23 @@ public class Regular extends Worker {
                     accWork = 0;
                 }
             }
+             
+            this.drive.getCostsM().acquire();
+                
+                //  ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4)
+                switch(this.type){
+                    case ScriptWriter:
+                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostScript()*24);
+                    case Designer:
+                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostDirector()*24);
+                    case Animator:
+                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostAnimation()*24);
+                    case Translator:
+                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostDub()*24);
+                    case PtWriter:
+                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostPT()*24);
+                }
+            this.drive.getCostsM().release();
             this.daysWorked++;
         }
         
@@ -64,7 +86,7 @@ public class Regular extends Worker {
     /**
      * @return the dailyProduction
      */
-    public int getDailyProduction() {
+    public double getDailyProduction() {
         return dailyProduction;
     }
 
