@@ -4,6 +4,7 @@
  */
 package Disk;
 
+import Workers.EnumW;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -70,7 +71,27 @@ public class Drive {
         this.daysCountdown = daysCountdown;
     }
     
-    public void addProduct(){}
+    public void addProduct(EnumW type){
+        switch (type){
+            //ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4), Assembler(5), ProjectManager(6), Director(7);
+            case ScriptWriter:
+                scripts = (scripts < maxScript)? scripts + 1: scripts;
+                break;
+            case Designer:
+                settings = (settings < maxSetting)? settings + 1: settings;
+                break;
+            case Animator:
+                animations = (animations < maxAnimation)? animations + 1: animations;
+                break;
+            case Translator:
+                dubs = (dubs < maxDub)? dubs + 1: dubs;
+                break;
+            case PtWriter:
+                plotTwists = (plotTwists < maxpTwist)? plotTwists + 1: plotTwists;
+                break;
+    
+    }
+    }
 
     /**
      * @return the scripts
