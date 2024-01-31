@@ -8,12 +8,12 @@ package Interfaces;
  *
  * @author andre
  */
-public class Settings extends javax.swing.JPanel {
+public class Welcome extends javax.swing.JPanel {
 
     /**
-     * Creates new form Settings
+     * Creates new form NewJPanel
      */
-    public Settings() {
+    public Welcome() {
         initComponents();
     }
 

@@ -8,12 +8,12 @@ package Interfaces;
  *
  * @author andre
  */
-public class Settings extends javax.swing.JPanel {
+public class Disney extends javax.swing.JPanel {
 
     /**
-     * Creates new form Settings
+     * Creates new form Disney
      */
-    public Settings() {
+    public Disney() {
         initComponents();
     }
 

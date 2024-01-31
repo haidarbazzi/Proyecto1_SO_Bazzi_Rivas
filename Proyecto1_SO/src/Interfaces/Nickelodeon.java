@@ -8,12 +8,12 @@ package Interfaces;
  *
  * @author andre
  */
-public class Settings extends javax.swing.JPanel {
+public class Nickelodeon extends javax.swing.JPanel {
 
     /**
-     * Creates new form Settings
+     * Creates new form Nickelodeon
      */
-    public Settings() {
+    public Nickelodeon() {
         initComponents();
     }
 

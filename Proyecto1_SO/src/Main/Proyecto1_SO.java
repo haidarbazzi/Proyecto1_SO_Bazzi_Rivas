@@ -4,6 +4,8 @@
  */
 package Main;
 
+import Interfaces.MainWindow;
+
 /**
  *
  * @author andre
@@ -14,7 +16,8 @@ public class Proyecto1_SO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MainWindow main = new MainWindow();
+        main.setVisible(true);
     }
     
 }
