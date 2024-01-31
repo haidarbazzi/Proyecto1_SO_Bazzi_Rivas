@@ -13,50 +13,71 @@ import Workers.ProjectManager;
 import Workers.Regular;
 import Workers.Worker;
 import java.util.concurrent.Semaphore;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author andre
  */
 public class Company {
-    
+
     protected CompanyRules requirements;
     protected Drive drive;
-    
+
     /**
-     * 0 - guionista
-     * 1 - disenador
-     * 2 - animador
-     * 3 - actor
-     * 4 - plot twist
-     * 5 - ensamblador
+     * 0 - guionista 1 - disenador 2 - animador 3 - actor 4 - plot twist 5 -
+     * ensamblador
      */
-    private List[] employees = new List[6];
-    
+    private List[] employees = new List[8];
+
     private int maxEmployees;
     private int numEmployees;
 
-    public Company(CompanyRules requirements, Drive drive, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers) {
+    public Company(CompanyRules requirements, Drive drive, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers, int dayLength) {
         this.requirements = requirements;
         this.drive = drive;
-        switch (requirements.getIdentifier()){
-            case Nickelodeon -> maxEmployees = 17;
-            case DisneyChannel -> maxEmployees = 19;
+        switch (requirements.getIdentifier()) {
+            case Nickelodeon ->
+                maxEmployees = 17;
+            case DisneyChannel ->
+                maxEmployees = 19;
         }
-        
-        for (int i = 0; i < this.employees.length; i++){
+
+        for (int i = 0; i < this.employees.length; i++) {
             employees[i] = new List();
         }
- 
-        //falta llenar las listas con los empleados segun el numero y set numEmployees.
+
+        for (int i = 0; i < numScripters; i++) {
+            employees[0].insert(this.createWorker(drive, EnumW.ScriptWriter, drive.getProduceM(), requirements.getDayLength()));
+        }
+        for (int i = 0; i < numDesigners; i++) {
+            employees[1].insert(this.createWorker(drive, EnumW.Designer, drive.getProduceM(), requirements.getDayLength()));
+        }
+        for (int i = 0; i < numAnimators; i++) {
+            employees[2].insert(this.createWorker(drive, EnumW.Animator, drive.getProduceM(), requirements.getDayLength()));
+        }
+        for (int i = 0; i < numActors; i++) {
+            employees[3].insert(this.createWorker(drive, EnumW.Translator, drive.getProduceM(), requirements.getDayLength()));
+        }
+        for (int i = 0; i < numPlotTwisters; i++) {
+            employees[4].insert(this.createWorker(drive, EnumW.PtWriter, drive.getProduceM(), requirements.getDayLength()));
+        }
+        for (int i = 0; i < numAssemblers; i++) {
+            employees[5].insert(this.createWorker(drive, EnumW.Assembler, drive.getProduceM(), requirements.getDayLength()));
+        }
+
+        employees[6].insert(this.createWorker(drive, EnumW.ProjectManager, drive.getProduceM(), requirements.getDayLength()));
+        employees[7].insert(this.createWorker(drive, EnumW.Director, drive.getProduceM(), requirements.getDayLength()));
+
+        numEmployees = numScripters + numDesigners + numAnimators + numActors + numPlotTwisters + numAssemblers;
+
     }
-    
-        
-    public Worker createWorker(Company company, Drive drive, EnumW type, Semaphore sem, int dayLength){
-    
+
+    public Worker createWorker(Drive drive, EnumW type, Semaphore sem, int dayLength) {
+
         double swDP = 0, dDP = 0, aDP = 0, tDP = 0, ptwDP = 0, asDP = 0;
-        
-        switch (company.getRequirements().getIdentifier()){
+
+        switch (this.getRequirements().getIdentifier()) {
             case Nickelodeon:
                 swDP = 0.34f;
                 dDP = 0.34f;
@@ -75,29 +96,76 @@ public class Company {
                 break;
         }
         return switch (type) {
-            case ScriptWriter -> new Regular(swDP, drive, type, drive.getCostScript(), sem, dayLength);
-            case Designer -> new Regular(dDP, drive, type, drive.getCostSetting(), sem, dayLength);
-            case Animator -> new Regular(aDP, drive, type, drive.getCostAnimation(), sem, dayLength);
-            case Translator -> new Regular(tDP, drive, type, drive.getCostDub(), sem, dayLength);
-            case PtWriter -> new Regular(ptwDP, drive, type, drive.getCostPT(), sem, dayLength);
-            case Assembler -> new Assembler(company.getRequirements(), drive.getRegEpstoplotEp(), type, drive.getCostAssemble(), sem, dayLength, drive);
-            case ProjectManager -> new ProjectManager(type, 40, sem, dayLength, drive);
-            case Director -> new Director(type, 100, sem, dayLength, drive, company.getRequirements());
-            default -> null;
-        }; 
+            case ScriptWriter ->
+                new Regular(swDP, drive, type, drive.getCostScript(), sem, dayLength);
+            case Designer ->
+                new Regular(dDP, drive, type, drive.getCostSetting(), sem, dayLength);
+            case Animator ->
+                new Regular(aDP, drive, type, drive.getCostAnimation(), sem, dayLength);
+            case Translator ->
+                new Regular(tDP, drive, type, drive.getCostDub(), sem, dayLength);
+            case PtWriter ->
+                new Regular(ptwDP, drive, type, drive.getCostPT(), sem, dayLength);
+            case Assembler ->
+                new Assembler(this.getRequirements(), drive.getRegEpstoplotEp(), type, drive.getCostAssemble(), sem, dayLength, drive);
+            case ProjectManager ->
+                new ProjectManager(type, 40, sem, dayLength, drive);
+            case Director ->
+                new Director(type, 100, sem, dayLength, drive, this.getRequirements());
+            default ->
+                null;
+        };
     }
+
+    public void hireEmployee(int type) {
+
+        if (this.getNumEmployees() < this.getMaxEmployees()) {
+            switch (type) {
+                case 0:
+                    this.createWorker(this.getDrive(), EnumW.ScriptWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+                case 1:
+                    this.createWorker(this.getDrive(), EnumW.Designer, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+                case 2:
+                    this.createWorker(this.getDrive(), EnumW.Animator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+                case 3:
+                    this.createWorker(this.getDrive(), EnumW.Translator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+                case 4:
+                    this.createWorker(this.getDrive(), EnumW.PtWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+                case 5:
+                    this.createWorker(this.getDrive(), EnumW.Assembler, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    break;
+
+            }
+            this.setNumEmployees(this.getNumEmployees() + 1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Se ha alcanzado el maximo de empleados");
+        }
+
+    }
+
+    ;
     
+   
     
-    
-    
-    
-    public void hireEmployee(){
-    
-    };
-    
-    public void fireEmployee(){
-    
-    };
+    public void fireEmployee(int type) {
+        if(this.getNumEmployees()>0){
+            
+            boolean eliminado = employees[type].remove();
+            if(eliminado){
+                this.setNumEmployees(this.getNumEmployees()-1);
+            }else{
+                JOptionPane.showMessageDialog(null, "No es posible eliminar el empleado");
+            }
+        
+        }
+    }
+
+    ;
     
     
     /**
@@ -148,8 +216,5 @@ public class Company {
     public void setNumEmployees(int numEmployees) {
         this.numEmployees = numEmployees;
     }
-    
-    
-    
-    
+
 }

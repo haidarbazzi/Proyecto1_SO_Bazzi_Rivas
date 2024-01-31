@@ -18,7 +18,7 @@ public class Assembler extends Worker {
     protected CompanyRules requirements;
     protected int regEpToplotEp; //capitulos regulares a capitulos con plot twist
 
-    public Assembler(CompanyRules requirements, int regEpToplotEp, EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+    public Assembler(CompanyRules requirements, int regEpToplotEp, EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive) {
         super(type, hourlyRate, sem, dayLength, drive);
         this.requirements = requirements;
         this.regEpToplotEp = regEpToplotEp;
@@ -30,9 +30,16 @@ public class Assembler extends Worker {
             try{
                 work();
                 if(isAssembling()){
-                    sleep(2*getDayLength());
+                    sleep(2*this.getDayLength());
+                    this.getDrive().getCostsM().acquire();
+                    this.getDrive().setCostAssemble(this.getDrive().getCostAssemble()+this.getHourlyRate()*48);
+                    this.getDrive().getCostsM().release();
+                    
                 }else{
-                    sleep(getDayLength());
+                    sleep(this.getDayLength());
+                    this.getDrive().getCostsM().acquire();
+                    this.getDrive().setCostAssemble(this.getDrive().getCostAssemble()+this.getHourlyRate()*24);
+                    this.getDrive().getCostsM().release();
                 }
             }catch(Exception e){}
         }
@@ -41,7 +48,45 @@ public class Assembler extends Worker {
 
     @Override
     public void work() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try{
+            this.setDaysWorked(this.getDaysWorked()+1);
+            
+            //validacion de que se tengan los recursos necesarios para producir un capitulo
+            boolean checkResources = (this.getDrive().getRegEpsSinceptEp() >= this.getRegEpToplotEp())?     
+                    this.getRequirements().checkForPT(this.getDrive().getScripts(), this.getDrive().getSettings(), this.getDrive().getAnimations(), this.getDrive().getDubs(), this.getDrive().getPlotTwists())
+                    : this.getRequirements().checkForReg(this.getDrive().getScripts(), this.getDrive().getSettings(), this.getDrive().getAnimations(), this.getDrive().getDubs());
+            
+            if(checkResources){
+                this.getDrive().getProduceM().acquire();
+                this.getDrive().setScripts(this.getDrive().getScripts()-this.getRequirements().getScriptsNeed());
+                this.getDrive().setSettings(this.getDrive().getSettings()-this.getRequirements().getScenesNeed());
+                this.getDrive().setAnimations(this.getDrive().getAnimations()-this.getRequirements().getAnimationsNeed());
+                this.getDrive().setDubs(this.getDrive().getDubs()-this.getRequirements().getTranslationsNeed());
+                this.getDrive().getAssembleM().acquire();
+                //si hay suficientes capitulos normales como para crear uno con plottwists, se crea el capitulo con plot twists 
+                if(this.getDrive().getRegEpsSinceptEp() >= this.getRegEpToplotEp()){
+                    this.getDrive().setPlotTwists(this.getDrive().getPlotTwists()-this.getRequirements().getPlotTwistsNeed());
+                    this.getDrive().setPtEps(this.getDrive().getPtEps()+1);
+                    this.getDrive().setRegEpsSinceptEp(this.getDrive().getRegEpsSinceptEp()-this.getRegEpToplotEp());
+                }else{
+                    this.getDrive().setRegEps(this.getDrive().getRegEps()+1);
+                    this.getDrive().setRegEpsSinceptEp(this.getDrive().getRegEpsSinceptEp()+1);
+                }
+                
+                this.getDrive().getAssembleM().release();
+                this.setAssembling(true);
+            
+            }
+            this.getDrive().getProduceM().release();
+            
+        }catch(Exception e){}
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**

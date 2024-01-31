@@ -41,14 +41,14 @@ public class Drive {
     private int faults; //num de faltas;
     
     // costos
-    private int costScript=20;
-    private int costSetting=26;
-    private int costAnimation=40;
-    private int costDub=16;
-    private int costPT=34;
-    private int costAssemble=50;
-    private int costPM=40;
-    private int costDirector = 60;
+    private int costScript=0;
+    private int costSetting=0;
+    private int costAnimation=0;
+    private int costDub=0;
+    private int costPT=0;
+    private int costAssemble=0;
+    private int costPM=0;
+    private int costDirector = 0;
     
     private int profit;
     private int netProfit;
@@ -78,19 +78,19 @@ public class Drive {
         switch (type){
             //ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4), Assembler(5), ProjectManager(6), Director(7);
             case ScriptWriter:
-                scripts = (scripts < maxScript)? scripts + 1: scripts;
+                this.setScripts((this.getScripts() < this.getMaxScript())? this.getScripts() + 1: this.getScripts());
                 break;
             case Designer:
-                settings = (settings < maxSetting)? settings + 1: settings;
+                this.setSettings((this.getSettings() < this.getMaxSetting())? this.getSettings() + 1: this.getSettings());
                 break;
             case Animator:
-                animations = (animations < maxAnimation)? animations + 1: animations;
+                this.setAnimations((this.getAnimations() < this.getMaxAnimation())? this.getAnimations() + 1: this.getAnimations());
                 break;
             case Translator:
-                dubs = (dubs < maxDub)? dubs + 1: dubs;
+                this.setDubs((this.getDubs() < this.getMaxDub())? this.getDubs() + 1: this.getDubs());
                 break;
             case PtWriter:
-                plotTwists = (plotTwists < maxpTwist)? plotTwists + 1: plotTwists;
+                this.setPlotTwists((this.getPlotTwists() < this.getMaxpTwist())? this.getPlotTwists() + 1: this.getPlotTwists());
                 break;
     
     }
@@ -444,6 +444,62 @@ public class Drive {
      */
     public void setTotalCosts(int totalCosts) {
         this.totalCosts = totalCosts;
+    }
+
+    /**
+     * @param costScript the costScript to set
+     */
+    public void setCostScript(int costScript) {
+        this.costScript = costScript;
+    }
+
+    /**
+     * @param costSetting the costSetting to set
+     */
+    public void setCostSetting(int costSetting) {
+        this.costSetting = costSetting;
+    }
+
+    /**
+     * @param costAnimation the costAnimation to set
+     */
+    public void setCostAnimation(int costAnimation) {
+        this.costAnimation = costAnimation;
+    }
+
+    /**
+     * @param costDub the costDub to set
+     */
+    public void setCostDub(int costDub) {
+        this.costDub = costDub;
+    }
+
+    /**
+     * @param costPT the costPT to set
+     */
+    public void setCostPT(int costPT) {
+        this.costPT = costPT;
+    }
+
+    /**
+     * @param costAssemble the costAssemble to set
+     */
+    public void setCostAssemble(int costAssemble) {
+        this.costAssemble = costAssemble;
+    }
+
+    /**
+     * @param costPM the costPM to set
+     */
+    public void setCostPM(int costPM) {
+        this.costPM = costPM;
+    }
+
+    /**
+     * @param costDirector the costDirector to set
+     */
+    public void setCostDirector(int costDirector) {
+        this.costDirector = costDirector;
     }
     
     

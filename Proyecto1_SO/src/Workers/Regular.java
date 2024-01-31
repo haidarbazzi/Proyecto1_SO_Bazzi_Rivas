@@ -20,9 +20,9 @@ import javax.swing.JOptionPane;
 public class Regular extends Worker {
     
     protected double dailyProduction;
-    private float accWork; // Acumulado de la fracción de la parte de Capítulo que realiza a diario
+    private double accWork; // Acumulado de la fracción de la parte de Capítulo que realiza a diario
 
-    public Regular(double dailyProduction, Drive drive, EnumW type, double hourlyRate, Semaphore sem, int dayLength) {
+    public Regular(double dailyProduction, Drive drive, EnumW type, int hourlyRate, Semaphore sem, int dayLength) {
         super(type, hourlyRate, sem, dayLength, drive);
         this.dailyProduction = dailyProduction;
         this.accWork = 0;
@@ -45,36 +45,36 @@ public class Regular extends Worker {
     @Override
     public void work() {
         
-        this.accWork += this.dailyProduction;
+        this.setAccWork( this.getAccWork()+ this.getDailyProduction());
         
         try{
-            while (accWork >= 1){
-                this.sem.acquire(1);
-                this.drive.addProduct(this.type);
-                this.sem.release();
-                accWork--;
-                if (accWork < 1){
-                    accWork = 0;
+            while (this.getAccWork() >= 1){
+                this.getSem().acquire(1);
+                this.getDrive().addProduct(this.getType());
+                this.getSem().release();
+                this.setAccWork( this.getAccWork()-1);
+                if (this.getAccWork() < 1){
+                    this.setAccWork(0);
                 }
             }
              
-            this.drive.getCostsM().acquire();
+            this.getDrive().getCostsM().acquire();
                 
                 //  ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4)
-                switch(this.type){
+                switch(this.getType()){
                     case ScriptWriter:
-                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostScript()*24);
+                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostScript()*24);
                     case Designer:
-                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostDirector()*24);
+                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostDirector()*24);
                     case Animator:
-                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostAnimation()*24);
+                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostAnimation()*24);
                     case Translator:
-                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostDub()*24);
+                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostDub()*24);
                     case PtWriter:
-                        this.drive.setTotalCosts(this.drive.getTotalCosts() + this.drive.getCostPT()*24);
+                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostPT()*24);
                 }
-            this.drive.getCostsM().release();
-            this.daysWorked++;
+            this.getDrive().getCostsM().release();
+            this.setDaysWorked(this.getDaysWorked() +1);
         }
         
         catch(Exception e){
@@ -87,10 +87,15 @@ public class Regular extends Worker {
      * @return the dailyProduction
      */
     public double getDailyProduction() {
-        return dailyProduction;
+        return this.dailyProduction;
     }
 
-    
+    public double getAccWork(){
+        return this.accWork;
+    }
+    public void setAccWork(double accwork){
+        this.accWork = accwork;
+    }
     
     
 }

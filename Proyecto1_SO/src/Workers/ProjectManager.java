@@ -13,7 +13,7 @@ import java.util.concurrent.Semaphore;
  */
 public class ProjectManager extends Worker {
 
-    public ProjectManager(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+    public ProjectManager(EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive) {
         super(type, hourlyRate, sem, dayLength, drive);
     }
 
@@ -34,41 +34,41 @@ public class ProjectManager extends Worker {
     @Override
     public void work() {
         int counter = 0;
-        this.daysWorked++;
+        this.setDaysWorked(this.getDaysWorked()+1);
         int thirtyMin = this.getDayLength()/48;
         int eightHours = (this.getDayLength()/24) * 8;
         int faultCount = 0;
         try{
         while (counter < 16){
-            this.drive.setStatusPM(1); //Esta viendo anime
-            if (this.drive.getStatusDirector() == 1){ //Lo vigila el director
-                this.drive.setFaults(this.drive.getFaults() + 1);
+            this.getDrive().setStatusPM(1); //Esta viendo anime
+            if (this.getDrive().getStatusDirector() == 1){ //Lo vigila el director
+                this.getDrive().setFaults(this.getDrive().getFaults() + 1);
                 faultCount ++;
                 sleep(thirtyMin);
             }
             
-            this.drive.setStatusPM(0); //Termina de ver anime y empieza a trabajar
+            this.getDrive().setStatusPM(0); //Termina de ver anime y empieza a trabajar
             sleep(thirtyMin);
             counter++;
         }
         sleep(eightHours);
-        drive.getDaysM().acquire();
-        if (drive.getDaysCountdown() > 0){
-            drive.setDaysCountdown(drive.getDaysCountdown() - 1);
+        this.getDrive().getDaysM().acquire();
+        if (this.getDrive().getDaysCountdown() > 0){
+            this.getDrive().setDaysCountdown(this.getDrive().getDaysCountdown() - 1);
         }
-        drive.getDaysM().release();
+        this.getDrive().getDaysM().release();
         
         int lostMoney = faultCount*100;
    
         //Se aumentan los gastos en PM en el drive
         
-        drive.getCostsM().acquire();
+        this.getDrive().getCostsM().acquire();
         
-            this.drive.setFaults(this.drive.getFaults() + faultCount);
-            int PMpay = (this.drive.getCostPM()*24) - lostMoney;
-            this.drive.setTotalCosts(this.drive.getTotalCosts() + PMpay);
+            this.getDrive().setFaults(this.getDrive().getFaults() + faultCount);
+            int PMpay = (this.getDrive().getCostPM()*24) - lostMoney;
+            this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + PMpay);
             
-        drive.getCostsM().release();
+        this.getDrive().getCostsM().release();
         
         }
         catch(Exception e){

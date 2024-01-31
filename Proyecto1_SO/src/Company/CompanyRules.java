@@ -10,6 +10,8 @@ package Company;
  */
 public class CompanyRules {
     
+    private int dayLength=500;
+    
     //Enum identificador de la empresa
     private EnumC identifier;
     
@@ -22,6 +24,7 @@ public class CompanyRules {
     //Capítulos con PlotTwist
     private int plotTwistsNeed;
     private int capsBetweenPt; //Capítulos entre plotTwists
+    
     
     //Ganancias por tipo de capítulo
     private int earningsReg; //Regular
@@ -55,6 +58,17 @@ public class CompanyRules {
             
             
         }
+    }
+    
+     public boolean checkForReg(int scriptsAv, int settAv, int aniAv, int transAv ){
+    
+        return scriptsAv >= this.getScriptsNeed() && settAv >= this.getScenesNeed() && aniAv >= this.getAnimationsNeed() && transAv >= this.getTranslationsNeed();
+    
+    }
+    public boolean checkForPT(int scriptsAv, int settAv, int aniAv, int transAv, int ptAv ){
+    
+        return scriptsAv >= this.getScriptsNeed() && settAv >= this.getScenesNeed() && aniAv >= this.getAnimationsNeed() && transAv >= this.getTranslationsNeed()&& ptAv >= this.getPlotTwistsNeed();
+    
     }
 
     /**
@@ -181,6 +195,13 @@ public class CompanyRules {
      */
     public void setEarningsPt(int earningsPt) {
         this.earningsPt = earningsPt;
+    }
+
+    /**
+     * @return the dayLength
+     */
+    public int getDayLength() {
+        return dayLength;
     }
     
     

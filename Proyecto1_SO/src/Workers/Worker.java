@@ -13,16 +13,20 @@ import java.util.concurrent.Semaphore;
  * @author andre
  */
 public abstract class Worker extends Thread {
-    
+
+    /**
+     * @return the type
+     */
+        
     protected EnumW type; 
     protected int daysWorked;
-    protected double hourlyRate;
+    protected int hourlyRate;
     protected boolean hired;
     protected Semaphore sem;
     protected int dayLength;
     protected final Drive drive;
 
-    public Worker(EnumW type, double hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+    public Worker(EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive) {
         this.type = type;
         this.daysWorked = 0;
         this.hourlyRate = hourlyRate;
@@ -36,6 +40,10 @@ public abstract class Worker extends Thread {
     
     public void fire(){
         setHired(false);
+    }
+
+    public EnumW getType() {
+        return type;
     }
 
     public Drive getDrive(){
@@ -59,14 +67,14 @@ public abstract class Worker extends Thread {
     /**
      * @return the hourlyRate
      */
-    public double getHourlyRate() {
+    public int getHourlyRate() {
         return hourlyRate;
     }
 
     /**
      * @param hourlyRate the hourlyRate to set
      */
-    public void setHourlyRate(double hourlyRate) {
+    public void setHourlyRate(int hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
