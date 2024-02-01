@@ -92,6 +92,8 @@ public class Nickelodeon extends javax.swing.JPanel {
         statusPM = new javax.swing.JLabel();
         statusDirector = new javax.swing.JLabel();
         numFaults = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel26.setText("jLabel26");
 
@@ -116,28 +118,28 @@ public class Nickelodeon extends javax.swing.JPanel {
         jSeparator1.setForeground(new java.awt.Color(2, 4, 15));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 530, 20));
 
-        moreDesigners.setBackground(new java.awt.Color(0, 107, 153));
+        moreDesigners.setBackground(new java.awt.Color(245, 125, 13));
         moreDesigners.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         moreDesigners.setForeground(new java.awt.Color(239, 248, 226));
         moreDesigners.setText("+");
         moreDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(moreDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 40, -1));
 
-        lessScriptWrtiers.setBackground(new java.awt.Color(0, 107, 153));
+        lessScriptWrtiers.setBackground(new java.awt.Color(245, 125, 13));
         lessScriptWrtiers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessScriptWrtiers.setForeground(new java.awt.Color(239, 248, 226));
         lessScriptWrtiers.setText("-");
         lessScriptWrtiers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(lessScriptWrtiers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 40, -1));
 
-        lessDesigners.setBackground(new java.awt.Color(0, 107, 153));
+        lessDesigners.setBackground(new java.awt.Color(245, 125, 13));
         lessDesigners.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessDesigners.setForeground(new java.awt.Color(239, 248, 226));
         lessDesigners.setText("-");
         lessDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(lessDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 40, -1));
 
-        moreScriptWriters.setBackground(new java.awt.Color(0, 107, 153));
+        moreScriptWriters.setBackground(new java.awt.Color(245, 125, 13));
         moreScriptWriters.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         moreScriptWriters.setForeground(new java.awt.Color(239, 248, 226));
         moreScriptWriters.setText("+");
@@ -186,7 +188,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel11.setText("Guionistas de Plot Twists");
         add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
 
-        moreAnimators.setBackground(new java.awt.Color(0, 107, 153));
+        moreAnimators.setBackground(new java.awt.Color(245, 125, 13));
         moreAnimators.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         moreAnimators.setForeground(new java.awt.Color(239, 248, 226));
         moreAnimators.setText("+");
@@ -199,14 +201,14 @@ public class Nickelodeon extends javax.swing.JPanel {
         numAnimators.setText("0");
         add(numAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 60, -1));
 
-        lessAnimators.setBackground(new java.awt.Color(0, 107, 153));
+        lessAnimators.setBackground(new java.awt.Color(245, 125, 13));
         lessAnimators.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessAnimators.setForeground(new java.awt.Color(239, 248, 226));
         lessAnimators.setText("-");
         lessAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(lessAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 40, -1));
 
-        lessActors.setBackground(new java.awt.Color(0, 107, 153));
+        lessActors.setBackground(new java.awt.Color(245, 125, 13));
         lessActors.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessActors.setForeground(new java.awt.Color(239, 248, 226));
         lessActors.setText("-");
@@ -219,21 +221,21 @@ public class Nickelodeon extends javax.swing.JPanel {
         numActors.setText("0");
         add(numActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 60, -1));
 
-        moreActors.setBackground(new java.awt.Color(0, 107, 153));
+        moreActors.setBackground(new java.awt.Color(245, 125, 13));
         moreActors.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         moreActors.setForeground(new java.awt.Color(239, 248, 226));
         moreActors.setText("+");
         moreActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(moreActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 40, -1));
 
-        morePlotTwister.setBackground(new java.awt.Color(0, 107, 153));
+        morePlotTwister.setBackground(new java.awt.Color(245, 125, 13));
         morePlotTwister.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         morePlotTwister.setForeground(new java.awt.Color(239, 248, 226));
         morePlotTwister.setText("+");
         morePlotTwister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(morePlotTwister, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 40, -1));
 
-        lessPlotTwisters.setBackground(new java.awt.Color(0, 107, 153));
+        lessPlotTwisters.setBackground(new java.awt.Color(245, 125, 13));
         lessPlotTwisters.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessPlotTwisters.setForeground(new java.awt.Color(239, 248, 226));
         lessPlotTwisters.setText("-");
@@ -247,14 +249,14 @@ public class Nickelodeon extends javax.swing.JPanel {
         numPlotTwisters.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         add(numPlotTwisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 60, -1));
 
-        moreAssemblers.setBackground(new java.awt.Color(0, 107, 153));
+        moreAssemblers.setBackground(new java.awt.Color(245, 125, 13));
         moreAssemblers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         moreAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         moreAssemblers.setText("+");
         moreAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
         add(moreAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 40, -1));
 
-        lessAssemblers.setBackground(new java.awt.Color(0, 107, 153));
+        lessAssemblers.setBackground(new java.awt.Color(245, 125, 13));
         lessAssemblers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
         lessAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         lessAssemblers.setText("-");
@@ -307,28 +309,28 @@ public class Nickelodeon extends javax.swing.JPanel {
         add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
 
         scenesProgress.setBackground(new java.awt.Color(239, 248, 226));
-        scenesProgress.setForeground(new java.awt.Color(0, 107, 153));
-        scenesProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        scenesProgress.setForeground(new java.awt.Color(245, 125, 13));
+        scenesProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
         add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 20));
 
         transProgress.setBackground(new java.awt.Color(239, 248, 226));
-        transProgress.setForeground(new java.awt.Color(0, 107, 153));
-        transProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        transProgress.setForeground(new java.awt.Color(245, 125, 13));
+        transProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
         add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 20));
 
         scriptProgress.setBackground(new java.awt.Color(239, 248, 226));
-        scriptProgress.setForeground(new java.awt.Color(0, 107, 153));
-        scriptProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        scriptProgress.setForeground(new java.awt.Color(245, 125, 13));
+        scriptProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
         add(scriptProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 20));
 
         plottwistsProgress.setBackground(new java.awt.Color(239, 248, 226));
-        plottwistsProgress.setForeground(new java.awt.Color(0, 107, 153));
-        plottwistsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        plottwistsProgress.setForeground(new java.awt.Color(245, 125, 13));
+        plottwistsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
         add(plottwistsProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, 20));
 
         animationsProgress.setBackground(new java.awt.Color(239, 248, 226));
-        animationsProgress.setForeground(new java.awt.Color(0, 107, 153));
-        animationsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        animationsProgress.setForeground(new java.awt.Color(245, 125, 13));
+        animationsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
         add(animationsProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
 
         jLabel24.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -355,7 +357,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jSeparator4.setForeground(new java.awt.Color(2, 4, 15));
         add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 540, 20));
 
-        numPtEps.setBackground(new java.awt.Color(0, 107, 153));
+        numPtEps.setBackground(new java.awt.Color(245, 125, 13));
         numPtEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numPtEps.setForeground(new java.awt.Color(239, 248, 226));
         numPtEps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -363,7 +365,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         numPtEps.setOpaque(true);
         add(numPtEps, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 40, 30));
 
-        numScenes.setBackground(new java.awt.Color(0, 107, 153));
+        numScenes.setBackground(new java.awt.Color(245, 125, 13));
         numScenes.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numScenes.setForeground(new java.awt.Color(239, 248, 226));
         numScenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -376,15 +378,15 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel29.setText("Max Escenarios: 20");
         add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
-        daysCountdown.setBackground(new java.awt.Color(0, 107, 153));
+        daysCountdown.setBackground(new java.awt.Color(245, 125, 13));
         daysCountdown.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         daysCountdown.setForeground(new java.awt.Color(239, 248, 226));
         daysCountdown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         daysCountdown.setText("0");
         daysCountdown.setOpaque(true);
-        add(daysCountdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 40, 30));
+        add(daysCountdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 40, 30));
 
-        numScripts.setBackground(new java.awt.Color(0, 107, 153));
+        numScripts.setBackground(new java.awt.Color(245, 125, 13));
         numScripts.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numScripts.setForeground(new java.awt.Color(239, 248, 226));
         numScripts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -397,7 +399,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel32.setText("Max Guiones: 25");
         add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
-        numAnimations.setBackground(new java.awt.Color(0, 107, 153));
+        numAnimations.setBackground(new java.awt.Color(245, 125, 13));
         numAnimations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numAnimations.setForeground(new java.awt.Color(239, 248, 226));
         numAnimations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -410,7 +412,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel34.setText("Max Animaciones: 55");
         add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
 
-        numTranslations.setBackground(new java.awt.Color(0, 107, 153));
+        numTranslations.setBackground(new java.awt.Color(245, 125, 13));
         numTranslations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numTranslations.setForeground(new java.awt.Color(239, 248, 226));
         numTranslations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -428,7 +430,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel37.setText("Max Plot Twists: 10");
         add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, -1, -1));
 
-        numPlotTwists.setBackground(new java.awt.Color(0, 107, 153));
+        numPlotTwists.setBackground(new java.awt.Color(245, 125, 13));
         numPlotTwists.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numPlotTwists.setForeground(new java.awt.Color(239, 248, 226));
         numPlotTwists.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -458,7 +460,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel42.setForeground(new java.awt.Color(239, 248, 226));
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("Dias para la entrega");
-        add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, -1, -1));
+        add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, -1, -1));
 
         jLabel43.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(2, 4, 15));
@@ -466,7 +468,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel43.setText("Numero de Faltas");
         add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
-        numRegEps.setBackground(new java.awt.Color(0, 107, 153));
+        numRegEps.setBackground(new java.awt.Color(245, 125, 13));
         numRegEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numRegEps.setForeground(new java.awt.Color(239, 248, 226));
         numRegEps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -497,6 +499,13 @@ public class Nickelodeon extends javax.swing.JPanel {
         numFaults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numFaults.setText("0");
         add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/bottomNickelodeon.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topNickelodeon.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -508,6 +517,7 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -517,6 +527,7 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel36;
