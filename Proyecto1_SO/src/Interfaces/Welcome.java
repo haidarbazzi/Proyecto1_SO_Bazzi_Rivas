@@ -51,10 +51,10 @@ public class Welcome extends javax.swing.JPanel {
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 480, 530, 110));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 530, 110));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/titleIcon.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 560, 360));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 560, 360));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
     }// </editor-fold>//GEN-END:initComponents
