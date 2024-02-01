@@ -11,7 +11,7 @@ package Interfaces;
 public class Nickelodeon extends javax.swing.JPanel {
 
     /**
-     * Creates new form Nickelodeon
+     * Creates new form Disney
      */
     public Nickelodeon() {
         initComponents();
@@ -26,19 +26,546 @@ public class Nickelodeon extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel26 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        moreDesigners = new javax.swing.JButton();
+        lessScriptWrtiers = new javax.swing.JButton();
+        lessDesigners = new javax.swing.JButton();
+        moreScriptWriters = new javax.swing.JButton();
+        numDesigners = new javax.swing.JLabel();
+        numScriptWriters = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        moreAnimators = new javax.swing.JButton();
+        numAnimators = new javax.swing.JLabel();
+        lessAnimators = new javax.swing.JButton();
+        lessActors = new javax.swing.JButton();
+        numActors = new javax.swing.JLabel();
+        moreActors = new javax.swing.JButton();
+        morePlotTwister = new javax.swing.JButton();
+        lessPlotTwisters = new javax.swing.JButton();
+        numPlotTwisters = new javax.swing.JLabel();
+        moreAssemblers = new javax.swing.JButton();
+        lessAssemblers = new javax.swing.JButton();
+        numAssemblers = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        scenesProgress = new javax.swing.JProgressBar();
+        transProgress = new javax.swing.JProgressBar();
+        scriptProgress = new javax.swing.JProgressBar();
+        plottwistsProgress = new javax.swing.JProgressBar();
+        animationsProgress = new javax.swing.JProgressBar();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel28 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        numPtEps = new javax.swing.JLabel();
+        numScenes = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        daysCountdown = new javax.swing.JLabel();
+        numScripts = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        numAnimations = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        numTranslations = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        numPlotTwists = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        salaryDiscount = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        numRegEps = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        statusPM = new javax.swing.JLabel();
+        statusDirector = new javax.swing.JLabel();
+        numFaults = new javax.swing.JLabel();
+
+        jLabel26.setText("jLabel26");
+
+        setBackground(new java.awt.Color(239, 248, 226));
+        setForeground(new java.awt.Color(2, 4, 15));
+        setMinimumSize(new java.awt.Dimension(900, 700));
+        setPreferredSize(new java.awt.Dimension(900, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Guionistas");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Disenadores");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, -1, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(2, 4, 15));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 530, 20));
+
+        moreDesigners.setBackground(new java.awt.Color(0, 107, 153));
+        moreDesigners.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        moreDesigners.setForeground(new java.awt.Color(239, 248, 226));
+        moreDesigners.setText("+");
+        moreDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(moreDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 40, -1));
+
+        lessScriptWrtiers.setBackground(new java.awt.Color(0, 107, 153));
+        lessScriptWrtiers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessScriptWrtiers.setForeground(new java.awt.Color(239, 248, 226));
+        lessScriptWrtiers.setText("-");
+        lessScriptWrtiers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessScriptWrtiers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 40, -1));
+
+        lessDesigners.setBackground(new java.awt.Color(0, 107, 153));
+        lessDesigners.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessDesigners.setForeground(new java.awt.Color(239, 248, 226));
+        lessDesigners.setText("-");
+        lessDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 40, -1));
+
+        moreScriptWriters.setBackground(new java.awt.Color(0, 107, 153));
+        moreScriptWriters.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        moreScriptWriters.setForeground(new java.awt.Color(239, 248, 226));
+        moreScriptWriters.setText("+");
+        moreScriptWriters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(moreScriptWriters, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 40, -1));
+
+        numDesigners.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numDesigners.setForeground(new java.awt.Color(2, 4, 15));
+        numDesigners.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numDesigners.setText("0");
+        add(numDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 60, -1));
+
+        numScriptWriters.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numScriptWriters.setForeground(new java.awt.Color(2, 4, 15));
+        numScriptWriters.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numScriptWriters.setText("0");
+        add(numScriptWriters, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 60, -1));
+
+        jLabel1.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manejador de Trabajadores");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Ensambladores");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Actores");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Animadores");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Guionistas de Plot Twists");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
+
+        moreAnimators.setBackground(new java.awt.Color(0, 107, 153));
+        moreAnimators.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        moreAnimators.setForeground(new java.awt.Color(239, 248, 226));
+        moreAnimators.setText("+");
+        moreAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(moreAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
+
+        numAnimators.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numAnimators.setForeground(new java.awt.Color(2, 4, 15));
+        numAnimators.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numAnimators.setText("0");
+        add(numAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 410, 60, -1));
+
+        lessAnimators.setBackground(new java.awt.Color(0, 107, 153));
+        lessAnimators.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessAnimators.setForeground(new java.awt.Color(239, 248, 226));
+        lessAnimators.setText("-");
+        lessAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 40, -1));
+
+        lessActors.setBackground(new java.awt.Color(0, 107, 153));
+        lessActors.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessActors.setForeground(new java.awt.Color(239, 248, 226));
+        lessActors.setText("-");
+        lessActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 40, -1));
+
+        numActors.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numActors.setForeground(new java.awt.Color(2, 4, 15));
+        numActors.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numActors.setText("0");
+        add(numActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 60, -1));
+
+        moreActors.setBackground(new java.awt.Color(0, 107, 153));
+        moreActors.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        moreActors.setForeground(new java.awt.Color(239, 248, 226));
+        moreActors.setText("+");
+        moreActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(moreActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 40, -1));
+
+        morePlotTwister.setBackground(new java.awt.Color(0, 107, 153));
+        morePlotTwister.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        morePlotTwister.setForeground(new java.awt.Color(239, 248, 226));
+        morePlotTwister.setText("+");
+        morePlotTwister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(morePlotTwister, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 40, -1));
+
+        lessPlotTwisters.setBackground(new java.awt.Color(0, 107, 153));
+        lessPlotTwisters.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessPlotTwisters.setForeground(new java.awt.Color(239, 248, 226));
+        lessPlotTwisters.setText("-");
+        lessPlotTwisters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessPlotTwisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 40, -1));
+
+        numPlotTwisters.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numPlotTwisters.setForeground(new java.awt.Color(2, 4, 15));
+        numPlotTwisters.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numPlotTwisters.setText("0");
+        numPlotTwisters.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(numPlotTwisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 60, -1));
+
+        moreAssemblers.setBackground(new java.awt.Color(0, 107, 153));
+        moreAssemblers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        moreAssemblers.setForeground(new java.awt.Color(239, 248, 226));
+        moreAssemblers.setText("+");
+        moreAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(moreAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 40, -1));
+
+        lessAssemblers.setBackground(new java.awt.Color(0, 107, 153));
+        lessAssemblers.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 1, 14)); // NOI18N
+        lessAssemblers.setForeground(new java.awt.Color(239, 248, 226));
+        lessAssemblers.setText("-");
+        lessAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        add(lessAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 40, -1));
+
+        numAssemblers.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numAssemblers.setForeground(new java.awt.Color(2, 4, 15));
+        numAssemblers.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numAssemblers.setText("0");
+        add(numAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 60, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/logoNickelodeon.png"))); // NOI18N
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, 70));
+
+        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Espacio en Drive");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Escenarios");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Status de Director");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Animaciones");
+        add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Doblajes");
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Plot Twists");
+        add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, -1, -1));
+
+        scenesProgress.setBackground(new java.awt.Color(239, 248, 226));
+        scenesProgress.setForeground(new java.awt.Color(0, 107, 153));
+        scenesProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 20));
+
+        transProgress.setBackground(new java.awt.Color(239, 248, 226));
+        transProgress.setForeground(new java.awt.Color(0, 107, 153));
+        transProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 20));
+
+        scriptProgress.setBackground(new java.awt.Color(239, 248, 226));
+        scriptProgress.setForeground(new java.awt.Color(0, 107, 153));
+        scriptProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        add(scriptProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 20));
+
+        plottwistsProgress.setBackground(new java.awt.Color(239, 248, 226));
+        plottwistsProgress.setForeground(new java.awt.Color(0, 107, 153));
+        plottwistsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        add(plottwistsProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, 20));
+
+        animationsProgress.setBackground(new java.awt.Color(239, 248, 226));
+        animationsProgress.setForeground(new java.awt.Color(0, 107, 153));
+        animationsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
+        add(animationsProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+
+        jLabel24.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Numero de Capitulos con PT");
+        add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 310, -1, -1));
+
+        jLabel25.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setText("Numero de Capitulos");
+        add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, -1, -1));
+
+        jSeparator3.setForeground(new java.awt.Color(2, 4, 15));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 540, 20));
+
+        jLabel28.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel28.setText("Informacion General");
+        add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+
+        jSeparator4.setForeground(new java.awt.Color(2, 4, 15));
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 540, 20));
+
+        numPtEps.setBackground(new java.awt.Color(0, 107, 153));
+        numPtEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numPtEps.setForeground(new java.awt.Color(239, 248, 226));
+        numPtEps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numPtEps.setText("0");
+        numPtEps.setOpaque(true);
+        add(numPtEps, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 40, 30));
+
+        numScenes.setBackground(new java.awt.Color(0, 107, 153));
+        numScenes.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numScenes.setForeground(new java.awt.Color(239, 248, 226));
+        numScenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numScenes.setText("0");
+        numScenes.setOpaque(true);
+        add(numScenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 40, 20));
+
+        jLabel29.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel29.setText("Max Escenarios: 20");
+        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+
+        daysCountdown.setBackground(new java.awt.Color(0, 107, 153));
+        daysCountdown.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        daysCountdown.setForeground(new java.awt.Color(239, 248, 226));
+        daysCountdown.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        daysCountdown.setText("0");
+        daysCountdown.setOpaque(true);
+        add(daysCountdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 40, 30));
+
+        numScripts.setBackground(new java.awt.Color(0, 107, 153));
+        numScripts.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numScripts.setForeground(new java.awt.Color(239, 248, 226));
+        numScripts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numScripts.setText("0");
+        numScripts.setOpaque(true);
+        add(numScripts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 40, 20));
+
+        jLabel32.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel32.setText("Max Guiones: 25");
+        add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        numAnimations.setBackground(new java.awt.Color(0, 107, 153));
+        numAnimations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numAnimations.setForeground(new java.awt.Color(239, 248, 226));
+        numAnimations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numAnimations.setText("0");
+        numAnimations.setOpaque(true);
+        add(numAnimations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 40, 20));
+
+        jLabel34.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel34.setText("Max Animaciones: 55");
+        add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+
+        numTranslations.setBackground(new java.awt.Color(0, 107, 153));
+        numTranslations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numTranslations.setForeground(new java.awt.Color(239, 248, 226));
+        numTranslations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numTranslations.setText("0");
+        numTranslations.setOpaque(true);
+        add(numTranslations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 40, 20));
+
+        jLabel36.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel36.setText("Max Doblajes: 35");
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
+
+        jLabel37.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel37.setText("Max Plot Twists: 10");
+        add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, -1, -1));
+
+        numPlotTwists.setBackground(new java.awt.Color(0, 107, 153));
+        numPlotTwists.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numPlotTwists.setForeground(new java.awt.Color(239, 248, 226));
+        numPlotTwists.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numPlotTwists.setText("0");
+        numPlotTwists.setOpaque(true);
+        add(numPlotTwists, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 40, 20));
+
+        jLabel39.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.setText("Guiones");
+        add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        jLabel40.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel40.setText("Salario descontado");
+        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
+
+        salaryDiscount.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        salaryDiscount.setForeground(new java.awt.Color(2, 4, 15));
+        salaryDiscount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        salaryDiscount.setText("0");
+        add(salaryDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 60, -1));
+
+        jLabel42.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(239, 248, 226));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("Dias para la entrega");
+        add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 120, -1, -1));
+
+        jLabel43.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel43.setText("Numero de Faltas");
+        add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+
+        numRegEps.setBackground(new java.awt.Color(0, 107, 153));
+        numRegEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        numRegEps.setForeground(new java.awt.Color(239, 248, 226));
+        numRegEps.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numRegEps.setText("0");
+        numRegEps.setOpaque(true);
+        add(numRegEps, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, 40, 30));
+
+        jLabel45.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("Status del PM");
+        add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        statusPM.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        statusPM.setForeground(new java.awt.Color(2, 4, 15));
+        statusPM.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statusPM.setText("Status del PM");
+        add(statusPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        statusDirector.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        statusDirector.setForeground(new java.awt.Color(2, 4, 15));
+        statusDirector.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        statusDirector.setText("Status del PM");
+        add(statusDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+
+        numFaults.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numFaults.setForeground(new java.awt.Color(2, 4, 15));
+        numFaults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numFaults.setText("0");
+        add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar animationsProgress;
+    private javax.swing.JLabel daysCountdown;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JButton lessActors;
+    private javax.swing.JButton lessAnimators;
+    private javax.swing.JButton lessAssemblers;
+    private javax.swing.JButton lessDesigners;
+    private javax.swing.JButton lessPlotTwisters;
+    private javax.swing.JButton lessScriptWrtiers;
+    private javax.swing.JButton moreActors;
+    private javax.swing.JButton moreAnimators;
+    private javax.swing.JButton moreAssemblers;
+    private javax.swing.JButton moreDesigners;
+    private javax.swing.JButton morePlotTwister;
+    private javax.swing.JButton moreScriptWriters;
+    private javax.swing.JLabel numActors;
+    private javax.swing.JLabel numAnimations;
+    private javax.swing.JLabel numAnimators;
+    private javax.swing.JLabel numAssemblers;
+    private javax.swing.JLabel numDesigners;
+    private javax.swing.JLabel numFaults;
+    private javax.swing.JLabel numPlotTwisters;
+    private javax.swing.JLabel numPlotTwists;
+    private javax.swing.JLabel numPtEps;
+    private javax.swing.JLabel numRegEps;
+    private javax.swing.JLabel numScenes;
+    private javax.swing.JLabel numScriptWriters;
+    private javax.swing.JLabel numScripts;
+    private javax.swing.JLabel numTranslations;
+    private javax.swing.JProgressBar plottwistsProgress;
+    private javax.swing.JLabel salaryDiscount;
+    private javax.swing.JProgressBar scenesProgress;
+    private javax.swing.JProgressBar scriptProgress;
+    private javax.swing.JLabel statusDirector;
+    private javax.swing.JLabel statusPM;
+    private javax.swing.JProgressBar transProgress;
     // End of variables declaration//GEN-END:variables
 }
