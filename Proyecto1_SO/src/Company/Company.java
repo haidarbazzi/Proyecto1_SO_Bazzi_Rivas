@@ -47,6 +47,7 @@ public class Company {
             employees[i] = new List();
         }
 
+        
         for (int i = 0; i < numScripters; i++) {
             employees[0].insert(this.createWorker(drive, EnumW.ScriptWriter, drive.getProduceM(), requirements.getDayLength()));
         }
@@ -122,22 +123,28 @@ public class Company {
         if (this.getNumEmployees() < this.getMaxEmployees()) {
             switch (type) {
                 case 0:
-                    this.createWorker(this.getDrive(), EnumW.ScriptWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Regular scriptW = (Regular) this.createWorker(this.getDrive(), EnumW.ScriptWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[0].insert(scriptW);
                     break;
                 case 1:
-                    this.createWorker(this.getDrive(), EnumW.Designer, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Regular designer = (Regular)this.createWorker(this.getDrive(), EnumW.Designer, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[1].insert(designer);
                     break;
                 case 2:
-                    this.createWorker(this.getDrive(), EnumW.Animator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Regular animator = (Regular)this.createWorker(this.getDrive(), EnumW.Animator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[2].insert(animator);
                     break;
                 case 3:
-                    this.createWorker(this.getDrive(), EnumW.Translator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Regular translator = (Regular)this.createWorker(this.getDrive(), EnumW.Translator, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[3].insert(translator);
                     break;
                 case 4:
-                    this.createWorker(this.getDrive(), EnumW.PtWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Regular PtWriter = (Regular)this.createWorker(this.getDrive(), EnumW.PtWriter, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[4].insert(PtWriter);
                     break;
                 case 5:
-                    this.createWorker(this.getDrive(), EnumW.Assembler, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    Assembler assembler = (Assembler)this.createWorker(this.getDrive(), EnumW.Assembler, this.getDrive().getProduceM(), this.getRequirements().getDayLength());
+                    this.getEmployees()[5].insert(assembler);
                     break;
 
             }

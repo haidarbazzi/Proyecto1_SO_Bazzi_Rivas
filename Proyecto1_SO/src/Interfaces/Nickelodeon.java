@@ -4,17 +4,51 @@
  */
 package Interfaces;
 
+import Company.Company;
+
 /**
  *
  * @author andre
  */
 public class Nickelodeon extends javax.swing.JPanel {
 
+    
+    private Company nickelodeon;
     /**
      * Creates new form Disney
+     * @param nickelodeon Objeto de la compañía Nickelodeon
      */
-    public Nickelodeon() {
+    public Nickelodeon(Company nickelodeon) {
         initComponents();
+        
+        
+        //Cantidad de trabajadores
+     
+        this.numScriptWriters.setText(Integer.toString(nickelodeon.getEmployees()[0].getSize()));
+        this.numDesigners.setText(Integer.toString(nickelodeon.getEmployees()[1].getSize()));
+        this.numAnimators.setText(Integer.toString(nickelodeon.getEmployees()[2].getSize()));
+        this.numActors.setText(Integer.toString(nickelodeon.getEmployees()[3].getSize()));
+        this.numPlotTwisters.setText(Integer.toString(nickelodeon.getEmployees()[4].getSize()));
+        this.numAssemblers.setText(Integer.toString(nickelodeon.getEmployees()[5].getSize()));
+
+        //Condiciones de los progess Bar
+        
+        this.scriptProgress.setMinimum(0);
+        this.scriptProgress.setMaximum(nickelodeon.getDrive().getMaxScript());
+        
+        this.animationsProgress.setMinimum(0);
+        this.animationsProgress.setMaximum(nickelodeon.getDrive().getMaxAnimation());
+        
+        this.plottwistsProgress.setMinimum(0);
+        this.plottwistsProgress.setMaximum(nickelodeon.getDrive().getMaxpTwist());
+        
+        this.transProgress.setMinimum(0);
+        this.transProgress.setMaximum(nickelodeon.getDrive().getMaxDub());
+        
+        this.scenesProgress.setMinimum(0);
+        this.scenesProgress.setMaximum(nickelodeon.getDrive().getMaxSetting());
+        
+        
     }
 
     /**
@@ -130,6 +164,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessScriptWrtiers.setForeground(new java.awt.Color(239, 248, 226));
         lessScriptWrtiers.setText("-");
         lessScriptWrtiers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessScriptWrtiers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessScriptWrtiersActionPerformed(evt);
+            }
+        });
         add(lessScriptWrtiers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 40, -1));
 
         lessDesigners.setBackground(new java.awt.Color(245, 125, 13));
@@ -144,6 +183,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         moreScriptWriters.setForeground(new java.awt.Color(239, 248, 226));
         moreScriptWriters.setText("+");
         moreScriptWriters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreScriptWriters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreScriptWritersActionPerformed(evt);
+            }
+        });
         add(moreScriptWriters, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 40, -1));
 
         numDesigners.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -206,6 +250,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessAnimators.setForeground(new java.awt.Color(239, 248, 226));
         lessAnimators.setText("-");
         lessAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessAnimators.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessAnimatorsActionPerformed(evt);
+            }
+        });
         add(lessAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 40, -1));
 
         lessActors.setBackground(new java.awt.Color(245, 125, 13));
@@ -508,6 +557,23 @@ public class Nickelodeon extends javax.swing.JPanel {
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lessScriptWrtiersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessScriptWrtiersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().fireEmployee(0);
+        this.numScriptWriters.setText(Integer.toString(getNickelodeon().getEmployees()[0].getSize()));
+        
+    }//GEN-LAST:event_lessScriptWrtiersActionPerformed
+
+    private void moreScriptWritersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreScriptWritersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(0);
+        this.numScriptWriters.setText(Integer.toString(getNickelodeon().getEmployees()[0].getSize()));
+    }//GEN-LAST:event_moreScriptWritersActionPerformed
+
+    private void lessAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAnimatorsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lessAnimatorsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar animationsProgress;
@@ -579,4 +645,18 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel statusPM;
     private javax.swing.JProgressBar transProgress;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the nickelodeon
+     */
+    public Company getNickelodeon() {
+        return nickelodeon;
+    }
+
+    /**
+     * @param nickelodeon the nickelodeon to set
+     */
+    public void setNickelodeon(Company nickelodeon) {
+        this.nickelodeon = nickelodeon;
+    }
 }

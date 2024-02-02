@@ -4,17 +4,47 @@
  */
 package Interfaces;
 
+import Company.Company;
+import Workers.EnumW;
+
 /**
  *
  * @author andre
  */
 public class Disney extends javax.swing.JPanel {
 
+    
+    private Company disney;
     /**
      * Creates new form Disney
+     * @param disney Objeto de la compañía disney
      */
-    public Disney() {
+    public Disney(Company disney) {
         initComponents();
+        
+        //Cantidad de empleados
+        this.numScriptWriters.setText(Integer.toString(disney.getEmployees()[0].getSize()));
+        this.numDesigners.setText(Integer.toString(disney.getEmployees()[1].getSize()));
+        this.numAnimators.setText(Integer.toString(disney.getEmployees()[2].getSize()));
+        this.numActors.setText(Integer.toString(disney.getEmployees()[3].getSize()));
+        this.numPlotTwisters.setText(Integer.toString(disney.getEmployees()[4].getSize()));
+        this.numAssemblers.setText(Integer.toString(disney.getEmployees()[5].getSize()));
+        
+        //Progress bars
+        this.scriptProgress.setMinimum(0);
+        this.scriptProgress.setMaximum(disney.getDrive().getMaxScript());
+        
+        this.animationsProgress.setMinimum(0);
+        this.animationsProgress.setMaximum(disney.getDrive().getMaxAnimation());
+        
+        this.plottwistsProgress.setMinimum(0);
+        this.plottwistsProgress.setMaximum(disney.getDrive().getMaxpTwist());
+        
+        this.transProgress.setMinimum(0);
+        this.transProgress.setMaximum(disney.getDrive().getMaxDub());
+        
+        this.scenesProgress.setMinimum(0);
+        this.scenesProgress.setMaximum(disney.getDrive().getMaxSetting());
     }
 
     /**
@@ -123,6 +153,11 @@ public class Disney extends javax.swing.JPanel {
         moreDesigners.setForeground(new java.awt.Color(239, 248, 226));
         moreDesigners.setText("+");
         moreDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreDesigners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreDesignersActionPerformed(evt);
+            }
+        });
         add(moreDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 40, -1));
 
         lessScriptWrtiers.setBackground(new java.awt.Color(0, 107, 153));
@@ -130,6 +165,11 @@ public class Disney extends javax.swing.JPanel {
         lessScriptWrtiers.setForeground(new java.awt.Color(239, 248, 226));
         lessScriptWrtiers.setText("-");
         lessScriptWrtiers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessScriptWrtiers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessScriptWrtiersActionPerformed(evt);
+            }
+        });
         add(lessScriptWrtiers, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 40, -1));
 
         lessDesigners.setBackground(new java.awt.Color(0, 107, 153));
@@ -137,6 +177,11 @@ public class Disney extends javax.swing.JPanel {
         lessDesigners.setForeground(new java.awt.Color(239, 248, 226));
         lessDesigners.setText("-");
         lessDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessDesigners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessDesignersActionPerformed(evt);
+            }
+        });
         add(lessDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 40, -1));
 
         moreScriptWriters.setBackground(new java.awt.Color(0, 107, 153));
@@ -144,6 +189,11 @@ public class Disney extends javax.swing.JPanel {
         moreScriptWriters.setForeground(new java.awt.Color(239, 248, 226));
         moreScriptWriters.setText("+");
         moreScriptWriters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreScriptWriters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreScriptWritersActionPerformed(evt);
+            }
+        });
         add(moreScriptWriters, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 40, -1));
 
         numDesigners.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -193,6 +243,11 @@ public class Disney extends javax.swing.JPanel {
         moreAnimators.setForeground(new java.awt.Color(239, 248, 226));
         moreAnimators.setText("+");
         moreAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreAnimators.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreAnimatorsActionPerformed(evt);
+            }
+        });
         add(moreAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
 
         numAnimators.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -206,6 +261,11 @@ public class Disney extends javax.swing.JPanel {
         lessAnimators.setForeground(new java.awt.Color(239, 248, 226));
         lessAnimators.setText("-");
         lessAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessAnimators.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessAnimatorsActionPerformed(evt);
+            }
+        });
         add(lessAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 40, -1));
 
         lessActors.setBackground(new java.awt.Color(0, 107, 153));
@@ -213,6 +273,11 @@ public class Disney extends javax.swing.JPanel {
         lessActors.setForeground(new java.awt.Color(239, 248, 226));
         lessActors.setText("-");
         lessActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessActors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessActorsActionPerformed(evt);
+            }
+        });
         add(lessActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 40, -1));
 
         numActors.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -226,6 +291,11 @@ public class Disney extends javax.swing.JPanel {
         moreActors.setForeground(new java.awt.Color(239, 248, 226));
         moreActors.setText("+");
         moreActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreActors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreActorsActionPerformed(evt);
+            }
+        });
         add(moreActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 40, -1));
 
         morePlotTwister.setBackground(new java.awt.Color(0, 107, 153));
@@ -233,6 +303,11 @@ public class Disney extends javax.swing.JPanel {
         morePlotTwister.setForeground(new java.awt.Color(239, 248, 226));
         morePlotTwister.setText("+");
         morePlotTwister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        morePlotTwister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                morePlotTwisterActionPerformed(evt);
+            }
+        });
         add(morePlotTwister, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 40, -1));
 
         lessPlotTwisters.setBackground(new java.awt.Color(0, 107, 153));
@@ -240,6 +315,11 @@ public class Disney extends javax.swing.JPanel {
         lessPlotTwisters.setForeground(new java.awt.Color(239, 248, 226));
         lessPlotTwisters.setText("-");
         lessPlotTwisters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessPlotTwisters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessPlotTwistersActionPerformed(evt);
+            }
+        });
         add(lessPlotTwisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 40, -1));
 
         numPlotTwisters.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -506,6 +586,77 @@ public class Disney extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topDisney.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+    //Scriptwriter (0), Designer (1), Animators(2), Translator(3), PtWriter(4), Assembler(5) 
+    // ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4), Assembler(5), ProjectManager(6), Director(7);
+    private void lessScriptWrtiersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessScriptWrtiersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.ScriptWriter.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessScriptWrtiersActionPerformed
+
+    private void moreScriptWritersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreScriptWritersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.ScriptWriter.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreScriptWritersActionPerformed
+
+    private void lessAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAnimatorsActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.Animator.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessAnimatorsActionPerformed
+
+    private void moreAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreAnimatorsActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.Animator.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreAnimatorsActionPerformed
+
+    private void lessPlotTwistersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessPlotTwistersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.PtWriter.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessPlotTwistersActionPerformed
+
+    private void morePlotTwisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_morePlotTwisterActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.PtWriter.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_morePlotTwisterActionPerformed
+
+    private void lessDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessDesignersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.Designer.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessDesignersActionPerformed
+
+    private void moreDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDesignersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.Designer.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreDesignersActionPerformed
+
+    private void lessActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessActorsActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.Translator.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessActorsActionPerformed
+
+    private void moreActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreActorsActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.Translator.getId());
+        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreActorsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -578,4 +729,18 @@ public class Disney extends javax.swing.JPanel {
     private javax.swing.JLabel statusPM;
     private javax.swing.JProgressBar transProgress;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the disney
+     */
+    public Company getDisney() {
+        return disney;
+    }
+
+    /**
+     * @param disney the disney to set
+     */
+    public void setDisney(Company disney) {
+        this.disney = disney;
+    }
 }

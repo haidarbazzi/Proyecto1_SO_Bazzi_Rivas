@@ -17,4 +17,13 @@ public enum EnumW {
     private EnumW(int id){
         this.id = id;
     }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+    
+    
 }

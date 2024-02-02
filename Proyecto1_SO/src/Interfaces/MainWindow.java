@@ -4,20 +4,26 @@
  */
 package Interfaces;
 
+import Company.Company;
+
 /**
  *
  * @author HP
  */
 public class MainWindow extends javax.swing.JFrame {
 
+    
+    private Company nickelodeon;
+    private Company DisneyChannel;
+    
     /**
      * Creates new form MainWindow
      */
     public MainWindow() {
         initComponents();
         this.tabPanel.addTab("Welcome", new Welcome());
-        this.tabPanel.addTab("Disney", new Disney());
-        this.tabPanel.addTab("Nickelodeon", new Nickelodeon());
+        this.tabPanel.addTab("Disney", new Disney(this.getNickelodeon()));
+        this.tabPanel.addTab("Nickelodeon", new Nickelodeon(this.getNickelodeon()));
         this.tabPanel.addTab("Settings", new Settings());
     }
 
@@ -83,4 +89,46 @@ public class MainWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane tabPanel;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the nickelodeon
+     */
+    public Company getNickelodeon() {
+        return nickelodeon;
+    }
+
+    /**
+     * @param nickelodeon the nickelodeon to set
+     */
+    public void setNickelodeon(Company nickelodeon) {
+        this.nickelodeon = nickelodeon;
+    }
+
+    /**
+     * @return the DisneyChannel
+     */
+    public Company getDisneyChannel() {
+        return DisneyChannel;
+    }
+
+    /**
+     * @param DisneyChannel the DisneyChannel to set
+     */
+    public void setDisneyChannel(Company DisneyChannel) {
+        this.DisneyChannel = DisneyChannel;
+    }
+
+    /**
+     * @return the tabPanel
+     */
+    public javax.swing.JTabbedPane getTabPanel() {
+        return tabPanel;
+    }
+
+    /**
+     * @param tabPanel the tabPanel to set
+     */
+    public void setTabPanel(javax.swing.JTabbedPane tabPanel) {
+        this.tabPanel = tabPanel;
+    }
 }
