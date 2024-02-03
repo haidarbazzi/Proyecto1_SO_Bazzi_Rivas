@@ -40,20 +40,21 @@ public class Drive {
     private int statusPM; //si esta trabajando o no
     private int faults; //num de faltas;
     
-    // costos
-    private int costScript=0;
-    private int costSetting=0;
-    private int costAnimation=0;
-    private int costDub=0;
-    private int costPT=0;
-    private int costAssemble=0;
-    private int costPM=0;
-    private int costDirector = 0;
+    // costos (gastos)
+    private float costScript=0;
+    private float costSetting=0;
+    private float costAnimation=0;
+    private float costDub = 0;
+    private float costPT = 0;
+    private float costAssemble=0;
+    private float costPM=0;
+    private float costDirector = 0;
     
-    private int profit;
-    private int netProfit;
+    private float profit;
+    private float netProfit;
     private int salaryFault;
-    private int totalCosts;
+    private float totalCosts;
+  
     
     private int daysCountdown;
     private int regEpsSinceptEp =0;
@@ -274,63 +275,63 @@ public class Drive {
     /**
      * @return the costScript
      */
-    public int getCostScript() {
+    public float getCostScript() {
         return costScript;
     }
 
     /**
      * @return the costSetting
      */
-    public int getCostSetting() {
+    public float getCostSetting() {
         return costSetting;
     }
 
     /**
      * @return the costAnimation
      */
-    public int getCostAnimation() {
+    public float getCostAnimation() {
         return costAnimation;
     }
 
     /**
      * @return the costDub
      */
-    public int getCostDub() {
+    public float getCostDub() {
         return costDub;
     }
 
     /**
      * @return the costPT
      */
-    public int getCostPT() {
+    public float getCostPT() {
         return costPT;
     }
 
     /**
      * @return the costAssemble
      */
-    public int getCostAssemble() {
+    public float getCostAssemble() {
         return costAssemble;
     }
 
     /**
      * @return the costPM
      */
-    public int getCostPM() {
+    public float getCostPM() {
         return costPM;
     }
 
     /**
      * @return the costDirector
      */
-    public int getCostDirector() {
+    public float getCostDirector() {
         return costDirector;
     }
 
     /**
      * @return the profit
      */
-    public int getProfit() {
+    public float getProfit() {
         return profit;
     }
 
@@ -344,7 +345,7 @@ public class Drive {
     /**
      * @return the netProfit
      */
-    public int getNetProfit() {
+    public float getNetProfit() {
         return netProfit;
     }
 
@@ -435,7 +436,7 @@ public class Drive {
     /**
      * @return the totalCosts
      */
-    public int getTotalCosts() {
+    public float getTotalCosts() {
         return totalCosts;
     }
 
@@ -501,7 +502,6 @@ public class Drive {
     public void setCostDirector(int costDirector) {
         this.costDirector = costDirector;
     }
-    
-    
+
     
 }

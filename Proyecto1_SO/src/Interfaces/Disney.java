@@ -95,6 +95,7 @@ public class Disney extends javax.swing.JPanel {
         scriptProgress = new javax.swing.JProgressBar();
         plottwistsProgress = new javax.swing.JProgressBar();
         animationsProgress = new javax.swing.JProgressBar();
+        settingsCost = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -105,7 +106,6 @@ public class Disney extends javax.swing.JPanel {
         jLabel29 = new javax.swing.JLabel();
         daysCountdown = new javax.swing.JLabel();
         numScripts = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
         numAnimations = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         numTranslations = new javax.swing.JLabel();
@@ -122,8 +122,22 @@ public class Disney extends javax.swing.JPanel {
         statusPM = new javax.swing.JLabel();
         statusDirector = new javax.swing.JLabel();
         numFaults = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        scriptsCosts = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        PlotTwistCosts = new javax.swing.JLabel();
+        animationsCost = new javax.swing.JLabel();
+        dubsCosts = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        totalEarnings = new javax.swing.JLabel();
+        totalCosts = new javax.swing.JLabel();
+        utilities = new javax.swing.JLabel();
+        assembleCosts = new javax.swing.JLabel();
 
         jLabel26.setText("jLabel26");
 
@@ -334,6 +348,11 @@ public class Disney extends javax.swing.JPanel {
         moreAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         moreAssemblers.setText("+");
         moreAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreAssemblers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreAssemblersActionPerformed(evt);
+            }
+        });
         add(moreAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 40, -1));
 
         lessAssemblers.setBackground(new java.awt.Color(0, 107, 153));
@@ -341,6 +360,11 @@ public class Disney extends javax.swing.JPanel {
         lessAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         lessAssemblers.setText("-");
         lessAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessAssemblers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessAssemblersActionPerformed(evt);
+            }
+        });
         add(lessAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 40, -1));
 
         numAssemblers.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -352,17 +376,17 @@ public class Disney extends javax.swing.JPanel {
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/logoDisney.png"))); // NOI18N
         add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(2, 4, 15));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Espacio en Drive");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jLabel4.setText("Gastos por parte:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 110, 30));
 
         jLabel19.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(2, 4, 15));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Escenarios");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(2, 4, 15));
@@ -380,7 +404,7 @@ public class Disney extends javax.swing.JPanel {
         jLabel22.setForeground(new java.awt.Color(2, 4, 15));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Doblajes");
-        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(2, 4, 15));
@@ -391,12 +415,12 @@ public class Disney extends javax.swing.JPanel {
         scenesProgress.setBackground(new java.awt.Color(239, 248, 226));
         scenesProgress.setForeground(new java.awt.Color(0, 107, 153));
         scenesProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
-        add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 20));
+        add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, 20));
 
         transProgress.setBackground(new java.awt.Color(239, 248, 226));
         transProgress.setForeground(new java.awt.Color(0, 107, 153));
         transProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
-        add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 20));
+        add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, 20));
 
         scriptProgress.setBackground(new java.awt.Color(239, 248, 226));
         scriptProgress.setForeground(new java.awt.Color(0, 107, 153));
@@ -412,6 +436,12 @@ public class Disney extends javax.swing.JPanel {
         animationsProgress.setForeground(new java.awt.Color(0, 107, 153));
         animationsProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 1, true));
         add(animationsProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+
+        settingsCost.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        settingsCost.setForeground(new java.awt.Color(2, 4, 15));
+        settingsCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        settingsCost.setText("0");
+        add(settingsCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 60, -1));
 
         jLabel24.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(2, 4, 15));
@@ -451,12 +481,12 @@ public class Disney extends javax.swing.JPanel {
         numScenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numScenes.setText("0");
         numScenes.setOpaque(true);
-        add(numScenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 40, 20));
+        add(numScenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 40, 20));
 
         jLabel29.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(2, 4, 15));
         jLabel29.setText("Max Escenarios: 20");
-        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         daysCountdown.setBackground(new java.awt.Color(0, 107, 153));
         daysCountdown.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -473,11 +503,6 @@ public class Disney extends javax.swing.JPanel {
         numScripts.setText("0");
         numScripts.setOpaque(true);
         add(numScripts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 40, 20));
-
-        jLabel32.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(2, 4, 15));
-        jLabel32.setText("Max Guiones: 25");
-        add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         numAnimations.setBackground(new java.awt.Color(0, 107, 153));
         numAnimations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -498,12 +523,12 @@ public class Disney extends javax.swing.JPanel {
         numTranslations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numTranslations.setText("0");
         numTranslations.setOpaque(true);
-        add(numTranslations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 40, 20));
+        add(numTranslations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 40, 20));
 
         jLabel36.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(2, 4, 15));
         jLabel36.setText("Max Doblajes: 35");
-        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
 
         jLabel37.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(2, 4, 15));
@@ -580,91 +605,196 @@ public class Disney extends javax.swing.JPanel {
         numFaults.setText("0");
         add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topDisney.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, 260));
+
+        scriptsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        scriptsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        scriptsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        scriptsCosts.setText("0");
+        add(scriptsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 80, -1));
+
+        jLabel12.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Gastos por parte:");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 110, 30));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/bottomDisney.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topDisney.png"))); // NOI18N
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
+        jLabel33.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel33.setText("Max Guiones: 25");
+        add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Gastos totales:");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Espacio en Drive");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        PlotTwistCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        PlotTwistCosts.setForeground(new java.awt.Color(2, 4, 15));
+        PlotTwistCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PlotTwistCosts.setText("0");
+        add(PlotTwistCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, 80, -1));
+
+        animationsCost.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        animationsCost.setForeground(new java.awt.Color(2, 4, 15));
+        animationsCost.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        animationsCost.setText("0");
+        add(animationsCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 80, -1));
+
+        dubsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        dubsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        dubsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dubsCosts.setText("0");
+        add(dubsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 60, -1));
+
+        jLabel14.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Ingresos totales:");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Utilidades:");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 100, -1));
+
+        totalEarnings.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        totalEarnings.setForeground(new java.awt.Color(2, 4, 15));
+        totalEarnings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalEarnings.setText("0");
+        add(totalEarnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 80, -1));
+
+        totalCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        totalCosts.setForeground(new java.awt.Color(2, 4, 15));
+        totalCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalCosts.setText("0");
+        add(totalCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 80, -1));
+
+        utilities.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        utilities.setForeground(new java.awt.Color(2, 4, 15));
+        utilities.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        utilities.setText("0");
+        add(utilities, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 80, -1));
+
+        assembleCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        assembleCosts.setForeground(new java.awt.Color(2, 4, 15));
+        assembleCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        assembleCosts.setText("0");
+        add(assembleCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 60, -1));
     }// </editor-fold>//GEN-END:initComponents
     //Scriptwriter (0), Designer (1), Animators(2), Translator(3), PtWriter(4), Assembler(5) 
     // ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4), Assembler(5), ProjectManager(6), Director(7);
     private void lessScriptWrtiersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessScriptWrtiersActionPerformed
         // TODO add your handling code here:
         this.getDisney().fireEmployee(EnumW.ScriptWriter.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
+        this.getNumScriptWriters().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
         
     }//GEN-LAST:event_lessScriptWrtiersActionPerformed
 
     private void moreScriptWritersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreScriptWritersActionPerformed
         // TODO add your handling code here:
         this.getDisney().hireEmployee(EnumW.ScriptWriter.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
+        this.getNumScriptWriters().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
         
     }//GEN-LAST:event_moreScriptWritersActionPerformed
 
     private void lessAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAnimatorsActionPerformed
         // TODO add your handling code here:
         this.getDisney().fireEmployee(EnumW.Animator.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
+        this.getNumAnimators().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
         
     }//GEN-LAST:event_lessAnimatorsActionPerformed
 
     private void moreAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreAnimatorsActionPerformed
         // TODO add your handling code here:
         this.getDisney().hireEmployee(EnumW.Animator.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
+        this.getNumAnimators().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Animator.getId()].getSize()));
         
     }//GEN-LAST:event_moreAnimatorsActionPerformed
 
     private void lessPlotTwistersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessPlotTwistersActionPerformed
         // TODO add your handling code here:
         this.getDisney().fireEmployee(EnumW.PtWriter.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        this.getNumPlotTwisters().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
         
     }//GEN-LAST:event_lessPlotTwistersActionPerformed
 
     private void morePlotTwisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_morePlotTwisterActionPerformed
         // TODO add your handling code here:
         this.getDisney().hireEmployee(EnumW.PtWriter.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        this.getNumPlotTwisters().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.PtWriter.getId()].getSize()));
         
     }//GEN-LAST:event_morePlotTwisterActionPerformed
 
     private void lessDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessDesignersActionPerformed
         // TODO add your handling code here:
         this.getDisney().fireEmployee(EnumW.Designer.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
+        this.getNumDesigners().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
         
     }//GEN-LAST:event_lessDesignersActionPerformed
 
     private void moreDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDesignersActionPerformed
         // TODO add your handling code here:
         this.getDisney().hireEmployee(EnumW.Designer.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
+        this.getNumDesigners().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Designer.getId()].getSize()));
         
     }//GEN-LAST:event_moreDesignersActionPerformed
 
     private void lessActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessActorsActionPerformed
         // TODO add your handling code here:
         this.getDisney().fireEmployee(EnumW.Translator.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
+        this.getNumActors().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
         
     }//GEN-LAST:event_lessActorsActionPerformed
 
     private void moreActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreActorsActionPerformed
         // TODO add your handling code here:
         this.getDisney().hireEmployee(EnumW.Translator.getId());
-        this.numScriptWriters.setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
+        this.getNumActors().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Translator.getId()].getSize()));
         
     }//GEN-LAST:event_moreActorsActionPerformed
 
+    private void lessAssemblersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAssemblersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().fireEmployee(EnumW.Assembler.getId());
+        this.getNumAssemblers().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Assembler.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessAssemblersActionPerformed
+
+    private void moreAssemblersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreAssemblersActionPerformed
+        // TODO add your handling code here:
+        this.getDisney().hireEmployee(EnumW.Assembler.getId());
+        this.getNumAssemblers().setText(Integer.toString(this.getDisney().getEmployees()[EnumW.Assembler.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreAssemblersActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PlotTwistCosts;
+    private javax.swing.JLabel animationsCost;
     private javax.swing.JProgressBar animationsProgress;
+    private javax.swing.JLabel assembleCosts;
     private javax.swing.JLabel daysCountdown;
+    private javax.swing.JLabel dubsCosts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -678,7 +808,7 @@ public class Disney extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
@@ -688,6 +818,7 @@ public class Disney extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -725,9 +856,14 @@ public class Disney extends javax.swing.JPanel {
     private javax.swing.JLabel salaryDiscount;
     private javax.swing.JProgressBar scenesProgress;
     private javax.swing.JProgressBar scriptProgress;
+    private javax.swing.JLabel scriptsCosts;
+    private javax.swing.JLabel settingsCost;
     private javax.swing.JLabel statusDirector;
     private javax.swing.JLabel statusPM;
+    private javax.swing.JLabel totalCosts;
+    private javax.swing.JLabel totalEarnings;
     private javax.swing.JProgressBar transProgress;
+    private javax.swing.JLabel utilities;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -742,5 +878,579 @@ public class Disney extends javax.swing.JPanel {
      */
     public void setDisney(Company disney) {
         this.disney = disney;
+    }
+
+    /**
+     * @return the PlotTwistCosts
+     */
+    public javax.swing.JLabel getPlotTwistCosts() {
+        return PlotTwistCosts;
+    }
+
+    /**
+     * @return the animationsCost
+     */
+    public javax.swing.JLabel getAnimationsCost() {
+        return animationsCost;
+    }
+
+    /**
+     * @return the animationsProgress
+     */
+    public javax.swing.JProgressBar getAnimationsProgress() {
+        return animationsProgress;
+    }
+
+    /**
+     * @return the daysCountdown
+     */
+    public javax.swing.JLabel getDaysCountdown() {
+        return daysCountdown;
+    }
+
+    /**
+     * @return the dubsCosts
+     */
+    public javax.swing.JLabel getDubsCosts() {
+        return dubsCosts;
+    }
+
+    /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    /**
+     * @return the jLabel10
+     */
+    public javax.swing.JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    /**
+     * @return the jLabel11
+     */
+    public javax.swing.JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    /**
+     * @return the jLabel12
+     */
+    public javax.swing.JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    /**
+     * @return the jLabel13
+     */
+    public javax.swing.JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    /**
+     * @return the jLabel14
+     */
+    public javax.swing.JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    /**
+     * @return the jLabel15
+     */
+    public javax.swing.JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    /**
+     * @return the jLabel18
+     */
+    public javax.swing.JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    /**
+     * @return the jLabel19
+     */
+    public javax.swing.JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @return the jLabel20
+     */
+    public javax.swing.JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    /**
+     * @return the jLabel21
+     */
+    public javax.swing.JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    /**
+     * @return the jLabel22
+     */
+    public javax.swing.JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    /**
+     * @return the jLabel23
+     */
+    public javax.swing.JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+    /**
+     * @return the jLabel24
+     */
+    public javax.swing.JLabel getjLabel24() {
+        return jLabel24;
+    }
+
+    /**
+     * @return the jLabel25
+     */
+    public javax.swing.JLabel getjLabel25() {
+        return jLabel25;
+    }
+
+    /**
+     * @return the jLabel26
+     */
+    public javax.swing.JLabel getjLabel26() {
+        return jLabel26;
+    }
+
+    /**
+     * @return the jLabel28
+     */
+    public javax.swing.JLabel getjLabel28() {
+        return jLabel28;
+    }
+
+    /**
+     * @return the jLabel29
+     */
+    public javax.swing.JLabel getjLabel29() {
+        return jLabel29;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @return the jLabel33
+     */
+    public javax.swing.JLabel getjLabel33() {
+        return jLabel33;
+    }
+
+    /**
+     * @return the jLabel34
+     */
+    public javax.swing.JLabel getjLabel34() {
+        return jLabel34;
+    }
+
+    /**
+     * @return the jLabel36
+     */
+    public javax.swing.JLabel getjLabel36() {
+        return jLabel36;
+    }
+
+    /**
+     * @return the jLabel37
+     */
+    public javax.swing.JLabel getjLabel37() {
+        return jLabel37;
+    }
+
+    /**
+     * @return the jLabel39
+     */
+    public javax.swing.JLabel getjLabel39() {
+        return jLabel39;
+    }
+
+    /**
+     * @return the jLabel4
+     */
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    /**
+     * @return the jLabel40
+     */
+    public javax.swing.JLabel getjLabel40() {
+        return jLabel40;
+    }
+
+    /**
+     * @return the jLabel42
+     */
+    public javax.swing.JLabel getjLabel42() {
+        return jLabel42;
+    }
+
+    /**
+     * @return the jLabel43
+     */
+    public javax.swing.JLabel getjLabel43() {
+        return jLabel43;
+    }
+
+    /**
+     * @return the jLabel45
+     */
+    public javax.swing.JLabel getjLabel45() {
+        return jLabel45;
+    }
+
+    /**
+     * @return the jLabel5
+     */
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    /**
+     * @return the jLabel6
+     */
+    public javax.swing.JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    /**
+     * @return the jLabel7
+     */
+    public javax.swing.JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    /**
+     * @return the jLabel8
+     */
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    /**
+     * @return the jLabel9
+     */
+    public javax.swing.JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    /**
+     * @return the jSeparator1
+     */
+    public javax.swing.JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    /**
+     * @return the jSeparator3
+     */
+    public javax.swing.JSeparator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    /**
+     * @return the jSeparator4
+     */
+    public javax.swing.JSeparator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    /**
+     * @return the lessActors
+     */
+    public javax.swing.JButton getLessActors() {
+        return lessActors;
+    }
+
+    /**
+     * @return the lessAnimators
+     */
+    public javax.swing.JButton getLessAnimators() {
+        return lessAnimators;
+    }
+
+    /**
+     * @return the lessAssemblers
+     */
+    public javax.swing.JButton getLessAssemblers() {
+        return lessAssemblers;
+    }
+
+    /**
+     * @return the lessDesigners
+     */
+    public javax.swing.JButton getLessDesigners() {
+        return lessDesigners;
+    }
+
+    /**
+     * @return the lessPlotTwisters
+     */
+    public javax.swing.JButton getLessPlotTwisters() {
+        return lessPlotTwisters;
+    }
+
+    /**
+     * @return the lessScriptWrtiers
+     */
+    public javax.swing.JButton getLessScriptWrtiers() {
+        return lessScriptWrtiers;
+    }
+
+    /**
+     * @return the moreActors
+     */
+    public javax.swing.JButton getMoreActors() {
+        return moreActors;
+    }
+
+    /**
+     * @return the moreAnimators
+     */
+    public javax.swing.JButton getMoreAnimators() {
+        return moreAnimators;
+    }
+
+    /**
+     * @return the moreAssemblers
+     */
+    public javax.swing.JButton getMoreAssemblers() {
+        return moreAssemblers;
+    }
+
+    /**
+     * @return the moreDesigners
+     */
+    public javax.swing.JButton getMoreDesigners() {
+        return moreDesigners;
+    }
+
+    /**
+     * @return the morePlotTwister
+     */
+    public javax.swing.JButton getMorePlotTwister() {
+        return morePlotTwister;
+    }
+
+    /**
+     * @return the moreScriptWriters
+     */
+    public javax.swing.JButton getMoreScriptWriters() {
+        return moreScriptWriters;
+    }
+
+    /**
+     * @return the numActors
+     */
+    public javax.swing.JLabel getNumActors() {
+        return numActors;
+    }
+
+    /**
+     * @return the numAnimations
+     */
+    public javax.swing.JLabel getNumAnimations() {
+        return numAnimations;
+    }
+
+    /**
+     * @return the numAnimators
+     */
+    public javax.swing.JLabel getNumAnimators() {
+        return numAnimators;
+    }
+
+    /**
+     * @return the numAssemblers
+     */
+    public javax.swing.JLabel getNumAssemblers() {
+        return numAssemblers;
+    }
+
+    /**
+     * @return the numDesigners
+     */
+    public javax.swing.JLabel getNumDesigners() {
+        return numDesigners;
+    }
+
+    /**
+     * @return the numFaults
+     */
+    public javax.swing.JLabel getNumFaults() {
+        return numFaults;
+    }
+
+    /**
+     * @return the numPlotTwisters
+     */
+    public javax.swing.JLabel getNumPlotTwisters() {
+        return numPlotTwisters;
+    }
+
+    /**
+     * @return the numPlotTwists
+     */
+    public javax.swing.JLabel getNumPlotTwists() {
+        return numPlotTwists;
+    }
+
+    /**
+     * @return the numPtEps
+     */
+    public javax.swing.JLabel getNumPtEps() {
+        return numPtEps;
+    }
+
+    /**
+     * @return the numRegEps
+     */
+    public javax.swing.JLabel getNumRegEps() {
+        return numRegEps;
+    }
+
+    /**
+     * @return the numScenes
+     */
+    public javax.swing.JLabel getNumScenes() {
+        return numScenes;
+    }
+
+    /**
+     * @return the numScriptWriters
+     */
+    public javax.swing.JLabel getNumScriptWriters() {
+        return numScriptWriters;
+    }
+
+    /**
+     * @return the numScripts
+     */
+    public javax.swing.JLabel getNumScripts() {
+        return numScripts;
+    }
+
+    /**
+     * @return the numTranslations
+     */
+    public javax.swing.JLabel getNumTranslations() {
+        return numTranslations;
+    }
+
+    /**
+     * @return the plottwistsProgress
+     */
+    public javax.swing.JProgressBar getPlottwistsProgress() {
+        return plottwistsProgress;
+    }
+
+    /**
+     * @return the salaryDiscount
+     */
+    public javax.swing.JLabel getSalaryDiscount() {
+        return salaryDiscount;
+    }
+
+    /**
+     * @return the scenesProgress
+     */
+    public javax.swing.JProgressBar getScenesProgress() {
+        return scenesProgress;
+    }
+
+    /**
+     * @return the scriptProgress
+     */
+    public javax.swing.JProgressBar getScriptProgress() {
+        return scriptProgress;
+    }
+
+    /**
+     * @return the scriptsCosts
+     */
+    public javax.swing.JLabel getScriptsCosts() {
+        return scriptsCosts;
+    }
+
+    /**
+     * @return the settingsCost
+     */
+    public javax.swing.JLabel getSettingsCost() {
+        return settingsCost;
+    }
+
+    /**
+     * @return the statusDirector
+     */
+    public javax.swing.JLabel getStatusDirector() {
+        return statusDirector;
+    }
+
+    /**
+     * @return the statusPM
+     */
+    public javax.swing.JLabel getStatusPM() {
+        return statusPM;
+    }
+
+    /**
+     * @return the totalCosts
+     */
+    public javax.swing.JLabel getTotalCosts() {
+        return totalCosts;
+    }
+
+    /**
+     * @return the totalEarnings
+     */
+    public javax.swing.JLabel getTotalEarnings() {
+        return totalEarnings;
+    }
+
+    /**
+     * @return the transProgress
+     */
+    public javax.swing.JProgressBar getTransProgress() {
+        return transProgress;
+    }
+
+    /**
+     * @return the utilities
+     */
+    public javax.swing.JLabel getUtilities() {
+        return utilities;
+    }
+
+    /**
+     * @return the assembleCosts
+     */
+    public javax.swing.JLabel getAssembleCosts() {
+        return assembleCosts;
     }
 }

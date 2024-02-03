@@ -98,17 +98,17 @@ public class Company {
         }
         return switch (type) {
             case ScriptWriter ->
-                new Regular(swDP, drive, type, drive.getCostScript(), sem, dayLength);
+                new Regular(swDP, drive, type, 20, sem, dayLength);
             case Designer ->
-                new Regular(dDP, drive, type, drive.getCostSetting(), sem, dayLength);
+                new Regular(dDP, drive, type, 26, sem, dayLength);
             case Animator ->
-                new Regular(aDP, drive, type, drive.getCostAnimation(), sem, dayLength);
+                new Regular(aDP, drive, type, 40, sem, dayLength);
             case Translator ->
-                new Regular(tDP, drive, type, drive.getCostDub(), sem, dayLength);
+                new Regular(tDP, drive, type, 16, sem, dayLength);
             case PtWriter ->
-                new Regular(ptwDP, drive, type, drive.getCostPT(), sem, dayLength);
+                new Regular(ptwDP, drive, type, 34, sem, dayLength);
             case Assembler ->
-                new Assembler(this.getRequirements(), drive.getRegEpstoplotEp(), type, drive.getCostAssemble(), sem, dayLength, drive);
+                new Assembler(this.getRequirements(), drive.getRegEpstoplotEp(), type, 50, sem, dayLength, drive);
             case ProjectManager ->
                 new ProjectManager(type, 40, sem, dayLength, drive);
             case Director ->

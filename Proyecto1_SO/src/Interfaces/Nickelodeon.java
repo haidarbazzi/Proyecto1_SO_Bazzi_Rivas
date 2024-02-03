@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Company.Company;
+import Workers.EnumW;
 
 /**
  *
@@ -110,12 +111,15 @@ public class Nickelodeon extends javax.swing.JPanel {
         daysCountdown = new javax.swing.JLabel();
         numScripts = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         numAnimations = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         numTranslations = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        settingsCosts = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         numPlotTwists = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         salaryDiscount = new javax.swing.JLabel();
@@ -125,9 +129,20 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel45 = new javax.swing.JLabel();
         statusPM = new javax.swing.JLabel();
         statusDirector = new javax.swing.JLabel();
-        numFaults = new javax.swing.JLabel();
+        utilities = new javax.swing.JLabel();
+        scriptsCosts = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        totalEarnings = new javax.swing.JLabel();
+        totalCosts = new javax.swing.JLabel();
+        numFaults4 = new javax.swing.JLabel();
+        dubsCosts = new javax.swing.JLabel();
+        plotTwistsCosts = new javax.swing.JLabel();
+        animationsCosts = new javax.swing.JLabel();
+        assembleCosts = new javax.swing.JLabel();
 
         jLabel26.setText("jLabel26");
 
@@ -157,6 +172,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         moreDesigners.setForeground(new java.awt.Color(239, 248, 226));
         moreDesigners.setText("+");
         moreDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreDesigners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreDesignersActionPerformed(evt);
+            }
+        });
         add(moreDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 40, -1));
 
         lessScriptWrtiers.setBackground(new java.awt.Color(245, 125, 13));
@@ -176,6 +196,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessDesigners.setForeground(new java.awt.Color(239, 248, 226));
         lessDesigners.setText("-");
         lessDesigners.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessDesigners.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessDesignersActionPerformed(evt);
+            }
+        });
         add(lessDesigners, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 40, -1));
 
         moreScriptWriters.setBackground(new java.awt.Color(245, 125, 13));
@@ -237,6 +262,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         moreAnimators.setForeground(new java.awt.Color(239, 248, 226));
         moreAnimators.setText("+");
         moreAnimators.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreAnimators.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreAnimatorsActionPerformed(evt);
+            }
+        });
         add(moreAnimators, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 40, -1));
 
         numAnimators.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -262,6 +292,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessActors.setForeground(new java.awt.Color(239, 248, 226));
         lessActors.setText("-");
         lessActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessActors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessActorsActionPerformed(evt);
+            }
+        });
         add(lessActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 490, 40, -1));
 
         numActors.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -275,6 +310,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         moreActors.setForeground(new java.awt.Color(239, 248, 226));
         moreActors.setText("+");
         moreActors.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreActors.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreActorsActionPerformed(evt);
+            }
+        });
         add(moreActors, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 40, -1));
 
         morePlotTwister.setBackground(new java.awt.Color(245, 125, 13));
@@ -282,6 +322,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         morePlotTwister.setForeground(new java.awt.Color(239, 248, 226));
         morePlotTwister.setText("+");
         morePlotTwister.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        morePlotTwister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                morePlotTwisterActionPerformed(evt);
+            }
+        });
         add(morePlotTwister, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 40, -1));
 
         lessPlotTwisters.setBackground(new java.awt.Color(245, 125, 13));
@@ -289,6 +334,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessPlotTwisters.setForeground(new java.awt.Color(239, 248, 226));
         lessPlotTwisters.setText("-");
         lessPlotTwisters.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessPlotTwisters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessPlotTwistersActionPerformed(evt);
+            }
+        });
         add(lessPlotTwisters, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 40, -1));
 
         numPlotTwisters.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -303,6 +353,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         moreAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         moreAssemblers.setText("+");
         moreAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        moreAssemblers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreAssemblersActionPerformed(evt);
+            }
+        });
         add(moreAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 40, -1));
 
         lessAssemblers.setBackground(new java.awt.Color(245, 125, 13));
@@ -310,6 +365,11 @@ public class Nickelodeon extends javax.swing.JPanel {
         lessAssemblers.setForeground(new java.awt.Color(239, 248, 226));
         lessAssemblers.setText("-");
         lessAssemblers.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(239, 248, 226), 1, true));
+        lessAssemblers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lessAssemblersActionPerformed(evt);
+            }
+        });
         add(lessAssemblers, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 490, 40, -1));
 
         numAssemblers.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -324,14 +384,14 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(2, 4, 15));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Espacio en Drive");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+        jLabel4.setText("Utilidades:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 80, -1));
 
         jLabel19.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(2, 4, 15));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Escenarios");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(2, 4, 15));
@@ -349,7 +409,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel22.setForeground(new java.awt.Color(2, 4, 15));
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("Doblajes");
-        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+        add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
 
         jLabel23.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(2, 4, 15));
@@ -360,12 +420,12 @@ public class Nickelodeon extends javax.swing.JPanel {
         scenesProgress.setBackground(new java.awt.Color(239, 248, 226));
         scenesProgress.setForeground(new java.awt.Color(245, 125, 13));
         scenesProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
-        add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, 20));
+        add(scenesProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, 20));
 
         transProgress.setBackground(new java.awt.Color(239, 248, 226));
         transProgress.setForeground(new java.awt.Color(245, 125, 13));
         transProgress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 1, true));
-        add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 20));
+        add(transProgress, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, -1, 20));
 
         scriptProgress.setBackground(new java.awt.Color(239, 248, 226));
         scriptProgress.setForeground(new java.awt.Color(245, 125, 13));
@@ -420,12 +480,12 @@ public class Nickelodeon extends javax.swing.JPanel {
         numScenes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numScenes.setText("0");
         numScenes.setOpaque(true);
-        add(numScenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 40, 20));
+        add(numScenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 40, 20));
 
         jLabel29.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(2, 4, 15));
         jLabel29.setText("Max Escenarios: 20");
-        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
+        add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         daysCountdown.setBackground(new java.awt.Color(245, 125, 13));
         daysCountdown.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -448,6 +508,12 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel32.setText("Max Guiones: 25");
         add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        jLabel15.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Gastos por parte:");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 110, 30));
+
         numAnimations.setBackground(new java.awt.Color(245, 125, 13));
         numAnimations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         numAnimations.setForeground(new java.awt.Color(239, 248, 226));
@@ -467,12 +533,18 @@ public class Nickelodeon extends javax.swing.JPanel {
         numTranslations.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numTranslations.setText("0");
         numTranslations.setOpaque(true);
-        add(numTranslations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 40, 20));
+        add(numTranslations, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 40, 20));
 
         jLabel36.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(2, 4, 15));
         jLabel36.setText("Max Doblajes: 35");
-        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
+        add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, -1, -1));
+
+        settingsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        settingsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        settingsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        settingsCosts.setText("0");
+        add(settingsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 515, 70, 30));
 
         jLabel37.setFont(new java.awt.Font("Gill Sans MT", 2, 12)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(2, 4, 15));
@@ -486,6 +558,12 @@ public class Nickelodeon extends javax.swing.JPanel {
         numPlotTwists.setText("0");
         numPlotTwists.setOpaque(true);
         add(numPlotTwists, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 40, 20));
+
+        jLabel14.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Gastos por parte:");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 110, 40));
 
         jLabel39.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(2, 4, 15));
@@ -543,44 +621,182 @@ public class Nickelodeon extends javax.swing.JPanel {
         statusDirector.setText("Status del PM");
         add(statusDirector, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
 
-        numFaults.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        numFaults.setForeground(new java.awt.Color(2, 4, 15));
-        numFaults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        numFaults.setText("0");
-        add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+        utilities.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        utilities.setForeground(new java.awt.Color(2, 4, 15));
+        utilities.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        utilities.setText("0");
+        add(utilities, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 110, -1));
+
+        scriptsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        scriptsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        scriptsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        scriptsCosts.setText("0");
+        add(scriptsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 90, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/bottomNickelodeon.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topNickelodeon.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Espacio en Drive");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Gastos totales:");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Ingresos totales:");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
+
+        totalEarnings.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        totalEarnings.setForeground(new java.awt.Color(2, 4, 15));
+        totalEarnings.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalEarnings.setText("0");
+        add(totalEarnings, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 110, -1));
+
+        totalCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        totalCosts.setForeground(new java.awt.Color(2, 4, 15));
+        totalCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalCosts.setText("0");
+        add(totalCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 110, -1));
+
+        numFaults4.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        numFaults4.setForeground(new java.awt.Color(2, 4, 15));
+        numFaults4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        numFaults4.setText("0");
+        add(numFaults4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+
+        dubsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        dubsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        dubsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dubsCosts.setText("0");
+        add(dubsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 60, -1));
+
+        plotTwistsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        plotTwistsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        plotTwistsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        plotTwistsCosts.setText("0");
+        add(plotTwistsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 440, 60, -1));
+
+        animationsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        animationsCosts.setForeground(new java.awt.Color(2, 4, 15));
+        animationsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        animationsCosts.setText("0");
+        add(animationsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 60, -1));
+
+        assembleCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        assembleCosts.setForeground(new java.awt.Color(2, 4, 15));
+        assembleCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        assembleCosts.setText("0");
+        add(assembleCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 80, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void lessScriptWrtiersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessScriptWrtiersActionPerformed
         // TODO add your handling code here:
-        getNickelodeon().fireEmployee(0);
-        this.numScriptWriters.setText(Integer.toString(getNickelodeon().getEmployees()[0].getSize()));
+        getNickelodeon().fireEmployee(EnumW.ScriptWriter.getId());
+        this.getNumScriptWriters().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
         
     }//GEN-LAST:event_lessScriptWrtiersActionPerformed
 
     private void moreScriptWritersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreScriptWritersActionPerformed
         // TODO add your handling code here:
-        getNickelodeon().hireEmployee(0);
-        this.numScriptWriters.setText(Integer.toString(getNickelodeon().getEmployees()[0].getSize()));
+        getNickelodeon().hireEmployee(EnumW.ScriptWriter.getId());
+        this.getNumScriptWriters().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.ScriptWriter.getId()].getSize()));
+        
     }//GEN-LAST:event_moreScriptWritersActionPerformed
 
     private void lessAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAnimatorsActionPerformed
         // TODO add your handling code here:
+        getNickelodeon().fireEmployee(EnumW.Animator.getId());
+        this.getNumAnimators().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Animator.getId()].getSize()));
+        
     }//GEN-LAST:event_lessAnimatorsActionPerformed
+
+    private void moreAnimatorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreAnimatorsActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.Animator.getId());
+        this.getNumAnimators().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Animator.getId()].getSize()));
+    }//GEN-LAST:event_moreAnimatorsActionPerformed
+
+    private void lessPlotTwistersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessPlotTwistersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().fireEmployee(EnumW.PtWriter.getId());
+        this.getNumPlotTwisters().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessPlotTwistersActionPerformed
+
+    private void morePlotTwisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_morePlotTwisterActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.PtWriter.getId());
+        this.getNumPlotTwisters().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.PtWriter.getId()].getSize()));
+        
+    }//GEN-LAST:event_morePlotTwisterActionPerformed
+
+    private void lessDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessDesignersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().fireEmployee(EnumW.Designer.getId());
+        this.getNumDesigners().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Designer.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessDesignersActionPerformed
+
+    private void moreDesignersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreDesignersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.Designer.getId());
+        this.getNumDesigners().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Designer.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreDesignersActionPerformed
+
+    private void lessActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessActorsActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().fireEmployee(EnumW.Translator.getId());
+        this.getNumActors().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Translator.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessActorsActionPerformed
+
+    private void moreActorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreActorsActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.Translator.getId());
+        this.getNumActors().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Translator.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreActorsActionPerformed
+
+    private void lessAssemblersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAssemblersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.Assembler.getId());
+        this.getNumAssemblers().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Assembler.getId()].getSize()));
+        
+    }//GEN-LAST:event_lessAssemblersActionPerformed
+
+    private void moreAssemblersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreAssemblersActionPerformed
+        // TODO add your handling code here:
+        getNickelodeon().hireEmployee(EnumW.Assembler.getId());
+        this.getNumAssemblers().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Assembler.getId()].getSize()));
+        
+    }//GEN-LAST:event_moreAssemblersActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel animationsCosts;
     private javax.swing.JProgressBar animationsProgress;
+    private javax.swing.JLabel assembleCosts;
     private javax.swing.JLabel daysCountdown;
+    private javax.swing.JLabel dubsCosts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -604,6 +820,7 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -628,7 +845,7 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel numAnimators;
     private javax.swing.JLabel numAssemblers;
     private javax.swing.JLabel numDesigners;
-    private javax.swing.JLabel numFaults;
+    private javax.swing.JLabel numFaults4;
     private javax.swing.JLabel numPlotTwisters;
     private javax.swing.JLabel numPlotTwists;
     private javax.swing.JLabel numPtEps;
@@ -637,13 +854,19 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel numScriptWriters;
     private javax.swing.JLabel numScripts;
     private javax.swing.JLabel numTranslations;
+    private javax.swing.JLabel plotTwistsCosts;
     private javax.swing.JProgressBar plottwistsProgress;
     private javax.swing.JLabel salaryDiscount;
     private javax.swing.JProgressBar scenesProgress;
     private javax.swing.JProgressBar scriptProgress;
+    private javax.swing.JLabel scriptsCosts;
+    private javax.swing.JLabel settingsCosts;
     private javax.swing.JLabel statusDirector;
     private javax.swing.JLabel statusPM;
+    private javax.swing.JLabel totalCosts;
+    private javax.swing.JLabel totalEarnings;
     private javax.swing.JProgressBar transProgress;
+    private javax.swing.JLabel utilities;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -659,4 +882,580 @@ public class Nickelodeon extends javax.swing.JPanel {
     public void setNickelodeon(Company nickelodeon) {
         this.nickelodeon = nickelodeon;
     }
+
+    /**
+     * @return the animationsCosts
+     */
+    public javax.swing.JLabel getAnimationsCosts() {
+        return animationsCosts;
+    }
+
+    /**
+     * @return the animationsProgress
+     */
+    public javax.swing.JProgressBar getAnimationsProgress() {
+        return animationsProgress;
+    }
+
+    /**
+     * @return the daysCountdown
+     */
+    public javax.swing.JLabel getDaysCountdown() {
+        return daysCountdown;
+    }
+
+    /**
+     * @return the dubsCosts
+     */
+    public javax.swing.JLabel getDubsCosts() {
+        return dubsCosts;
+    }
+
+    /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    /**
+     * @return the jLabel10
+     */
+    public javax.swing.JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    /**
+     * @return the jLabel11
+     */
+    public javax.swing.JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    /**
+     * @return the jLabel12
+     */
+    public javax.swing.JLabel getjLabel12() {
+        return jLabel12;
+    }
+
+    /**
+     * @return the jLabel13
+     */
+    public javax.swing.JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    /**
+     * @return the jLabel14
+     */
+    public javax.swing.JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    /**
+     * @return the jLabel15
+     */
+    public javax.swing.JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    /**
+     * @return the jLabel18
+     */
+    public javax.swing.JLabel getjLabel18() {
+        return jLabel18;
+    }
+
+    /**
+     * @return the jLabel19
+     */
+    public javax.swing.JLabel getjLabel19() {
+        return jLabel19;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @return the jLabel20
+     */
+    public javax.swing.JLabel getjLabel20() {
+        return jLabel20;
+    }
+
+    /**
+     * @return the jLabel21
+     */
+    public javax.swing.JLabel getjLabel21() {
+        return jLabel21;
+    }
+
+    /**
+     * @return the jLabel22
+     */
+    public javax.swing.JLabel getjLabel22() {
+        return jLabel22;
+    }
+
+    /**
+     * @return the jLabel23
+     */
+    public javax.swing.JLabel getjLabel23() {
+        return jLabel23;
+    }
+
+    /**
+     * @return the jLabel24
+     */
+    public javax.swing.JLabel getjLabel24() {
+        return jLabel24;
+    }
+
+    /**
+     * @return the jLabel25
+     */
+    public javax.swing.JLabel getjLabel25() {
+        return jLabel25;
+    }
+
+    /**
+     * @return the jLabel26
+     */
+    public javax.swing.JLabel getjLabel26() {
+        return jLabel26;
+    }
+
+    /**
+     * @return the jLabel28
+     */
+    public javax.swing.JLabel getjLabel28() {
+        return jLabel28;
+    }
+
+    /**
+     * @return the jLabel29
+     */
+    public javax.swing.JLabel getjLabel29() {
+        return jLabel29;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @return the jLabel32
+     */
+    public javax.swing.JLabel getjLabel32() {
+        return jLabel32;
+    }
+
+    /**
+     * @return the jLabel34
+     */
+    public javax.swing.JLabel getjLabel34() {
+        return jLabel34;
+    }
+
+    /**
+     * @return the jLabel36
+     */
+    public javax.swing.JLabel getjLabel36() {
+        return jLabel36;
+    }
+
+    /**
+     * @return the jLabel37
+     */
+    public javax.swing.JLabel getjLabel37() {
+        return jLabel37;
+    }
+
+    /**
+     * @return the jLabel39
+     */
+    public javax.swing.JLabel getjLabel39() {
+        return jLabel39;
+    }
+
+    /**
+     * @return the jLabel4
+     */
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    /**
+     * @return the jLabel40
+     */
+    public javax.swing.JLabel getjLabel40() {
+        return jLabel40;
+    }
+
+    /**
+     * @return the jLabel42
+     */
+    public javax.swing.JLabel getjLabel42() {
+        return jLabel42;
+    }
+
+    /**
+     * @return the jLabel43
+     */
+    public javax.swing.JLabel getjLabel43() {
+        return jLabel43;
+    }
+
+    /**
+     * @return the jLabel45
+     */
+    public javax.swing.JLabel getjLabel45() {
+        return jLabel45;
+    }
+
+    /**
+     * @return the jLabel5
+     */
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    /**
+     * @return the jLabel6
+     */
+    public javax.swing.JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    /**
+     * @return the jLabel7
+     */
+    public javax.swing.JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    /**
+     * @return the jLabel8
+     */
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    /**
+     * @return the jLabel9
+     */
+    public javax.swing.JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    /**
+     * @return the jSeparator1
+     */
+    public javax.swing.JSeparator getjSeparator1() {
+        return jSeparator1;
+    }
+
+    /**
+     * @return the jSeparator3
+     */
+    public javax.swing.JSeparator getjSeparator3() {
+        return jSeparator3;
+    }
+
+    /**
+     * @return the jSeparator4
+     */
+    public javax.swing.JSeparator getjSeparator4() {
+        return jSeparator4;
+    }
+
+    /**
+     * @return the lessActors
+     */
+    public javax.swing.JButton getLessActors() {
+        return lessActors;
+    }
+
+    /**
+     * @return the lessAnimators
+     */
+    public javax.swing.JButton getLessAnimators() {
+        return lessAnimators;
+    }
+
+    /**
+     * @return the lessAssemblers
+     */
+    public javax.swing.JButton getLessAssemblers() {
+        return lessAssemblers;
+    }
+
+    /**
+     * @return the lessDesigners
+     */
+    public javax.swing.JButton getLessDesigners() {
+        return lessDesigners;
+    }
+
+    /**
+     * @return the lessPlotTwisters
+     */
+    public javax.swing.JButton getLessPlotTwisters() {
+        return lessPlotTwisters;
+    }
+
+    /**
+     * @return the lessScriptWrtiers
+     */
+    public javax.swing.JButton getLessScriptWrtiers() {
+        return lessScriptWrtiers;
+    }
+
+    /**
+     * @return the moreActors
+     */
+    public javax.swing.JButton getMoreActors() {
+        return moreActors;
+    }
+
+    /**
+     * @return the moreAnimators
+     */
+    public javax.swing.JButton getMoreAnimators() {
+        return moreAnimators;
+    }
+
+    /**
+     * @return the moreAssemblers
+     */
+    public javax.swing.JButton getMoreAssemblers() {
+        return moreAssemblers;
+    }
+
+    /**
+     * @return the moreDesigners
+     */
+    public javax.swing.JButton getMoreDesigners() {
+        return moreDesigners;
+    }
+
+    /**
+     * @return the morePlotTwister
+     */
+    public javax.swing.JButton getMorePlotTwister() {
+        return morePlotTwister;
+    }
+
+    /**
+     * @return the moreScriptWriters
+     */
+    public javax.swing.JButton getMoreScriptWriters() {
+        return moreScriptWriters;
+    }
+
+    /**
+     * @return the numActors
+     */
+    public javax.swing.JLabel getNumActors() {
+        return numActors;
+    }
+
+    /**
+     * @return the numAnimations
+     */
+    public javax.swing.JLabel getNumAnimations() {
+        return numAnimations;
+    }
+
+    /**
+     * @return the numAnimators
+     */
+    public javax.swing.JLabel getNumAnimators() {
+        return numAnimators;
+    }
+
+    /**
+     * @return the numAssemblers
+     */
+    public javax.swing.JLabel getNumAssemblers() {
+        return numAssemblers;
+    }
+
+    /**
+     * @return the numDesigners
+     */
+    public javax.swing.JLabel getNumDesigners() {
+        return numDesigners;
+    }
+
+    /**
+     * @return the numFaults4
+     */
+    public javax.swing.JLabel getNumFaults4() {
+        return numFaults4;
+    }
+
+    /**
+     * @return the numPlotTwisters
+     */
+    public javax.swing.JLabel getNumPlotTwisters() {
+        return numPlotTwisters;
+    }
+
+    /**
+     * @return the numPlotTwists
+     */
+    public javax.swing.JLabel getNumPlotTwists() {
+        return numPlotTwists;
+    }
+
+    /**
+     * @return the numPtEps
+     */
+    public javax.swing.JLabel getNumPtEps() {
+        return numPtEps;
+    }
+
+    /**
+     * @return the numRegEps
+     */
+    public javax.swing.JLabel getNumRegEps() {
+        return numRegEps;
+    }
+
+    /**
+     * @return the numScenes
+     */
+    public javax.swing.JLabel getNumScenes() {
+        return numScenes;
+    }
+
+    /**
+     * @return the numScriptWriters
+     */
+    public javax.swing.JLabel getNumScriptWriters() {
+        return numScriptWriters;
+    }
+
+    /**
+     * @return the numScripts
+     */
+    public javax.swing.JLabel getNumScripts() {
+        return numScripts;
+    }
+
+    /**
+     * @return the numTranslations
+     */
+    public javax.swing.JLabel getNumTranslations() {
+        return numTranslations;
+    }
+
+    /**
+     * @return the plotTwistsCosts
+     */
+    public javax.swing.JLabel getPlotTwistsCosts() {
+        return plotTwistsCosts;
+    }
+
+    /**
+     * @return the plottwistsProgress
+     */
+    public javax.swing.JProgressBar getPlottwistsProgress() {
+        return plottwistsProgress;
+    }
+
+    /**
+     * @return the salaryDiscount
+     */
+    public javax.swing.JLabel getSalaryDiscount() {
+        return salaryDiscount;
+    }
+
+    /**
+     * @return the scenesProgress
+     */
+    public javax.swing.JProgressBar getScenesProgress() {
+        return scenesProgress;
+    }
+
+    /**
+     * @return the scriptProgress
+     */
+    public javax.swing.JProgressBar getScriptProgress() {
+        return scriptProgress;
+    }
+
+    /**
+     * @return the scriptsCosts
+     */
+    public javax.swing.JLabel getScriptsCosts() {
+        return scriptsCosts;
+    }
+
+    /**
+     * @return the settingsCosts
+     */
+    public javax.swing.JLabel getSettingsCosts() {
+        return settingsCosts;
+    }
+
+    /**
+     * @return the statusDirector
+     */
+    public javax.swing.JLabel getStatusDirector() {
+        return statusDirector;
+    }
+
+    /**
+     * @return the statusPM
+     */
+    public javax.swing.JLabel getStatusPM() {
+        return statusPM;
+    }
+
+    /**
+     * @return the totalCosts
+     */
+    public javax.swing.JLabel getTotalCosts() {
+        return totalCosts;
+    }
+
+    /**
+     * @return the totalEarnings
+     */
+    public javax.swing.JLabel getTotalEarnings() {
+        return totalEarnings;
+    }
+
+    /**
+     * @return the transProgress
+     */
+    public javax.swing.JProgressBar getTransProgress() {
+        return transProgress;
+    }
+
+    /**
+     * @return the utilities
+     */
+    public javax.swing.JLabel getUtilities() {
+        return utilities;
+    }
+
+    /**
+     * @return the assembleCosts
+     */
+    public javax.swing.JLabel getAssembleCosts() {
+        return assembleCosts;
+    }
+
+ 
 }

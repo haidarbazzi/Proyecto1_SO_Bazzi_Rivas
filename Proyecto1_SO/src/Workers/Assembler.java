@@ -32,13 +32,13 @@ public class Assembler extends Worker {
                 if(isAssembling()){
                     sleep(2*this.getDayLength());
                     this.getDrive().getCostsM().acquire();
-                    this.getDrive().setCostAssemble(this.getDrive().getCostAssemble()+this.getHourlyRate()*48);
+                    this.getDrive().setCostAssemble((int)this.getDrive().getCostAssemble()+this.getHourlyRate()*48);
                     this.getDrive().getCostsM().release();
                     
                 }else{
                     sleep(this.getDayLength());
                     this.getDrive().getCostsM().acquire();
-                    this.getDrive().setCostAssemble(this.getDrive().getCostAssemble()+this.getHourlyRate()*24);
+                    this.getDrive().setCostAssemble((int)this.getDrive().getCostAssemble()+this.getHourlyRate()*24);
                     this.getDrive().getCostsM().release();
                 }
             }catch(Exception e){}

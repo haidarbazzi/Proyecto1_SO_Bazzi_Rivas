@@ -63,15 +63,15 @@ public class Regular extends Worker {
                 //  ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4)
                 switch(this.getType()){
                     case ScriptWriter:
-                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostScript()*24);
+                        this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.hourlyRate*24);
                     case Designer:
-                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostDirector()*24);
+                        this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.hourlyRate*24);
                     case Animator:
-                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostAnimation()*24);
+                        this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.hourlyRate*24);
                     case Translator:
-                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostDub()*24);
+                        this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.hourlyRate*24);
                     case PtWriter:
-                        this.getDrive().setTotalCosts(this.getDrive().getTotalCosts() + this.getDrive().getCostPT()*24);
+                        this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.hourlyRate*24);
                 }
             this.getDrive().getCostsM().release();
             this.setDaysWorked(this.getDaysWorked() +1);

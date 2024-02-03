@@ -6,7 +6,7 @@ package Interfaces;
 
 /**
  *
- * @author HP Inicia la simulación
+ * @author HP Inicia la simulación para cada compañía
  */
 public class Starter{
     
