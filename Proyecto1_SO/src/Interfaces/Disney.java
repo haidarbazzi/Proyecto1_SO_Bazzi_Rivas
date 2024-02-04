@@ -22,6 +22,8 @@ public class Disney extends javax.swing.JPanel {
     public Disney(Company disney) {
         initComponents();
         
+        this.disney = disney;
+        
         //Cantidad de empleados
         this.numScriptWriters.setText(Integer.toString(disney.getEmployees()[0].getSize()));
         this.numDesigners.setText(Integer.toString(disney.getEmployees()[1].getSize()));

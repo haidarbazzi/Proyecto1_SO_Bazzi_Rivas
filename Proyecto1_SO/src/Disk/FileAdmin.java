@@ -1,5 +1,6 @@
 package Disk;
 
+import Company.EnumC;
 import com.google.gson.Gson;
 import java.io.File;
 import java.io.FileReader;
@@ -15,23 +16,23 @@ import java.io.FileWriter;
  */
 public class FileAdmin {
 
-    File Nickelodeon = new File("./src/Disk/NickelodeonFile.json");
-    File Disney = new File("./src/Disk/DisneyFile.json");
+    File NickelodeonFile = new File("./src/Disk/NickelodeonFile.json");
+    File DisneyFile = new File("./src/Disk/DisneyFile.json");
     Gson jsonAdmin = new Gson();
 
     public FileAdmin() {
     }
 
-    public JSONFile getFile(int companyType) {
+    public JSONFile getFile(EnumC companyType) {
 
         try {
             File selected = null;
             switch (companyType) {
-                case 0:
-                    selected = this.Nickelodeon;
+                case Nickelodeon:
+                    selected = this.NickelodeonFile;
                     break;
-                case 1:
-                    selected = this.Disney;
+                case DisneyChannel:
+                    selected = this.DisneyFile;
                     break;
             }
 
@@ -45,16 +46,16 @@ public class FileAdmin {
         }
        
     }
-    public void saveFile(int companyType, JSONFile save) {
+    public void saveFile(EnumC companyType, JSONFile save) {
 
         try {
             File selected = null;
             switch (companyType) {
-                case 0:
-                    selected = this.Nickelodeon;
+                case Nickelodeon:
+                    selected = this.NickelodeonFile;
                     break;
-                case 1:
-                    selected = this.Disney;
+                case DisneyChannel:
+                    selected = this.DisneyFile;
                     break;
             }
 

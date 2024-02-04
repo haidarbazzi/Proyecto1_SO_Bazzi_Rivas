@@ -4,7 +4,7 @@
  */
 package Workers;
 
-import Company.CompanyRules;
+import Company.Requirements;
 import Disk.Drive;
 import Main.Global;
 import java.util.Random;
@@ -16,10 +16,10 @@ import java.util.concurrent.Semaphore;
  */
 public class Director extends Worker {
 
-    private CompanyRules cRules;
+    private Requirements cRules;
     
 
-    public Director(EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive, CompanyRules cRules) {
+    public Director(EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive, Requirements cRules) {
         super(type, hourlyRate, sem, dayLength, drive);
         this.cRules = cRules;
         
@@ -42,6 +42,7 @@ public class Director extends Worker {
         try {
             this.getDrive().getDaysM().acquire();
             if (this.getDrive().getDaysCountdown() == 0) {
+               
                 this.getDrive().getAssembleM().acquire();
                 this.getDrive().setProfit(this.getDrive().getRegEps() * this.getcRules().getEarningsReg() + this.getDrive().getPtEps() * this.getcRules().getEarningsPt());
                 this.getDrive().setRegEps(0);
@@ -49,6 +50,7 @@ public class Director extends Worker {
                 this.getDrive().setDaysCountdown(Global.getDaysBetweenRelease());
                 this.getDrive().getAssembleM().release();
                 this.getDrive().getDaysM().release();
+               
                 sleep(this.getDayLength());
             }else{
                 this.getDrive().getDaysM().release();
@@ -56,18 +58,23 @@ public class Director extends Worker {
                 Random ran = new Random();
                 double hour = this.getDayLength()/24;
                 double hourEq = ran.nextInt(24)*hour;
-                for (double i = 0; i < this.getDayLength(); i++) {
+                for (double i = 0; i < this.getDayLength(); i+=hour) {
+                  
                     if(i == hourEq){
                     
-                        this.getDrive().setStatusDirector(0);
+                        this.getDrive().setStatusDirector(1);
                         
                         double min = hour/60;
-                        sleep(Math.round(min*25));
-                         this.getDrive().setStatusDirector(1);
+                        System.out.println("VIGILA");
                         sleep(Math.round(min*35));
-                        
+                        this.getDrive().setStatusDirector(0);
+                        System.out.println("se acaba");
+                        sleep(Math.round(min*25));
+                       
                     }else{
                         sleep(Math.round(hour));
+                     
+                        
                     }
                     
                     i += hour;
@@ -87,14 +94,14 @@ public class Director extends Worker {
     /**
      * @return the cRules
      */
-    public CompanyRules getcRules() {
+    public Requirements getcRules() {
         return cRules;
     }
 
     /**
      * @param cRules the cRules to set
      */
-    public void setcRules(CompanyRules cRules) {
+    public void setcRules(Requirements cRules) {
         this.cRules = cRules;
     }
 
