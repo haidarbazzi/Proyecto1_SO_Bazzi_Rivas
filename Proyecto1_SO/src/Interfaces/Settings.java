@@ -4,6 +4,10 @@
  */
 package Interfaces;
 
+import Disk.FileAdmin;
+import Disk.FileAdmin.JSONFile;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author andre
@@ -66,6 +70,11 @@ public class Settings extends javax.swing.JPanel {
         companyName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nickelodeon", "Disney" }));
         companyName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(11, 19, 43), 1, true));
         companyName.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        companyName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                companyNameActionPerformed(evt);
+            }
+        });
         add(companyName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, 30));
 
         jLabel1.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
@@ -75,12 +84,12 @@ public class Settings extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(2, 4, 15));
-        jLabel2.setText("Dia entre Estrenos");
+        jLabel2.setText("Días entre Estrenos");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(2, 4, 15));
-        jLabel3.setText("Duracion del Dia");
+        jLabel3.setText("Duración del Dia");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
 
         dayBetweenReleaseInput.setBackground(new java.awt.Color(239, 248, 226));
@@ -224,6 +233,11 @@ public class Settings extends javax.swing.JPanel {
         saveFile.setBackground(new java.awt.Color(11, 19, 43));
         saveFile.setForeground(new java.awt.Color(239, 248, 226));
         saveFile.setText("Guardar");
+        saveFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveFileActionPerformed(evt);
+            }
+        });
         add(saveFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 140, 30));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -258,6 +272,50 @@ public class Settings extends javax.swing.JPanel {
     private void numTranslatorsInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numTranslatorsInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numTranslatorsInputActionPerformed
+
+    private void companyNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companyNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_companyNameActionPerformed
+
+    private void saveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileActionPerformed
+        // TODO add your handling code here:
+        try{
+            int numAnimators = Integer.parseInt(this.numAnimatorsInput.getText().trim());
+            int numScriptWriters = Integer.parseInt(this.numScriptWritersInput.getText().trim());
+            int numPT = Integer.parseInt(this.numPlotTwistersInput.getText().trim());
+            int numAssemblers = Integer.parseInt(this.numAssemblersInput.getText().trim());
+            int numTranslators = Integer.parseInt(this.numTranslatorsInput.getText().trim());
+            int numDesigners = Integer.parseInt(this.numDesignersInput.getText().trim());
+            int dayLength = Integer.parseInt(this.dayLengthInput.getText().trim());
+            int daysBetweenReleases = Integer.parseInt(this.dayBetweenReleaseInput.getText().trim());
+            
+            String companyName = (String)this.companyName.getSelectedItem();
+            int companyNum = 2;
+            switch (companyName){
+                case "Nickelodeon" -> companyNum = 0;
+                case "Disney" -> companyNum = 1;
+            }
+            
+            FileAdmin fileAdm = new FileAdmin();
+            FileAdmin.JSONFile fileToSave = fileAdm.new JSONFile();
+            
+            fileToSave.setDayLength(dayLength);
+            fileToSave.setDaysBetweenReleases(daysBetweenReleases);
+            fileToSave.setNumScriptWriters(numScriptWriters);
+            fileToSave.setNumPlotTwisters(numPT);
+            fileToSave.setNumDesigners(numDesigners);
+            fileToSave.setNumActors(numTranslators);
+            fileToSave.setNumAnimators(numAnimators);
+            fileToSave.setNumAssemblers(numAssemblers);
+            
+            fileAdm.saveFile(companyNum, fileToSave);
+            
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Ingrese valores válidos");
+        }
+    }//GEN-LAST:event_saveFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

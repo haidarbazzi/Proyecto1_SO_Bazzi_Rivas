@@ -138,6 +138,62 @@ public class FileAdmin {
             return numAssemblers;
         }
 
+        /**
+         * @param dayLength the dayLength to set
+         */
+        public void setDayLength(int dayLength) {
+            this.dayLength = dayLength;
+        }
+
+        /**
+         * @param daysBetweenReleases the daysBetweenReleases to set
+         */
+        public void setDaysBetweenReleases(int daysBetweenReleases) {
+            this.daysBetweenReleases = daysBetweenReleases;
+        }
+
+        /**
+         * @param numScriptWriters the numScriptWriters to set
+         */
+        public void setNumScriptWriters(int numScriptWriters) {
+            this.numScriptWriters = numScriptWriters;
+        }
+
+        /**
+         * @param numDesigners the numDesigners to set
+         */
+        public void setNumDesigners(int numDesigners) {
+            this.numDesigners = numDesigners;
+        }
+
+        /**
+         * @param numAnimators the numAnimators to set
+         */
+        public void setNumAnimators(int numAnimators) {
+            this.numAnimators = numAnimators;
+        }
+
+        /**
+         * @param numActors the numActors to set
+         */
+        public void setNumActors(int numActors) {
+            this.numActors = numActors;
+        }
+
+        /**
+         * @param numPlotTwisters the numPlotTwisters to set
+         */
+        public void setNumPlotTwisters(int numPlotTwisters) {
+            this.numPlotTwisters = numPlotTwisters;
+        }
+
+        /**
+         * @param numAssemblers the numAssemblers to set
+         */
+        public void setNumAssemblers(int numAssemblers) {
+            this.numAssemblers = numAssemblers;
+        }
+
     }
 
 }
