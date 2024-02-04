@@ -4,7 +4,7 @@
  */
 package Workers;
 
-import Company.CompanyRules;
+import Company.Requirements;
 import Disk.Drive;
 import java.util.concurrent.Semaphore;
 
@@ -15,10 +15,10 @@ import java.util.concurrent.Semaphore;
 public class Assembler extends Worker {
     
     protected boolean assembling;
-    protected CompanyRules requirements;
+    protected Requirements requirements;
     protected int regEpToplotEp; //capitulos regulares a capitulos con plot twist
 
-    public Assembler(CompanyRules requirements, int regEpToplotEp, EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive) {
+    public Assembler(Requirements requirements, int regEpToplotEp, EnumW type, int hourlyRate, Semaphore sem, int dayLength, Drive drive) {
         super(type, hourlyRate, sem, dayLength, drive);
         this.requirements = requirements;
         this.regEpToplotEp = regEpToplotEp;
@@ -64,6 +64,7 @@ public class Assembler extends Worker {
                 this.getDrive().setDubs(this.getDrive().getDubs()-this.getRequirements().getTranslationsNeed());
                 this.getDrive().getAssembleM().acquire();
                 //si hay suficientes capitulos normales como para crear uno con plottwists, se crea el capitulo con plot twists 
+                
                 if(this.getDrive().getRegEpsSinceptEp() >= this.getRegEpToplotEp()){
                     this.getDrive().setPlotTwists(this.getDrive().getPlotTwists()-this.getRequirements().getPlotTwistsNeed());
                     this.getDrive().setPtEps(this.getDrive().getPtEps()+1);
@@ -106,7 +107,7 @@ public class Assembler extends Worker {
     /**
      * @return the requirements
      */
-    public CompanyRules getRequirements() {
+    public Requirements getRequirements() {
         return requirements;
     }
 

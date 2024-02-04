@@ -14,7 +14,7 @@ import Workers.EnumW;
 public class Nickelodeon extends javax.swing.JPanel {
 
     
-    private Company nickelodeon;
+    private Company Nickelodeon;
     /**
      * Creates new form Disney
      * @param nickelodeon Objeto de la compañía Nickelodeon
@@ -22,6 +22,9 @@ public class Nickelodeon extends javax.swing.JPanel {
     public Nickelodeon(Company nickelodeon) {
         initComponents();
         
+        
+        this.Nickelodeon = nickelodeon;
+        nickelodeon.updateTimes();
         
         //Cantidad de trabajadores
      
@@ -771,7 +774,7 @@ public class Nickelodeon extends javax.swing.JPanel {
 
     private void lessAssemblersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessAssemblersActionPerformed
         // TODO add your handling code here:
-        getNickelodeon().hireEmployee(EnumW.Assembler.getId());
+        getNickelodeon().fireEmployee(EnumW.Assembler.getId());
         this.getNumAssemblers().setText(Integer.toString(getNickelodeon().getEmployees()[EnumW.Assembler.getId()].getSize()));
         
     }//GEN-LAST:event_lessAssemblersActionPerformed
@@ -873,14 +876,14 @@ public class Nickelodeon extends javax.swing.JPanel {
      * @return the nickelodeon
      */
     public Company getNickelodeon() {
-        return nickelodeon;
+        return Nickelodeon;
     }
 
     /**
      * @param nickelodeon the nickelodeon to set
      */
     public void setNickelodeon(Company nickelodeon) {
-        this.nickelodeon = nickelodeon;
+        this.Nickelodeon = nickelodeon;
     }
 
     /**

@@ -6,6 +6,8 @@ package Company;
 
 import Disk.Drive;
 import List.List;
+import List.Nodo;
+import Main.Global;
 import Workers.Assembler;
 import Workers.Director;
 import Workers.EnumW;
@@ -21,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class Company {
 
-    protected CompanyRules requirements;
+    protected Requirements requirements;
     protected Drive drive;
 
     /**
@@ -33,7 +35,7 @@ public class Company {
     private int maxEmployees;
     private int numEmployees;
 
-    public Company(CompanyRules requirements, Drive drive, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers, int dayLength) {
+    public Company(Requirements requirements, Drive drive, int numScripters, int numDesigners, int numAnimators, int numActors, int numPlotTwisters, int numAssemblers, int dayLength) {
         this.requirements = requirements;
         this.drive = drive;
         switch (requirements.getIdentifier()) {
@@ -108,7 +110,7 @@ public class Company {
             case PtWriter ->
                 new Regular(ptwDP, drive, type, 34, sem, dayLength);
             case Assembler ->
-                new Assembler(this.getRequirements(), drive.getRegEpstoplotEp(), type, 50, sem, dayLength, drive);
+                new Assembler(this.getRequirements(), this.getRequirements().getCapsBetweenPt(), type, 50, sem, dayLength, drive);
             case ProjectManager ->
                 new ProjectManager(type, 40, sem, dayLength, drive);
             case Director ->
@@ -173,12 +175,24 @@ public class Company {
     }
 
     ;
+     public void updateTimes(){
+    
+        for (int i = 0; i < employees.length; i++) {
+            for (int j = 0; j < employees[i].getSize(); j++) {
+                
+                Nodo temp = employees[i].getNodo(j);
+                
+                if(temp != null)
+                    employees[i].getNodo(j).getData().setDayLength((int) Global.dayLength);
+            }
+        }
+    }
     
     
     /**
      * @return the requirements
      */
-    public CompanyRules getRequirements() {
+    public Requirements getRequirements() {
         return requirements;
     }
 

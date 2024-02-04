@@ -21,9 +21,9 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+//        this.tabPanel.addTab("Disney", new Disney(this.getNickelodeon()));
         this.tabPanel.addTab("Welcome", new Welcome());
-        this.tabPanel.addTab("Disney", new Disney(this.getNickelodeon()));
-        this.tabPanel.addTab("Nickelodeon", new Nickelodeon(this.getNickelodeon()));
+       
         this.tabPanel.addTab("Settings", new Settings());
     }
 
@@ -87,7 +87,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane tabPanel;
+    public static javax.swing.JTabbedPane tabPanel;
     // End of variables declaration//GEN-END:variables
 
     /**

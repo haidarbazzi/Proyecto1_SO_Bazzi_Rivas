@@ -17,6 +17,7 @@ public class Proyecto1_SO {
      */
     public static void main(String[] args) {
         MainWindow main = new MainWindow();
+        Global global = new Global(main);
         main.setVisible(true);
     }
     

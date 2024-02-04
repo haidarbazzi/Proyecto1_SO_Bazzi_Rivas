@@ -8,7 +8,7 @@ package Company;
  *
  * @author andre
  */
-public class CompanyRules {
+public class Requirements {
     
     private int dayLength=500;
     
@@ -30,7 +30,7 @@ public class CompanyRules {
     private int earningsReg; //Regular
     private int earningsPt; //Con PlotTwist
     
-    public CompanyRules(EnumC identifier){
+    public Requirements(EnumC identifier){
         this.identifier = identifier;
         switch (identifier){
             

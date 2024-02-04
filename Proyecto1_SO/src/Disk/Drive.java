@@ -36,7 +36,7 @@ public class Drive {
     private Semaphore costsM; //acceder a los costos
     
     // simulacion 
-    private int statusDirector; //si esta trabajando o no
+    private int statusDirector = 0; //si esta trabajando o no
     private int statusPM; //si esta trabajando o no
     private int faults; //num de faltas;
     
@@ -58,7 +58,7 @@ public class Drive {
     
     private int daysCountdown;
     private int regEpsSinceptEp =0;
-    private int regEpstoplotEp;
+   
 
     public Drive(int daysCountdown) {
         this.produceM = new Semaphore(1);
@@ -72,7 +72,6 @@ public class Drive {
         this.netProfit = 0;
         this.salaryFault = 100;
         this.daysCountdown = daysCountdown;
-        regEpstoplotEp =0;
     }
     
     public void addProduct(EnumW type){
@@ -422,16 +421,7 @@ public class Drive {
     /**
      * @return the regEpstoplotEp
      */
-    public int getRegEpstoplotEp() {
-        return regEpstoplotEp;
-    }
-
-    /**
-     * @param regEpstoplotEp the regEpstoplotEp to set
-     */
-    public void setRegEpstoplotEp(int regEpstoplotEp) {
-        this.regEpstoplotEp = regEpstoplotEp;
-    }
+    
 
     /**
      * @return the totalCosts

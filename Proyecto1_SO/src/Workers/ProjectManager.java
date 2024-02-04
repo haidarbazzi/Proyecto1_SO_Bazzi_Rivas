@@ -44,9 +44,9 @@ public class ProjectManager extends Worker {
             if (this.getDrive().getStatusDirector() == 1){ //Lo vigila el director
                 this.getDrive().setFaults(this.getDrive().getFaults() + 1);
                 faultCount ++;
-                sleep(thirtyMin);
+                
             }
-            
+            sleep(thirtyMin);
             this.getDrive().setStatusPM(0); //Termina de ver anime y empieza a trabajar
             sleep(thirtyMin);
             counter++;
@@ -54,6 +54,7 @@ public class ProjectManager extends Worker {
         sleep(eightHours);
         this.getDrive().getDaysM().acquire();
         if (this.getDrive().getDaysCountdown() > 0){
+           
             this.getDrive().setDaysCountdown(this.getDrive().getDaysCountdown() - 1);
         }
         this.getDrive().getDaysM().release();
