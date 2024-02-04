@@ -42,7 +42,7 @@ public class Updater extends Thread{
             //Costos Particulares
             
             nickelodeonFrame.getScriptsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostScript()));
-            nickelodeonFrame.getPlotTwistsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostPT()));
+            nickelodeonFrame.getSettingsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostSetting()));
             nickelodeonFrame.getAnimationsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostAnimation()));
             nickelodeonFrame.getPlotTwistsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostPT()));
             nickelodeonFrame.getAssembleCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostAssemble()));
