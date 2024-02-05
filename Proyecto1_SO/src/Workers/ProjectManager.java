@@ -68,6 +68,7 @@ public class ProjectManager extends Worker {
             this.getDrive().setFaults(this.getDrive().getFaults() + faultCount);
             int PMpay = (this.hourlyRate*24) - lostMoney;
             this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + PMpay);
+          
             
         this.getDrive().getCostsM().release();
         

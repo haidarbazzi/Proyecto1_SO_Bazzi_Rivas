@@ -85,6 +85,7 @@ public class Director extends Worker {
             
             this.getDrive().getCostsM().acquire();
             this.getDrive().setCostDirector((int)this.getDrive().getCostDirector()+this.getHourlyRate()*24);
+            this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.getHourlyRate()*24);
             this.getDrive().getCostsM().release();
 
         } catch (Exception e) {
