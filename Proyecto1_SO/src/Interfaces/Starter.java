@@ -31,23 +31,59 @@ public class Starter {
         }
         if (fileNickelodeon != null) {
             Drive NickelodeonDrive = new Drive(fileNickelodeon.getDaysBetweenReleases());
-            Global.setDaysBetweenRelease(fileNickelodeon.getDaysBetweenReleases());
+            NickelodeonReq.setDaysBetweenReleases(fileNickelodeon.getDaysBetweenReleases());
             System.out.println(fileNickelodeon.getDaysBetweenReleases());
-            Global.setDayLength(fileNickelodeon.getDayLength());
+            Global.setDayLengthN(fileNickelodeon.getDayLength());
 
             Nick = new Company(NickelodeonReq, NickelodeonDrive, fileNickelodeon.getNumScriptWriters(), fileNickelodeon.getNumDesigners(), fileNickelodeon.getNumAnimators(), fileNickelodeon.getNumActors(), fileNickelodeon.getNumPlotTwisters(), fileNickelodeon.getNumAssemblers(), fileNickelodeon.getDayLength());
 
         } else {
             Drive NickelodeonDrive = new Drive(20);
-            Global.setDaysBetweenRelease(20);
-            Global.setDayLength(35000);
+            NickelodeonReq.setDaysBetweenReleases(10);
+            Global.setDayLengthN(35000);
             Nick= new Company(NickelodeonReq, NickelodeonDrive, 1,1,1,1,1,1, 350000);
         }
         
         Nickelodeon NickelodeonTab = new Nickelodeon(Nick);
         
+       
         Global.getMainWindow().getTabPanel().addTab("Nickelodeon", NickelodeonTab);
-        Updater update = new Updater(NickelodeonTab);
+        
+        UpdaterNick update = new UpdaterNick(NickelodeonTab);
+        update.start();
+    }
+    public static void startSimDisney() {
+
+        Requirements DisneyReq = new Requirements(EnumC.DisneyChannel);
+        FileAdmin fileAdmin = new FileAdmin();
+        JSONFile fileDisney = null;
+        Company Disney;
+        try {
+            fileDisney = fileAdmin.getFile(EnumC.DisneyChannel);
+
+        } catch (Exception e) {
+        }
+        if (fileDisney != null) {
+            Drive DisneyDrive = new Drive(fileDisney.getDaysBetweenReleases());
+            DisneyReq.setDaysBetweenReleases(fileDisney.getDaysBetweenReleases());
+            System.out.println(fileDisney.getDaysBetweenReleases());
+            Global.setDayLengthD(fileDisney.getDayLength());
+
+            Disney = new Company(DisneyReq, DisneyDrive, fileDisney.getNumScriptWriters(), fileDisney.getNumDesigners(), fileDisney.getNumAnimators(), fileDisney.getNumActors(), fileDisney.getNumPlotTwisters(), fileDisney.getNumAssemblers(), fileDisney.getDayLength());
+
+        } else {
+            Drive DisneyDrive = new Drive(20);
+            DisneyReq.setDaysBetweenReleases(10);
+            Global.setDayLengthD(35000);
+            Disney= new Company(DisneyReq, DisneyDrive, 1,1,1,1,1,1, 350000);
+        }
+        
+        Disney DisneyTab = new Disney(Disney);
+        
+       
+        Global.getMainWindow().getTabPanel().addTab("Disney", DisneyTab);
+        
+        UpdaterDisney update = new UpdaterDisney(DisneyTab);
         update.start();
     }
         
