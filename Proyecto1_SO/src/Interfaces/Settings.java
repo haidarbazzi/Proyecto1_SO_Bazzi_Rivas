@@ -4,8 +4,10 @@
  */
 package Interfaces;
 
+import Company.EnumC;
 import Disk.FileAdmin;
 import Disk.FileAdmin.JSONFile;
+import static java.lang.Thread.sleep;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +21,7 @@ public class Settings extends javax.swing.JPanel {
      */
     public Settings() {
         initComponents();
+        
     }
 
     /**
@@ -41,7 +44,6 @@ public class Settings extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -52,9 +54,10 @@ public class Settings extends javax.swing.JPanel {
         numDesignersInput = new javax.swing.JTextField();
         numTranslatorsInput = new javax.swing.JTextField();
         saveFile = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(239, 248, 226));
-        setForeground(new java.awt.Color(2, 4, 15));
+        setForeground(new java.awt.Color(0, 153, 0));
         setMinimumSize(new java.awt.Dimension(900, 700));
         setPreferredSize(new java.awt.Dimension(900, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,12 +136,6 @@ public class Settings extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Disenadores");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(2, 4, 15));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Animadores");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(2, 4, 15));
@@ -239,6 +236,12 @@ public class Settings extends javax.swing.JPanel {
             }
         });
         add(saveFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 140, 30));
+
+        jLabel12.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Animadores");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void dayBetweenReleaseInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayBetweenReleaseInputActionPerformed
@@ -279,52 +282,96 @@ public class Settings extends javax.swing.JPanel {
 
     private void saveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileActionPerformed
         // TODO add your handling code here:
-        /*try{
-            int numAnimators = Integer.parseInt(this.numAnimatorsInput.getText().trim());
-            int numScriptWriters = Integer.parseInt(this.numScriptWritersInput.getText().trim());
+        try{
+            
+            String companyName = (String)this.companyName.getSelectedItem();
+              
+            EnumC compEnum = null;
+            switch (companyName){
+                case "Nickelodeon":
+                    compEnum = EnumC.Nickelodeon;
+                    break;
+                case "Disney":
+                    compEnum = EnumC.DisneyChannel;
+                    break;
+                default:
+                    break;
+            }
+            
+            int numAn = Integer.parseInt(this.numAnimatorsInput.getText().trim());
+            int numSW = Integer.parseInt(this.numScriptWritersInput.getText().trim());
             int numPT = Integer.parseInt(this.numPlotTwistersInput.getText().trim());
-            int numAssemblers = Integer.parseInt(this.numAssemblersInput.getText().trim());
-            int numTranslators = Integer.parseInt(this.numTranslatorsInput.getText().trim());
-            int numDesigners = Integer.parseInt(this.numDesignersInput.getText().trim());
+            int numAss = Integer.parseInt(this.numAssemblersInput.getText().trim());
+            int numTrans = Integer.parseInt(this.numTranslatorsInput.getText().trim());
+            int numD = Integer.parseInt(this.numDesignersInput.getText().trim());
             int dayLength = Integer.parseInt(this.dayLengthInput.getText().trim());
             int daysBetweenReleases = Integer.parseInt(this.dayBetweenReleaseInput.getText().trim());
             
-            String companyName = (String)this.companyName.getSelectedItem();
-            int companyNum = 2;
-            switch (companyName){
-                case "Nickelodeon" -> companyNum = 0;
-                case "Disney" -> companyNum = 1;
-            }
+            int sum = numAn + numSW + numPT + numAss + numTrans + numD;
+            boolean canDo = checkSum(compEnum, sum);
             
             FileAdmin fileAdm = new FileAdmin();
             FileAdmin.JSONFile fileToSave = fileAdm.new JSONFile();
             
+            if (numAn > 0 && numSW > 0 && numPT >0 && numAss>0 && numTrans >0 && numD >0 && dayLength>0 && daysBetweenReleases>0 && canDo){
             fileToSave.setDayLength(dayLength);
             fileToSave.setDaysBetweenReleases(daysBetweenReleases);
-            fileToSave.setNumScriptWriters(numScriptWriters);
+            fileToSave.setNumScriptWriters(numSW);
             fileToSave.setNumPlotTwisters(numPT);
-            fileToSave.setNumDesigners(numDesigners);
-            fileToSave.setNumActors(numTranslators);
-            fileToSave.setNumAnimators(numAnimators);
-            fileToSave.setNumAssemblers(numAssemblers);
+            fileToSave.setNumDesigners(numD);
+            fileToSave.setNumActors(numTrans);
+            fileToSave.setNumAnimators(numAn);
+            fileToSave.setNumAssemblers(numAss);
+            
+            fileAdm.saveFile(compEnum, fileToSave);
+            JOptionPane.showMessageDialog(null, "¡Valores guardados correctamente!");
+            
+            setToZero();
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingrese valores validos acorde a los requerimientos de la empresa");
+                setToZero();
+            }
             
             
-            
+           
             
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Ingrese valores válidos");
-        }*/
+        }
+        
     }//GEN-LAST:event_saveFileActionPerformed
-
-
+    public void setToZero(){
+        this.dayLengthInput.setText("");
+        this.dayBetweenReleaseInput.setText("");
+        this.numScriptWritersInput.setText("");
+        this.numAnimatorsInput.setText("");
+        this.numAssemblersInput.setText("");
+        this.numPlotTwistersInput.setText("");
+        this.numTranslatorsInput.setText("");
+        this.numDesignersInput.setText("");
+    }
+    
+    public boolean checkSum(EnumC compEnum, int sum){
+        switch(compEnum){
+            case Nickelodeon:
+                int max1 = 19;
+                return (sum<=max1);
+            case DisneyChannel:
+                int max2 = 17;
+                return sum<=max2;
+        }
+        return false;
+            
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> companyName;
     private javax.swing.JTextField dayBetweenReleaseInput;
     private javax.swing.JTextField dayLengthInput;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -1,10 +1,1 @@
-{
-     "dayLength":35000,
-    "daysBetweenReleases":10,
-    "numScriptWriters":3,
-    "numDesigners":3,
-    "numAnimators":3,
-    "numActors":3,
-    "numPlotTwisters":3,
-    "numAssemblers":3
-}
+{"dayLength":10000,"daysBetweenReleases":10,"numScriptWriters":1,"numDesigners":3,"numAnimators":3,"numActors":3,"numPlotTwisters":1,"numAssemblers":3}
