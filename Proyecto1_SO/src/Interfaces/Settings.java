@@ -279,7 +279,7 @@ public class Settings extends javax.swing.JPanel {
 
     private void saveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileActionPerformed
         // TODO add your handling code here:
-        try{
+        /*try{
             int numAnimators = Integer.parseInt(this.numAnimatorsInput.getText().trim());
             int numScriptWriters = Integer.parseInt(this.numScriptWritersInput.getText().trim());
             int numPT = Integer.parseInt(this.numPlotTwistersInput.getText().trim());
@@ -314,7 +314,7 @@ public class Settings extends javax.swing.JPanel {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, "Ingrese valores válidos");
-        }
+        }*/
     }//GEN-LAST:event_saveFileActionPerformed
 
 

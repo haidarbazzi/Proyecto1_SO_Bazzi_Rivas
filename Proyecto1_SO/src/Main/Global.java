@@ -11,33 +11,24 @@ import Interfaces.MainWindow;
  * @author HP
  */
 public class Global {
-    public static int daysBetweenRelease;
-    public static int dayLength;
+    public static int dayLengthD;
+    public static int dayLengthN;
+    
     private static MainWindow MainWindow;
 
     public Global(MainWindow mainwindow) {
         this.MainWindow = mainwindow;
     }
 
-    public static void setDayLength(int day){
-        Global.dayLength= day;
+    public static void setDayLengthN(int day){
+        Global.dayLengthN= day;
     }
-    public static int getDayLength(){
-        return dayLength;}
+    public static int getDayLengthN(){
+        return dayLengthN;}
     /**
      * @return the daysBetweenRelease
      */
-    public static int getDaysBetweenRelease() {
-        return daysBetweenRelease;
-    }
-
-    /**
-     * @param daysBetweenRelease the daysBetweenRelease to set
-     */
-    public static void setDaysBetweenRelease(int daysBetweenRelease) {
-        Global.daysBetweenRelease = daysBetweenRelease;
-    }
-
+    
     /**
      * @return the MainWindow
      */
@@ -50,6 +41,24 @@ public class Global {
      */
     public static void setMainWindow(MainWindow aMainWindow) {
         MainWindow = aMainWindow;
+    }
+
+    /**
+     * @return the daysBetweenReleaseD
+     */
+    
+    /**
+     * @return the dayLengthD
+     */
+    public static int getDayLengthD() {
+        return dayLengthD;
+    }
+
+    /**
+     * @param aDayLengthD the dayLengthD to set
+     */
+    public static void setDayLengthD(int aDayLengthD) {
+        dayLengthD = aDayLengthD;
     }
     
     

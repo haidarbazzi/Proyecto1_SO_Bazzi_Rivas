@@ -11,6 +11,7 @@ package Company;
 public class Requirements {
     
     private int dayLength=500;
+    private int daysBetweenReleases=10;
     
     //Enum identificador de la empresa
     private EnumC identifier;
@@ -202,6 +203,20 @@ public class Requirements {
      */
     public int getDayLength() {
         return dayLength;
+    }
+
+    /**
+     * @return the daysBetweenRealeses
+     */
+    public int getDaysBetweenReleases() {
+        return daysBetweenReleases;
+    }
+
+    /**
+     * @param daysBetweenRealeses the daysBetweenRealeses to set
+     */
+    public void setDaysBetweenReleases(int daysBetweenRealeses) {
+        this.daysBetweenReleases = daysBetweenRealeses;
     }
     
     

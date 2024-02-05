@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Company.Company;
+import Company.EnumC;
 import Workers.EnumW;
 
 /**
@@ -24,7 +25,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         
         
         this.Nickelodeon = nickelodeon;
-        nickelodeon.updateTimes();
+        nickelodeon.updateTimes(EnumC.Nickelodeon);
         
         //Cantidad de trabajadores
      

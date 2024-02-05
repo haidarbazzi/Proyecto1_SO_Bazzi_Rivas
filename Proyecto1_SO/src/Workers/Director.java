@@ -40,6 +40,7 @@ public class Director extends Worker {
     @Override
     public void work() {
         try {
+            this.getDrive().setStatusDirector(0);
             this.getDrive().getDaysM().acquire();
             if (this.getDrive().getDaysCountdown() == 0) {
                
@@ -47,7 +48,7 @@ public class Director extends Worker {
                 this.getDrive().setProfit(this.getDrive().getRegEps() * this.getcRules().getEarningsReg() + this.getDrive().getPtEps() * this.getcRules().getEarningsPt());
                 this.getDrive().setRegEps(0);
                 this.getDrive().setPtEps(0);
-                this.getDrive().setDaysCountdown(Global.getDaysBetweenRelease());
+                this.getDrive().setDaysCountdown(this.getcRules().getDaysBetweenReleases());
                 this.getDrive().getAssembleM().release();
                 this.getDrive().getDaysM().release();
                
@@ -84,6 +85,7 @@ public class Director extends Worker {
             
             this.getDrive().getCostsM().acquire();
             this.getDrive().setCostDirector((int)this.getDrive().getCostDirector()+this.getHourlyRate()*24);
+            this.getDrive().setTotalCosts((int)this.getDrive().getTotalCosts() + this.getHourlyRate()*24);
             this.getDrive().getCostsM().release();
 
         } catch (Exception e) {
