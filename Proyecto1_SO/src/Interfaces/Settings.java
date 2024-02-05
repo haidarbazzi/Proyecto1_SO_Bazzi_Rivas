@@ -284,10 +284,10 @@ public class Settings extends javax.swing.JPanel {
         // TODO add your handling code here:
         try{
             
-            String companyName = (String)this.companyName.getSelectedItem();
+            String compName = (String)this.companyName.getSelectedItem();
               
             EnumC compEnum = null;
-            switch (companyName){
+            switch (compName){
                 case "Nickelodeon":
                     compEnum = EnumC.Nickelodeon;
                     break;
@@ -355,10 +355,10 @@ public class Settings extends javax.swing.JPanel {
     public boolean checkSum(EnumC compEnum, int sum){
         switch(compEnum){
             case Nickelodeon:
-                int max1 = 19;
+                int max1 = 17;
                 return (sum<=max1);
             case DisneyChannel:
-                int max2 = 17;
+                int max2 = 19;
                 return sum<=max2;
         }
         return false;
