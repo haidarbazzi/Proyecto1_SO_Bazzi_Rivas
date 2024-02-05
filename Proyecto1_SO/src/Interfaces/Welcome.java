@@ -63,6 +63,11 @@ public class Welcome extends javax.swing.JPanel {
         iniciarDisney.setForeground(new java.awt.Color(0, 107, 153));
         iniciarDisney.setText("Iniciar Disney");
         iniciarDisney.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 3, true));
+        iniciarDisney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarDisneyActionPerformed(evt);
+            }
+        });
         jPanel1.add(iniciarDisney, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 140, 30));
 
         iniciarNick1.setBackground(new java.awt.Color(239, 248, 226));
@@ -83,6 +88,10 @@ public class Welcome extends javax.swing.JPanel {
     private void iniciarNick1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarNick1ActionPerformed
         Starter.startSimNickelodeon();
     }//GEN-LAST:event_iniciarNick1ActionPerformed
+
+    private void iniciarDisneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarDisneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iniciarDisneyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

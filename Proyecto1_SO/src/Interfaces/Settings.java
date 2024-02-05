@@ -308,7 +308,7 @@ public class Settings extends javax.swing.JPanel {
             fileToSave.setNumAnimators(numAnimators);
             fileToSave.setNumAssemblers(numAssemblers);
             
-            fileAdm.saveFile(companyNum, fileToSave);
+            
             
             
         }
