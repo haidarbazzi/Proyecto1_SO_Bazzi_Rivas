@@ -63,7 +63,7 @@ public class UpdaterDisney extends Thread{
             disneyFrame.getScenesProgress().setValue(disneyFrame.getDisney().getDrive().getSettings());
             disneyFrame.getNumScenes().setText(Integer.toString(disneyFrame.getDisney().getDrive().getSettings()));
             
-            disneyFrame.getPlottwistsProgress().setValue(disneyFrame.getDisney().getDrive().getScripts());
+            disneyFrame.getPlottwistsProgress().setValue(disneyFrame.getDisney().getDrive().getPlotTwists());
             disneyFrame.getNumPlotTwists().setText(Integer.toString(disneyFrame.getDisney().getDrive().getPlotTwists()));
             
             //Status del Pm

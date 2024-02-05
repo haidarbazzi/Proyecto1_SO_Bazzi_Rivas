@@ -63,7 +63,7 @@ public class UpdaterNick extends Thread{
             nickelodeonFrame.getScenesProgress().setValue(nickelodeonFrame.getNickelodeon().getDrive().getSettings());
             nickelodeonFrame.getNumScenes().setText(Integer.toString(nickelodeonFrame.getNickelodeon().getDrive().getSettings()));
             
-            nickelodeonFrame.getPlottwistsProgress().setValue(nickelodeonFrame.getNickelodeon().getDrive().getScripts());
+            nickelodeonFrame.getPlottwistsProgress().setValue(nickelodeonFrame.getNickelodeon().getDrive().getPlotTwists());
             nickelodeonFrame.getNumPlotTwists().setText(Integer.toString(nickelodeonFrame.getNickelodeon().getDrive().getPlotTwists()));
             
             //Status del Pm
