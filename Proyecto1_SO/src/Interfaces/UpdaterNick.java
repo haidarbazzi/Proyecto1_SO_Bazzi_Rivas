@@ -22,9 +22,10 @@ public class UpdaterNick extends Thread{
     
     
     public String transformToK(float num){
-        if (num < 1000){
+        if (Math.abs(num) < 1000){
             return Float.toString(num);
-        } else {
+        } 
+        else {
             String toReturn = Float.toString(num/1000) + "K";
             return toReturn;
         }
@@ -36,9 +37,10 @@ public class UpdaterNick extends Thread{
             //NICKELODEON:
             
             //Estadisticas generales
-            nickelodeonFrame.getTotalCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getTotalCosts()));
+            float totalC = nickelodeonFrame.getNickelodeon().getDrive().getCostAnimation() + nickelodeonFrame.getNickelodeon().getDrive().getCostAssemble() + nickelodeonFrame.getNickelodeon().getDrive().getCostDirector() + nickelodeonFrame.getNickelodeon().getDrive().getCostDub() + nickelodeonFrame.getNickelodeon().getDrive().getCostPM() + nickelodeonFrame.getNickelodeon().getDrive().getCostPT() + nickelodeonFrame.getNickelodeon().getDrive().getCostScript() + nickelodeonFrame.getNickelodeon().getDrive().getCostSetting();
+            nickelodeonFrame.getTotalCosts().setText(transformToK(totalC));
             nickelodeonFrame.getTotalEarnings().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getProfit()));
-            nickelodeonFrame.getUtilities().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getNetProfit()));
+            nickelodeonFrame.getUtilities().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getProfit() - totalC));
             
             //Costos Particulares
             

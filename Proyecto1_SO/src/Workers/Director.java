@@ -46,13 +46,16 @@ public class Director extends Worker {
                
                 this.getDrive().getAssembleM().acquire();
                 this.getDrive().setProfit(this.getDrive().getRegEps() * this.getcRules().getEarningsReg() + this.getDrive().getPtEps() * this.getcRules().getEarningsPt());
+                this.getDrive().setNetProfit(this.getDrive().getProfit() - this.getDrive().getTotalCosts());
                 this.getDrive().setRegEps(0);
                 this.getDrive().setPtEps(0);
+                
+                sleep(this.getDayLength());
                 this.getDrive().setDaysCountdown(this.getcRules().getDaysBetweenReleases());
                 this.getDrive().getAssembleM().release();
                 this.getDrive().getDaysM().release();
                
-                sleep(this.getDayLength());
+                
             }else{
                 this.getDrive().getDaysM().release();
                 

@@ -337,7 +337,7 @@ public class Drive {
     /**
      * @param profit the profit to set
      */
-    public void setProfit(int profit) {
+    public void setProfit(float profit) {
         this.profit = profit;
     }
 
@@ -351,7 +351,7 @@ public class Drive {
     /**
      * @param netProfit the netProfit to set
      */
-    public void setNetProfit(int netProfit) {
+    public void setNetProfit(float netProfit) {
         this.netProfit = netProfit;
     }
 

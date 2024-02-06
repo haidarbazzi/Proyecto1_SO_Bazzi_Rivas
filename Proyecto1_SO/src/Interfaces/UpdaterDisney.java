@@ -21,7 +21,7 @@ public class UpdaterDisney extends Thread{
     
     
     public String transformToK(float num){
-        if (num < 1000){
+        if (Math.abs(num)< 1000){
             return Float.toString(num);
         } else {
             String toReturn = Float.toString(num/1000) + "K";
@@ -36,9 +36,10 @@ public class UpdaterDisney extends Thread{
             //DISNEY CHANNEL:
             
             //Estadisticas generales
-            disneyFrame.getTotalCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getTotalCosts()));
+            float totalC = disneyFrame.getDisney().getDrive().getCostAnimation() + disneyFrame.getDisney().getDrive().getCostAssemble() + disneyFrame.getDisney().getDrive().getCostDirector() + disneyFrame.getDisney().getDrive().getCostDub() + disneyFrame.getDisney().getDrive().getCostPM() + disneyFrame.getDisney().getDrive().getCostPT() + disneyFrame.getDisney().getDrive().getCostScript() + disneyFrame.getDisney().getDrive().getCostSetting();
+            disneyFrame.getTotalCosts().setText(transformToK(totalC));
             disneyFrame.getTotalEarnings().setText(transformToK(disneyFrame.getDisney().getDrive().getProfit()));
-            disneyFrame.getUtilities().setText(transformToK(disneyFrame.getDisney().getDrive().getNetProfit()));
+            disneyFrame.getUtilities().setText(transformToK(disneyFrame.getDisney().getDrive().getProfit() - totalC));
             
             //Costos Particulares
             
