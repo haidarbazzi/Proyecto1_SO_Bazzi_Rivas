@@ -7,6 +7,8 @@ package Interfaces;
 import Company.EnumC;
 import Disk.FileAdmin;
 import Disk.FileAdmin.JSONFile;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import static java.lang.Thread.sleep;
 import javax.swing.JOptionPane;
 
@@ -16,12 +18,20 @@ import javax.swing.JOptionPane;
  */
 public class Settings extends javax.swing.JPanel {
 
+    JSONFile file;
+
     /**
      * Creates new form Disney
      */
     public Settings() {
         initComponents();
-        
+        updateData();
+        companyName.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                updateData();
+            }
+        });
+
     }
 
     /**
@@ -282,12 +292,12 @@ public class Settings extends javax.swing.JPanel {
 
     private void saveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileActionPerformed
         // TODO add your handling code here:
-        try{
-            
-            String compName = (String)this.companyName.getSelectedItem();
-              
+        try {
+
+            String compName = (String) this.companyName.getSelectedItem();
+
             EnumC compEnum = null;
-            switch (compName){
+            switch (compName) {
                 case "Nickelodeon":
                     compEnum = EnumC.Nickelodeon;
                     break;
@@ -297,7 +307,7 @@ public class Settings extends javax.swing.JPanel {
                 default:
                     break;
             }
-            
+
             int numAn = Integer.parseInt(this.numAnimatorsInput.getText().trim());
             int numSW = Integer.parseInt(this.numScriptWritersInput.getText().trim());
             int numPT = Integer.parseInt(this.numPlotTwistersInput.getText().trim());
@@ -306,42 +316,38 @@ public class Settings extends javax.swing.JPanel {
             int numD = Integer.parseInt(this.numDesignersInput.getText().trim());
             int dayLength = Integer.parseInt(this.dayLengthInput.getText().trim());
             int daysBetweenReleases = Integer.parseInt(this.dayBetweenReleaseInput.getText().trim());
-            
+
             int sum = numAn + numSW + numPT + numAss + numTrans + numD;
             boolean canDo = checkSum(compEnum, sum);
-            
+
             FileAdmin fileAdm = new FileAdmin();
             FileAdmin.JSONFile fileToSave = fileAdm.new JSONFile();
-            
-            if (numAn > 0 && numSW > 0 && numPT >0 && numAss>0 && numTrans >0 && numD >0 && dayLength>0 && daysBetweenReleases>0 && canDo){
-            fileToSave.setDayLength(dayLength);
-            fileToSave.setDaysBetweenReleases(daysBetweenReleases);
-            fileToSave.setNumScriptWriters(numSW);
-            fileToSave.setNumPlotTwisters(numPT);
-            fileToSave.setNumDesigners(numD);
-            fileToSave.setNumActors(numTrans);
-            fileToSave.setNumAnimators(numAn);
-            fileToSave.setNumAssemblers(numAss);
-            
-            fileAdm.saveFile(compEnum, fileToSave);
-            JOptionPane.showMessageDialog(null, "¡Valores guardados correctamente!");
-            
-            setToZero();
+
+            if (numAn > 0 && numSW > 0 && numPT > 0 && numAss > 0 && numTrans > 0 && numD > 0 && dayLength > 0 && daysBetweenReleases > 0 && canDo) {
+                fileToSave.setDayLength(dayLength);
+                fileToSave.setDaysBetweenReleases(daysBetweenReleases);
+                fileToSave.setNumScriptWriters(numSW);
+                fileToSave.setNumPlotTwisters(numPT);
+                fileToSave.setNumDesigners(numD);
+                fileToSave.setNumActors(numTrans);
+                fileToSave.setNumAnimators(numAn);
+                fileToSave.setNumAssemblers(numAss);
+
+                fileAdm.saveFile(compEnum, fileToSave);
+                JOptionPane.showMessageDialog(null, "¡Valores guardados correctamente!");
+
+                setToZero();
             } else {
                 JOptionPane.showMessageDialog(null, "Ingrese valores validos acorde a los requerimientos de la empresa");
                 setToZero();
             }
-            
-            
-           
-            
-        }
-        catch(Exception e){
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ingrese valores válidos");
         }
-        
+
     }//GEN-LAST:event_saveFileActionPerformed
-    public void setToZero(){
+    public void setToZero() {
         this.dayLengthInput.setText("");
         this.dayBetweenReleaseInput.setText("");
         this.numScriptWritersInput.setText("");
@@ -351,20 +357,45 @@ public class Settings extends javax.swing.JPanel {
         this.numTranslatorsInput.setText("");
         this.numDesignersInput.setText("");
     }
-    
-    public boolean checkSum(EnumC compEnum, int sum){
-        switch(compEnum){
+
+    public boolean checkSum(EnumC compEnum, int sum) {
+        switch (compEnum) {
             case Nickelodeon:
                 int max1 = 17;
-                return (sum<=max1);
+                return (sum <= max1);
             case DisneyChannel:
                 int max2 = 19;
-                return sum<=max2;
+                return sum <= max2;
         }
         return false;
-            
+
     }
-    
+
+    public void updateData() {
+        FileAdmin fileAdmin = new FileAdmin();
+        if (companyName.getSelectedItem() == "Nickelodeon") {
+            file = fileAdmin.getFile(EnumC.Nickelodeon);
+            this.dayLengthInput.setText(String.valueOf(file.getDayLength()));
+            this.dayBetweenReleaseInput.setText(String.valueOf(file.getDaysBetweenReleases()));
+            this.numAnimatorsInput.setText(String.valueOf(file.getNumAnimators()));
+            this.numAssemblersInput.setText(String.valueOf(file.getNumAssemblers()));
+            this.numDesignersInput.setText(String.valueOf(file.getNumDesigners()));
+            this.numPlotTwistersInput.setText(String.valueOf(file.getNumPlotTwisters()));
+            this.numScriptWritersInput.setText(String.valueOf(file.getNumScriptWriters()));
+            this.numTranslatorsInput.setText(String.valueOf(file.getNumActors()));
+        } else {
+            file = fileAdmin.getFile(EnumC.DisneyChannel);
+            this.dayLengthInput.setText(String.valueOf(file.getDayLength()));
+            this.dayBetweenReleaseInput.setText(String.valueOf(file.getDaysBetweenReleases()));
+            this.numAnimatorsInput.setText(String.valueOf(file.getNumAnimators()));
+            this.numAssemblersInput.setText(String.valueOf(file.getNumAssemblers()));
+            this.numDesignersInput.setText(String.valueOf(file.getNumDesigners()));
+            this.numPlotTwistersInput.setText(String.valueOf(file.getNumPlotTwisters()));
+            this.numScriptWritersInput.setText(String.valueOf(file.getNumScriptWriters()));
+            this.numTranslatorsInput.setText(String.valueOf(file.getNumActors()));
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> companyName;
     private javax.swing.JTextField dayBetweenReleaseInput;
