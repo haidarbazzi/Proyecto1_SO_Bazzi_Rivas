@@ -65,7 +65,7 @@ public class Drive {
         this.assembleM = new Semaphore(1);
         this.daysM = new Semaphore(1);
         this.costsM = new Semaphore(1);
-        this.statusDirector = 1;
+        this.statusDirector = 0;
         this.statusPM = 1;
         this.faults = 0;
         this.profit = 0;
