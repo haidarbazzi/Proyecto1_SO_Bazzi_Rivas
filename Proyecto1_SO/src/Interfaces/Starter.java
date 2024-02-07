@@ -43,7 +43,7 @@ public class Starter {
             Global.setDayLengthN(35000);
             Nick= new Company(NickelodeonReq, NickelodeonDrive, 1,1,1,1,1,1, 350000);
         }
-        
+        Nick.updateTimes(EnumC.Nickelodeon);
         Nickelodeon NickelodeonTab = new Nickelodeon(Nick);
         
        
@@ -77,7 +77,7 @@ public class Starter {
             Global.setDayLengthD(35000);
             Disney= new Company(DisneyReq, DisneyDrive, 1,1,1,1,1,1, 350000);
         }
-        
+        Disney.updateTimes(EnumC.DisneyChannel);
         Disney DisneyTab = new Disney(Disney);
         
        
@@ -86,7 +86,25 @@ public class Starter {
         UpdaterDisney update = new UpdaterDisney(DisneyTab);
         update.start();
     }
-        
+    
+    public static void stopNickelodeon(){
+        for (int i = 0; i < Global.getMainWindow().getTabPanel().getTabCount(); i++) {
+                if(Global.getMainWindow().getTabPanel().getTitleAt(i).equals("Nickelodeon")){
+                    Nickelodeon nick = (Nickelodeon) Global.getMainWindow().getTabPanel().getComponentAt(i);
+                    nick.getNickelodeon().endCompany();
+                    break;
+                }
+            }
+    }
+    public static void stopDisney(){
+        for (int i = 0; i < Global.getMainWindow().getTabPanel().getTabCount(); i++) {
+                if(Global.getMainWindow().getTabPanel().getTitleAt(i).equals("Disney")){
+                    Disney disney = (Disney) Global.getMainWindow().getTabPanel().getComponentAt(i);
+                    disney.getDisney().endCompany();
+                    break;
+                }
+            }
+    }
 
     
 }

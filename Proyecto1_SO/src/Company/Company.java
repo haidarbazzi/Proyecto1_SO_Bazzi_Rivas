@@ -4,6 +4,8 @@
  */
 package Company;
 
+import static Company.EnumC.DisneyChannel;
+import static Company.EnumC.Nickelodeon;
 import Disk.Drive;
 import List.List;
 import List.Nodo;
@@ -75,6 +77,19 @@ public class Company {
 
     }
 
+    public void endCompany(){
+        for (int i = 0; i < employees.length; i++) {
+            for (int j = 0; j < employees[i].getSize(); j++) {
+
+                Nodo temp = employees[i].getNodo(j);
+
+                if (temp != null) {
+                   temp.getData().fire();
+                }
+            }
+        }
+    }
+    
     public Worker createWorker(Drive drive, EnumW type, Semaphore sem, int dayLength) {
 
         double swDP = 0, dDP = 0, aDP = 0, tDP = 0, ptwDP = 0, asDP = 0;

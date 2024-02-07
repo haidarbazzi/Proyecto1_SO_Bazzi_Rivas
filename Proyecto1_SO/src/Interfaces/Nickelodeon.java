@@ -25,7 +25,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         
         
         this.Nickelodeon = nickelodeon;
-        nickelodeon.updateTimes(EnumC.Nickelodeon);
+       
         
         //Cantidad de trabajadores
      

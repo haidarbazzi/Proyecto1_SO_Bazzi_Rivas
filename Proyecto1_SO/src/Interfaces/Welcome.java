@@ -5,6 +5,7 @@
 package Interfaces;
 
 import Interfaces.Starter;
+import Main.Global;
 
 /**
  *
@@ -12,11 +13,16 @@ import Interfaces.Starter;
  */
 public class Welcome extends javax.swing.JPanel {
 
+    private boolean nickStarted;
+    private boolean disneyStarted;
+
     /**
      * Creates new form NewJPanel
      */
     public Welcome() {
         initComponents();
+        this.nickStarted = false;
+        this.disneyStarted = false;
     }
 
     /**
@@ -33,7 +39,7 @@ public class Welcome extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         iniciarDisney = new javax.swing.JButton();
-        iniciarNick1 = new javax.swing.JButton();
+        iniciarNick = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -72,36 +78,93 @@ public class Welcome extends javax.swing.JPanel {
         });
         jPanel1.add(iniciarDisney, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 140, 30));
 
-        iniciarNick1.setBackground(new java.awt.Color(239, 248, 226));
-        iniciarNick1.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
-        iniciarNick1.setForeground(new java.awt.Color(245, 125, 13));
-        iniciarNick1.setText("Iniciar Nickelodeon");
-        iniciarNick1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 3, true));
-        iniciarNick1.addActionListener(new java.awt.event.ActionListener() {
+        iniciarNick.setBackground(new java.awt.Color(239, 248, 226));
+        iniciarNick.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        iniciarNick.setForeground(new java.awt.Color(245, 125, 13));
+        iniciarNick.setText("Iniciar Nickelodeon");
+        iniciarNick.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(245, 125, 13), 3, true));
+        iniciarNick.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iniciarNick1ActionPerformed(evt);
+                iniciarNickActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarNick1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 140, 30));
+        jPanel1.add(iniciarNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 140, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void iniciarNick1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarNick1ActionPerformed
-        Starter.startSimNickelodeon();
-    }//GEN-LAST:event_iniciarNick1ActionPerformed
+    private void iniciarNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarNickActionPerformed
+        if (!isNickStarted()) {
+            Starter.startSimNickelodeon();
+            setNickStarted(true);
+            this.iniciarNick.setText("Detener Simulación");
+        }else{
+            for (int i = 0; i < Global.getMainWindow().getTabPanel().getTabCount(); i++) {
+                if(Global.getMainWindow().getTabPanel().getTitleAt(i).equals("Nickelodeon")){
+                    Starter.stopNickelodeon();
+                    Global.getMainWindow().getTabPanel().remove(i);
+                    break;
+                }
+            }
+            
+            setNickStarted(false);
+            this.iniciarNick.setText("Iniciar Nickelodeon");
+        }
+    }//GEN-LAST:event_iniciarNickActionPerformed
 
     private void iniciarDisneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarDisneyActionPerformed
-             Starter.startSimDisney();
+        if (!isDisneyStarted()) {
+            Starter.startSimDisney();
+            setDisneyStarted(true);
+            this.iniciarDisney.setText("Detener Simulación");
+        }else{
+            for (int i = 0; i < Global.getMainWindow().getTabPanel().getTabCount(); i++) {
+                if(Global.getMainWindow().getTabPanel().getTitleAt(i).equals("Disney")){
+                    Starter.stopDisney();
+                    Global.getMainWindow().getTabPanel().remove(i);
+                    break;
+                }
+            }
+            setDisneyStarted(false);
+            this.iniciarDisney.setText("Iniciar Disney");
+        }
     }//GEN-LAST:event_iniciarDisneyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton iniciarDisney;
-    private javax.swing.JButton iniciarNick1;
+    private javax.swing.JButton iniciarNick;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the nickStarted
+     */
+    public boolean isNickStarted() {
+        return nickStarted;
+    }
+
+    /**
+     * @param nickStarted the nickStarted to set
+     */
+    public void setNickStarted(boolean nickStarted) {
+        this.nickStarted = nickStarted;
+    }
+
+    /**
+     * @return the disneyStarted
+     */
+    public boolean isDisneyStarted() {
+        return disneyStarted;
+    }
+
+    /**
+     * @param disneyStarted the disneyStarted to set
+     */
+    public void setDisneyStarted(boolean disneyStarted) {
+        this.disneyStarted = disneyStarted;
+    }
 }

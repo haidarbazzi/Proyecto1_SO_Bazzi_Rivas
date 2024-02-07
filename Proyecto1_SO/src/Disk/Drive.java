@@ -36,7 +36,7 @@ public class Drive {
     private Semaphore costsM; //acceder a los costos
     
     // simulacion 
-    private int statusDirector = 0; //si esta trabajando o no
+    private int statusDirector; //si esta trabajando o no
     private int statusPM; //si esta trabajando o no
     private int faults; //num de faltas;
     
@@ -65,7 +65,7 @@ public class Drive {
         this.assembleM = new Semaphore(1);
         this.daysM = new Semaphore(1);
         this.costsM = new Semaphore(1);
-        this.statusDirector = 1;
+        this.statusDirector = 0;
         this.statusPM = 1;
         this.faults = 0;
         this.profit = 0;

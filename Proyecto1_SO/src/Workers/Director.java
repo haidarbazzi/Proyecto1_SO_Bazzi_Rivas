@@ -40,7 +40,6 @@ public class Director extends Worker {
     @Override
     public void work() {
         try {
-            this.getDrive().setStatusDirector(0);
             this.getDrive().getDaysM().acquire();
             if (this.getDrive().getDaysCountdown() == 0) {
                
@@ -69,10 +68,8 @@ public class Director extends Worker {
                         this.getDrive().setStatusDirector(1);
                         
                         double min = hour/60;
-                        System.out.println("VIGILA");
                         sleep(Math.round(min*35));
                         this.getDrive().setStatusDirector(0);
-                        System.out.println("se acaba");
                         sleep(Math.round(min*25));
                        
                     }else{

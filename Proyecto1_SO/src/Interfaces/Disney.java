@@ -24,7 +24,7 @@ public class Disney extends javax.swing.JPanel {
         initComponents();
         
         this.disney = disney;
-        disney.updateTimes(EnumC.DisneyChannel);
+      
         //Cantidad de empleados
         this.numScriptWriters.setText(Integer.toString(disney.getEmployees()[0].getSize()));
         this.numDesigners.setText(Integer.toString(disney.getEmployees()[1].getSize()));

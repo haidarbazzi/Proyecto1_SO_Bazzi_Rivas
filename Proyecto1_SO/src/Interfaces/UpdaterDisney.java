@@ -70,9 +70,9 @@ public class UpdaterDisney extends Thread{
             //Status del Pm
             
             if(disneyFrame.getDisney().getDrive().getStatusPM() ==1){
-                disneyFrame.getStatusPM().setText("Trabajando");
-            } else if (disneyFrame.getDisney().getDrive().getStatusPM() ==0) {
                 disneyFrame.getStatusPM().setText("Viendo anime");
+            } else if (disneyFrame.getDisney().getDrive().getStatusPM() ==0) {
+                disneyFrame.getStatusPM().setText("Trabajando");
             }
             
             //Status del director

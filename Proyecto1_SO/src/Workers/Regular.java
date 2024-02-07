@@ -11,7 +11,6 @@ import static Workers.EnumW.PtWriter;
 import static Workers.EnumW.ScriptWriter;
 import static Workers.EnumW.Translator;
 import java.util.concurrent.Semaphore;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -34,31 +33,8 @@ public class Regular extends Worker {
             try{
                 work();
                 sleep(getDayLength());
-                
-            }catch(InterruptedException e){}
-        }    
-    }
-    
-    
-    
 
-    @Override
-    public void work() {
-        
-        this.setAccWork( this.getAccWork()+ this.getDailyProduction());
-        
-        try{
-            while (this.getAccWork() >= 1){
-                this.getSem().acquire(1);
-                this.getDrive().addProduct(this.getType());
-                this.getSem().release();
-                this.setAccWork( this.getAccWork()-1);
-                if (this.getAccWork() < 1){
-                    this.setAccWork(0);
-                }
-            }
-             
-            this.getDrive().getCostsM().acquire();
+                this.getDrive().getCostsM().acquire();
                 
                 //  ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4)
                 switch(this.getType()){
@@ -84,6 +60,31 @@ public class Regular extends Worker {
                         break;
                 }
             this.getDrive().getCostsM().release();
+                
+            }catch(InterruptedException e){}
+        }    
+    }
+    
+    
+    
+
+    @Override
+    public void work() {
+        
+        this.setAccWork( this.getAccWork()+ this.getDailyProduction());
+        
+        try{
+            while (this.getAccWork() >= 1){
+                this.getSem().acquire(1);
+                this.getDrive().addProduct(this.getType());
+                this.getSem().release();
+                this.setAccWork( this.getAccWork()-1);
+                if (this.getAccWork() < 1){
+                    this.setAccWork(0);
+                }
+            }
+             
+            
             this.setDaysWorked(this.getDaysWorked() +1);
         }
         
