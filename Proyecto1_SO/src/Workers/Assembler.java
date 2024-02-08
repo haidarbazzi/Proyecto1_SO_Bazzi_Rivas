@@ -52,14 +52,14 @@ public class Assembler extends Worker {
     public void work() {
         try{
             this.setDaysWorked(this.getDaysWorked()+1);
-            
+            this.getDrive().getProduceM().acquire();
             //validacion de que se tengan los recursos necesarios para producir un capitulo
             boolean checkResources = (this.getDrive().getRegEpsSinceptEp() >= this.getRegEpToplotEp())?     
                     this.getRequirements().checkForPT(this.getDrive().getScripts(), this.getDrive().getSettings(), this.getDrive().getAnimations(), this.getDrive().getDubs(), this.getDrive().getPlotTwists())
                     : this.getRequirements().checkForReg(this.getDrive().getScripts(), this.getDrive().getSettings(), this.getDrive().getAnimations(), this.getDrive().getDubs());
             
             if(checkResources){
-                this.getDrive().getProduceM().acquire();
+                
                 this.getDrive().setScripts(this.getDrive().getScripts()-this.getRequirements().getScriptsNeed());
                 this.getDrive().setSettings(this.getDrive().getSettings()-this.getRequirements().getScenesNeed());
                 this.getDrive().setAnimations(this.getDrive().getAnimations()-this.getRequirements().getAnimationsNeed());

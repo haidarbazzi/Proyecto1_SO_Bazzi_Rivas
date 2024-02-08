@@ -49,6 +49,7 @@ public class Director extends Worker {
                 this.getDrive().setRegEps(0);
                 this.getDrive().setPtEps(0);
                 
+                
                 sleep(this.getDayLength());
                 this.getDrive().setDaysCountdown(this.getcRules().getDaysBetweenReleases());
                 this.getDrive().getAssembleM().release();
