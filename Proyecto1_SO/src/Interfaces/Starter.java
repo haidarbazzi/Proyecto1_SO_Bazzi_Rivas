@@ -36,12 +36,13 @@ public class Starter {
             Global.setDayLengthN(fileNickelodeon.getDayLength());
 
             Nick = new Company(NickelodeonReq, NickelodeonDrive, fileNickelodeon.getNumScriptWriters(), fileNickelodeon.getNumDesigners(), fileNickelodeon.getNumAnimators(), fileNickelodeon.getNumActors(), fileNickelodeon.getNumPlotTwisters(), fileNickelodeon.getNumAssemblers(), fileNickelodeon.getDayLength());
-
+            Global.setNick(Nick);
         } else {
             Drive NickelodeonDrive = new Drive(20);
             NickelodeonReq.setDaysBetweenReleases(10);
             Global.setDayLengthN(35000);
             Nick= new Company(NickelodeonReq, NickelodeonDrive, 1,1,1,1,1,1, 350000);
+            Global.setNick(Nick);
         }
         Nick.updateTimes(EnumC.Nickelodeon);
         Nickelodeon NickelodeonTab = new Nickelodeon(Nick);
@@ -70,12 +71,14 @@ public class Starter {
             Global.setDayLengthD(fileDisney.getDayLength());
 
             Disney = new Company(DisneyReq, DisneyDrive, fileDisney.getNumScriptWriters(), fileDisney.getNumDesigners(), fileDisney.getNumAnimators(), fileDisney.getNumActors(), fileDisney.getNumPlotTwisters(), fileDisney.getNumAssemblers(), fileDisney.getDayLength());
-
+            
+            Global.setDisney(Disney);
         } else {
             Drive DisneyDrive = new Drive(20);
             DisneyReq.setDaysBetweenReleases(10);
             Global.setDayLengthD(35000);
             Disney= new Company(DisneyReq, DisneyDrive, 1,1,1,1,1,1, 350000);
+            Global.setDisney(Disney);
         }
         Disney.updateTimes(EnumC.DisneyChannel);
         Disney DisneyTab = new Disney(Disney);

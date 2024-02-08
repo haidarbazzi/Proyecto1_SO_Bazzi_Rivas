@@ -4,9 +4,10 @@
  */
 package Interfaces;
 
+import Company.Company;
 import Interfaces.Starter;
 import Main.Global;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author andre
@@ -15,6 +16,7 @@ public class Welcome extends javax.swing.JPanel {
 
     private boolean nickStarted;
     private boolean disneyStarted;
+    
 
     /**
      * Creates new form NewJPanel
@@ -23,6 +25,7 @@ public class Welcome extends javax.swing.JPanel {
         initComponents();
         this.nickStarted = false;
         this.disneyStarted = false;
+       
     }
 
     /**
@@ -40,6 +43,7 @@ public class Welcome extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         iniciarDisney = new javax.swing.JButton();
         iniciarNick = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -76,7 +80,7 @@ public class Welcome extends javax.swing.JPanel {
                 iniciarDisneyActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarDisney, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 480, 140, 30));
+        jPanel1.add(iniciarDisney, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, 140, 30));
 
         iniciarNick.setBackground(new java.awt.Color(239, 248, 226));
         iniciarNick.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -88,7 +92,19 @@ public class Welcome extends javax.swing.JPanel {
                 iniciarNickActionPerformed(evt);
             }
         });
-        jPanel1.add(iniciarNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, 140, 30));
+        jPanel1.add(iniciarNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, 140, 30));
+
+        jButton1.setBackground(new java.awt.Color(239, 248, 226));
+        jButton1.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Gráfico de ambos");
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 140, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 700));
     }// </editor-fold>//GEN-END:initComponents
@@ -130,10 +146,23 @@ public class Welcome extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_iniciarDisneyActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (nickStarted && disneyStarted){
+            
+        Chart chartBoth = new Chart(Global.getNick(), 3, Global.getDisney());
+       
+        } 
+        else {
+            JOptionPane.showMessageDialog(null, " ¡Inicia ambas simulaciones!" );
+        } 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton iniciarDisney;
     private javax.swing.JButton iniciarNick;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -167,4 +196,6 @@ public class Welcome extends javax.swing.JPanel {
     public void setDisneyStarted(boolean disneyStarted) {
         this.disneyStarted = disneyStarted;
     }
+
+    
 }

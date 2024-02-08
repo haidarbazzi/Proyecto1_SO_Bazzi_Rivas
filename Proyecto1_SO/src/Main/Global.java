@@ -4,6 +4,7 @@
  */
 package Main;
 
+import Company.Company;
 import Interfaces.MainWindow;
 
 /**
@@ -13,6 +14,8 @@ import Interfaces.MainWindow;
 public class Global {
     public static int dayLengthD;
     public static int dayLengthN;
+    private static Company nick;
+    private static Company disney;
     
     private static MainWindow MainWindow;
 
@@ -59,6 +62,34 @@ public class Global {
      */
     public static void setDayLengthD(int aDayLengthD) {
         dayLengthD = aDayLengthD;
+    }
+
+    /**
+     * @return the nick
+     */
+    public static Company getNick() {
+        return nick;
+    }
+
+    /**
+     * @param aNick the nick to set
+     */
+    public static void setNick(Company aNick) {
+        nick = aNick;
+    }
+
+    /**
+     * @return the disney
+     */
+    public static Company getDisney() {
+        return disney;
+    }
+
+    /**
+     * @param aDisney the disney to set
+     */
+    public static void setDisney(Company aDisney) {
+        disney = aDisney;
     }
     
     

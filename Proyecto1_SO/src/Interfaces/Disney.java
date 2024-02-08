@@ -6,6 +6,7 @@ package Interfaces;
 
 import Company.Company;
 import Company.EnumC;
+import Main.Global;
 import Workers.EnumW;
 
 /**
@@ -125,9 +126,13 @@ public class Disney extends javax.swing.JPanel {
         statusPM = new javax.swing.JLabel();
         statusDirector = new javax.swing.JLabel();
         numFaults = new javax.swing.JLabel();
+        directorCosts = new javax.swing.JLabel();
+        PMCosts = new javax.swing.JLabel();
+        disneyGraph = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         scriptsCosts = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -141,6 +146,7 @@ public class Disney extends javax.swing.JPanel {
         totalCosts = new javax.swing.JLabel();
         utilities = new javax.swing.JLabel();
         assembleCosts = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         jLabel26.setText("jLabel26");
 
@@ -556,13 +562,13 @@ public class Disney extends javax.swing.JPanel {
         jLabel40.setForeground(new java.awt.Color(2, 4, 15));
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("Salario descontado");
-        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
+        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, -1, -1));
 
         salaryDiscount.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         salaryDiscount.setForeground(new java.awt.Color(2, 4, 15));
         salaryDiscount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         salaryDiscount.setText("0");
-        add(salaryDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 60, -1));
+        add(salaryDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, 60, -1));
 
         jLabel42.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(239, 248, 226));
@@ -574,7 +580,7 @@ public class Disney extends javax.swing.JPanel {
         jLabel43.setForeground(new java.awt.Color(2, 4, 15));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("Numero de Faltas");
-        add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
 
         numRegEps.setBackground(new java.awt.Color(0, 107, 153));
         numRegEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -606,7 +612,37 @@ public class Disney extends javax.swing.JPanel {
         numFaults.setForeground(new java.awt.Color(2, 4, 15));
         numFaults.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numFaults.setText("0");
-        add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+        add(numFaults, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 60, -1));
+
+        directorCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        directorCosts.setForeground(new java.awt.Color(2, 4, 15));
+        directorCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        directorCosts.setText("0");
+        add(directorCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 60, -1));
+
+        PMCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        PMCosts.setForeground(new java.awt.Color(2, 4, 15));
+        PMCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PMCosts.setText("0");
+        add(PMCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 60, -1));
+
+        disneyGraph.setBackground(new java.awt.Color(239, 248, 226));
+        disneyGraph.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        disneyGraph.setForeground(new java.awt.Color(0, 107, 153));
+        disneyGraph.setText("Gráfico");
+        disneyGraph.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 107, 153), 3, true));
+        disneyGraph.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                disneyGraphActionPerformed(evt);
+            }
+        });
+        add(disneyGraph, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 70, 30));
+
+        jLabel12.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Gastos de Director:");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 110, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/topDisney.png"))); // NOI18N
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, -1, 260));
@@ -617,11 +653,11 @@ public class Disney extends javax.swing.JPanel {
         scriptsCosts.setText("0");
         add(scriptsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 80, -1));
 
-        jLabel12.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(2, 4, 15));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Gastos por parte:");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 110, 30));
+        jLabel16.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Gastos por parte:");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 110, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/bottomDisney.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, -1, -1));
@@ -696,6 +732,12 @@ public class Disney extends javax.swing.JPanel {
         assembleCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         assembleCosts.setText("0");
         add(assembleCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 60, -1));
+
+        jLabel17.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Gastos de PM:");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
     //Scriptwriter (0), Designer (1), Animators(2), Translator(3), PtWriter(4), Assembler(5) 
     // ScriptWriter(0), Designer(1), Animator(2), Translator(3), PtWriter(4), Assembler(5), ProjectManager(6), Director(7);
@@ -783,13 +825,21 @@ public class Disney extends javax.swing.JPanel {
         
     }//GEN-LAST:event_moreAssemblersActionPerformed
 
+    private void disneyGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_disneyGraphActionPerformed
+        // TODO add your handling code here:
+        Chart disneyGraph = new Chart(null, 1, Global.getDisney());
+    }//GEN-LAST:event_disneyGraphActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PMCosts;
     private javax.swing.JLabel PlotTwistCosts;
     private javax.swing.JLabel animationsCost;
     private javax.swing.JProgressBar animationsProgress;
     private javax.swing.JLabel assembleCosts;
     private javax.swing.JLabel daysCountdown;
+    private javax.swing.JLabel directorCosts;
+    private javax.swing.JButton disneyGraph;
     private javax.swing.JLabel dubsCosts;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -798,6 +848,8 @@ public class Disney extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1210,5 +1262,19 @@ public class Disney extends javax.swing.JPanel {
      */
     public javax.swing.JLabel getAssembleCosts() {
         return assembleCosts;
+    }
+
+    /**
+     * @return the PMCosts
+     */
+    public javax.swing.JLabel getPMCosts() {
+        return PMCosts;
+    }
+
+    /**
+     * @return the directorCosts
+     */
+    public javax.swing.JLabel getDirectorCosts() {
+        return directorCosts;
     }
 }
