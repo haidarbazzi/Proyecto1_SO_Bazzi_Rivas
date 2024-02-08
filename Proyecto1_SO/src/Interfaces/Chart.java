@@ -9,6 +9,7 @@ import Company.EnumC;
 import Main.Global;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -67,12 +68,13 @@ public class Chart {
         switch (chosenComp) {
             case 0 ->                 {
                     this.nickelodeon = nick;
-                    Timer timer = new Timer(Math.round(Global.getDayLengthN()), (ActionEvent e) -> {
+                    Timer timer = new Timer(Math.round(Global.getDayLengthN()), (ActionEvent e)->{
                         float totalC = nickelodeon.getDrive().getCostAnimation() + nickelodeon.getDrive().getCostAssemble() + nickelodeon.getDrive().getCostScript() + nickelodeon.getDrive().getCostSetting();
                         days++;
-                       
+                         
                         nickelodeonS.addOrUpdate(days, Math.round(nickelodeon.getDrive().getProfit() - totalC));
-                    });     
+                    
+                    });
                     frame.add(nickPanel, BorderLayout.CENTER);
                     timer.start();
                 }
@@ -80,7 +82,7 @@ public class Chart {
                     this.disney = disney;
                     Timer timer = new Timer(Math.round(Global.getDayLengthD()), (ActionEvent e) -> {
                         float totalC = disney.getDrive().getCostAnimation() + disney.getDrive().getCostAssemble() + disney.getDrive().getCostScript() + disney.getDrive().getCostSetting();
-                        System.out.println(days + "ACAAAAAAA");
+                     
                         days++;
                         disneyS.addOrUpdate(days, Math.round(disney.getDrive().getProfit() - totalC));
                     });   

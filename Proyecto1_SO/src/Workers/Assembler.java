@@ -68,10 +68,12 @@ public class Assembler extends Worker {
                 //si hay suficientes capitulos normales como para crear uno con plottwists, se crea el capitulo con plot twists 
                 
                 if(this.getDrive().getRegEpsSinceptEp() >= this.getRegEpToplotEp()){
+                    System.out.println("aqui");
                     this.getDrive().setPlotTwists(this.getDrive().getPlotTwists()-this.getRequirements().getPlotTwistsNeed());
                     this.getDrive().setPtEps(this.getDrive().getPtEps()+1);
                     this.getDrive().setRegEpsSinceptEp(this.getDrive().getRegEpsSinceptEp()-this.getRegEpToplotEp());
                 }else{
+                    System.out.println("aquipt");
                     this.getDrive().setRegEps(this.getDrive().getRegEps()+1);
                     this.getDrive().setRegEpsSinceptEp(this.getDrive().getRegEpsSinceptEp()+1);
                 }

@@ -25,14 +25,15 @@ public class Regular extends Worker {
         super(type, hourlyRate, sem, dayLength, drive);
         this.dailyProduction = dailyProduction;
         this.accWork = 0;
+        
     }
     
     @Override
     public void  run(){
         while(isHired()){
             try{
-                work();
                 sleep(getDayLength());
+                work();
                 
 
                 this.getDrive().getCostsM().acquire();
