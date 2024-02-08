@@ -116,6 +116,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         numScripts = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         numAnimations = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         numTranslations = new javax.swing.JLabel();
@@ -132,9 +133,13 @@ public class Nickelodeon extends javax.swing.JPanel {
         numRegEps = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         statusPM = new javax.swing.JLabel();
+        PMCosts = new javax.swing.JLabel();
         statusDirector = new javax.swing.JLabel();
         utilities = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         scriptsCosts = new javax.swing.JLabel();
+        DirectorCosts = new javax.swing.JLabel();
+        GraficoNick = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -515,8 +520,14 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel15.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(2, 4, 15));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("Gastos por parte:");
-        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 110, 30));
+        jLabel15.setText("Gastos de Director:");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 110, 30));
+
+        jLabel16.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Gastos por parte:");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 110, 30));
 
         numAnimations.setBackground(new java.awt.Color(245, 125, 13));
         numAnimations.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -579,13 +590,13 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel40.setForeground(new java.awt.Color(2, 4, 15));
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("Salario descontado");
-        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, -1));
+        add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
 
         salaryDiscount.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         salaryDiscount.setForeground(new java.awt.Color(2, 4, 15));
         salaryDiscount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         salaryDiscount.setText("0");
-        add(salaryDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 60, -1));
+        add(salaryDiscount, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 60, -1));
 
         jLabel42.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(239, 248, 226));
@@ -597,7 +608,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         jLabel43.setForeground(new java.awt.Color(2, 4, 15));
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("Numero de Faltas");
-        add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, -1, -1));
+        add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
 
         numRegEps.setBackground(new java.awt.Color(245, 125, 13));
         numRegEps.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
@@ -619,6 +630,12 @@ public class Nickelodeon extends javax.swing.JPanel {
         statusPM.setText("Status del PM");
         add(statusPM, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
+        PMCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        PMCosts.setForeground(new java.awt.Color(2, 4, 15));
+        PMCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PMCosts.setText("0");
+        add(PMCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 80, -1));
+
         statusDirector.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         statusDirector.setForeground(new java.awt.Color(2, 4, 15));
         statusDirector.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -631,11 +648,35 @@ public class Nickelodeon extends javax.swing.JPanel {
         utilities.setText("0");
         add(utilities, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 110, -1));
 
+        jLabel17.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(2, 4, 15));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Gastos de PM:");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 110, 30));
+
         scriptsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         scriptsCosts.setForeground(new java.awt.Color(2, 4, 15));
         scriptsCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scriptsCosts.setText("0");
         add(scriptsCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 90, -1));
+
+        DirectorCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        DirectorCosts.setForeground(new java.awt.Color(2, 4, 15));
+        DirectorCosts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DirectorCosts.setText("0");
+        add(DirectorCosts, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 80, -1));
+
+        GraficoNick.setBackground(new java.awt.Color(239, 248, 226));
+        GraficoNick.setFont(new java.awt.Font("Gill Sans MT", 1, 12)); // NOI18N
+        GraficoNick.setForeground(new java.awt.Color(245, 123, 13));
+        GraficoNick.setText("Grafico");
+        GraficoNick.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 0), 3, true));
+        GraficoNick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GraficoNickActionPerformed(evt);
+            }
+        });
+        add(GraficoNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 40, 80, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/bottomNickelodeon.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, -1, -1));
@@ -677,7 +718,7 @@ public class Nickelodeon extends javax.swing.JPanel {
         numFaults4.setForeground(new java.awt.Color(2, 4, 15));
         numFaults4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         numFaults4.setText("0");
-        add(numFaults4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 60, -1));
+        add(numFaults4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 60, -1));
 
         dubsCosts.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         dubsCosts.setForeground(new java.awt.Color(2, 4, 15));
@@ -787,8 +828,16 @@ public class Nickelodeon extends javax.swing.JPanel {
         
     }//GEN-LAST:event_moreAssemblersActionPerformed
 
+    private void GraficoNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GraficoNickActionPerformed
+        // TODO add your handling code here:
+        Chart nickChart = new Chart(this.getNickelodeon(), 0, null);
+    }//GEN-LAST:event_GraficoNickActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DirectorCosts;
+    private javax.swing.JButton GraficoNick;
+    private javax.swing.JLabel PMCosts;
     private javax.swing.JLabel animationsCosts;
     private javax.swing.JProgressBar animationsProgress;
     private javax.swing.JLabel assembleCosts;
@@ -801,6 +850,8 @@ public class Nickelodeon extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -1193,6 +1244,20 @@ public class Nickelodeon extends javax.swing.JPanel {
      */
     public javax.swing.JLabel getAssembleCosts() {
         return assembleCosts;
+    }
+
+    /**
+     * @return the DirectorCosts
+     */
+    public javax.swing.JLabel getDirectorCosts() {
+        return DirectorCosts;
+    }
+
+    /**
+     * @return the PMCosts
+     */
+    public javax.swing.JLabel getPMCosts() {
+        return PMCosts;
     }
 
  

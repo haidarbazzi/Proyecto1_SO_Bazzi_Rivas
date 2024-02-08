@@ -11,7 +11,7 @@ package Interfaces;
 public class UpdaterDisney extends Thread{
     
    
-    private Disney disneyFrame;
+    private static Disney disneyFrame;
     
     public UpdaterDisney (Disney disneyFrame){
         
@@ -27,6 +27,7 @@ public class UpdaterDisney extends Thread{
             String toReturn = Float.toString(num/1000) + "K";
             return toReturn;
         }
+        
     }
     @Override
     public void run (){
@@ -49,6 +50,8 @@ public class UpdaterDisney extends Thread{
             disneyFrame.getPlotTwistCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getCostPT()));
             disneyFrame.getAssembleCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getCostAssemble()));
             disneyFrame.getDubsCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getCostDub()));
+            disneyFrame.getPMCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getCostPM()));
+            disneyFrame.getDirectorCosts().setText(transformToK(disneyFrame.getDisney().getDrive().getCostDirector()));
             
             //Progress Bars y cantidad de cada parte de capítulo
             

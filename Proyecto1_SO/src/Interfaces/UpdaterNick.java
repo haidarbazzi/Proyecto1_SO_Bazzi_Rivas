@@ -22,13 +22,12 @@ public class UpdaterNick extends Thread{
     
     
     public String transformToK(float num){
-        if (Math.abs(num) < 1000){
+        if (Math.abs(num)< 1000){
             return Float.toString(num);
-        } 
-        else {
+        } else {
             String toReturn = Float.toString(num/1000) + "K";
             return toReturn;
-        }
+        } 
     }
     @Override
     public void run (){
@@ -50,6 +49,8 @@ public class UpdaterNick extends Thread{
             nickelodeonFrame.getPlotTwistsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostPT()));
             nickelodeonFrame.getAssembleCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostAssemble()));
             nickelodeonFrame.getDubsCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostDub()));
+            nickelodeonFrame.getPMCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostPM()));
+            nickelodeonFrame.getDirectorCosts().setText(transformToK(nickelodeonFrame.getNickelodeon().getDrive().getCostDirector()));
             
             //Progress Bars y cantidad de cada parte de capítulo
             
