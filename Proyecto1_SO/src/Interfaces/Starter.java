@@ -32,7 +32,6 @@ public class Starter {
         if (fileNickelodeon != null) {
             Drive NickelodeonDrive = new Drive(fileNickelodeon.getDaysBetweenReleases());
             NickelodeonReq.setDaysBetweenReleases(fileNickelodeon.getDaysBetweenReleases());
-            System.out.println(fileNickelodeon.getDaysBetweenReleases());
             Global.setDayLengthN(fileNickelodeon.getDayLength());
 
             Nick = new Company(NickelodeonReq, NickelodeonDrive, fileNickelodeon.getNumScriptWriters(), fileNickelodeon.getNumDesigners(), fileNickelodeon.getNumAnimators(), fileNickelodeon.getNumActors(), fileNickelodeon.getNumPlotTwisters(), fileNickelodeon.getNumAssemblers(), fileNickelodeon.getDayLength());
@@ -44,7 +43,7 @@ public class Starter {
             Nick= new Company(NickelodeonReq, NickelodeonDrive, 1,1,1,1,1,1, 350000);
             Global.setNick(Nick);
         }
-        Nick.updateTimes(EnumC.Nickelodeon);
+        
         Nickelodeon NickelodeonTab = new Nickelodeon(Nick);
         
        

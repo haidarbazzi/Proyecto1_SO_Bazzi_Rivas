@@ -218,6 +218,13 @@ public class Requirements {
     public void setDaysBetweenReleases(int daysBetweenRealeses) {
         this.daysBetweenReleases = daysBetweenRealeses;
     }
+
+    /**
+     * @param dayLength the dayLength to set
+     */
+    public void setDayLength(int dayLength) {
+        this.dayLength = dayLength;
+    }
     
     
     
