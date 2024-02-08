@@ -33,6 +33,7 @@ public class Regular extends Worker {
             try{
                 work();
                 sleep(getDayLength());
+                
 
                 this.getDrive().getCostsM().acquire();
                 

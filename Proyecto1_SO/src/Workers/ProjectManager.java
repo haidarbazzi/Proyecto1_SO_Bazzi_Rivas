@@ -41,7 +41,6 @@ public class ProjectManager extends Worker {
         try{
         while (counter < 16){
             this.getDrive().setStatusPM(1); //Esta viendo anime
-            System.out.println(this.getDrive().getStatusDirector());
             if (this.getDrive().getStatusDirector() == 1){ //Lo vigila el director
                 this.getDrive().setFaults(this.getDrive().getFaults() + 1);
                 faultCount ++;

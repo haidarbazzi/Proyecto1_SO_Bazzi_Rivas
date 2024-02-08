@@ -98,8 +98,8 @@ public class Company {
             case Nickelodeon:
                 swDP = 0.34f;
                 dDP = 0.34f;
-                aDP = 0.5f;
-                tDP = 0.2f;
+                aDP = 2;
+                tDP = 5;
                 ptwDP = 0.5f;
                 asDP = 0.5f;
                 break;
@@ -107,7 +107,7 @@ public class Company {
                 swDP = 0.25f;
                 dDP = 0.25f;
                 aDP = 1;
-                tDP = 0.2f;
+                tDP = 5;
                 ptwDP = 0.5f;
                 asDP = 0.5f;
                 break;
@@ -168,7 +168,7 @@ public class Company {
         } else {
             JOptionPane.showMessageDialog(null, "Se ha alcanzado el maximo de empleados");
         }
-
+        this.updateTimes(this.getRequirements().getIdentifier());
     }
 
     ;
