@@ -44,9 +44,9 @@ public class Chart {
     
     //Charts
     
-    JFreeChart disneyChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad", disneyData, PlotOrientation.VERTICAL, true, true, false);
-    JFreeChart nickChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad", nickData, PlotOrientation.VERTICAL, true, true, false);
-    JFreeChart nickDisneyChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad", nickDisneyData, PlotOrientation.VERTICAL, true, true, false);
+    JFreeChart disneyChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad (en miles de Bs.)", disneyData, PlotOrientation.VERTICAL, true, true, false);
+    JFreeChart nickChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad (en miles de Bs.)", nickData, PlotOrientation.VERTICAL, true, true, false);
+    JFreeChart nickDisneyChart = ChartFactory.createXYLineChart("Utilidad en el tiempo", "Días", "Utilidad (en miles de Bs.)", nickDisneyData, PlotOrientation.VERTICAL, true, true, false);
     
     //Paneles
     
@@ -71,7 +71,7 @@ public class Chart {
                         float totalC = nickelodeon.getDrive().getCostAnimation() + nickelodeon.getDrive().getCostAssemble() + nickelodeon.getDrive().getCostScript() + nickelodeon.getDrive().getCostSetting();
                         days++;
                        
-                        nickelodeonS.addOrUpdate(days, Math.round(nickelodeon.getDrive().getProfit() - totalC));
+                        nickelodeonS.addOrUpdate(days, Math.round((nickelodeon.getDrive().getProfit() - totalC)/1000));
                     });     
                     frame.add(nickPanel, BorderLayout.CENTER);
                     timer.start();
@@ -82,7 +82,7 @@ public class Chart {
                         float totalC = disney.getDrive().getCostAnimation() + disney.getDrive().getCostAssemble() + disney.getDrive().getCostScript() + disney.getDrive().getCostSetting();
                         System.out.println(days + "ACAAAAAAA");
                         days++;
-                        disneyS.addOrUpdate(days, Math.round(disney.getDrive().getProfit() - totalC));
+                        disneyS.addOrUpdate(days, Math.round((disney.getDrive().getProfit() - totalC)/1000));
                     });   
                     frame.add(disneyPanel, BorderLayout.CENTER);
                     timer.start();
@@ -98,10 +98,10 @@ public class Chart {
                         days++;
                         
                         float totalCnick = nickelodeon.getDrive().getCostAnimation() + nickelodeon.getDrive().getCostAssemble() + nickelodeon.getDrive().getCostScript() + nickelodeon.getDrive().getCostSetting();
-                        nickelodeonS.addOrUpdate(days, Math.round(nickelodeon.getDrive().getProfit() - totalCnick));
+                        nickelodeonS.addOrUpdate(days, Math.round((nickelodeon.getDrive().getProfit() - totalCnick)/1000));
                         
                         float totalCdisney = disney.getDrive().getCostAnimation() + disney.getDrive().getCostAssemble() + disney.getDrive().getCostScript() + disney.getDrive().getCostSetting();
-                        disneyS.addOrUpdate(days, Math.round(disney.getDrive().getProfit() - totalCdisney));
+                        disneyS.addOrUpdate(days, Math.round((disney.getDrive().getProfit() - totalCdisney)/1000));
                     });     frame.add(nickDisneyPanel, BorderLayout.CENTER);
                     timer.start();
                 }
